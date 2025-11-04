@@ -1,0 +1,8 @@
+node_modules
+.next
+coverage
+.env
+.env.local
+db/tokens.db
+*.log
+.DS_Store

@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "MIRO_CLIENT_ID": "@miro_client_id",
+    "MIRO_CLIENT_SECRET": "@miro_client_secret",
+    "MIRO_REDIRECT_URL": "@miro_redirect_url"
+  }
+}
