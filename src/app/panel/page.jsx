@@ -461,6 +461,10 @@ export default function PanelPage() {
   const [tempCalibrationDistance, setTempCalibrationDistance] = useState(null);
   const [calibrationUnit, setCalibrationUnit] = useState('ft');
   const [calibrationValue, setCalibrationValue] = useState('');
+  const [calibrationFeet, setCalibrationFeet] = useState('');
+  const [calibrationInches, setCalibrationInches] = useState('');
+  const [calibrationMeters, setCalibrationMeters] = useState('');
+  const [calibrationCentimeters, setCalibrationCentimeters] = useState('');
   const [hoveredCard, setHoveredCard] = useState(null);
   const [calibrationLine, setCalibrationLine] = useState(null);
   const [isFirstMeasurement, setIsFirstMeasurement] = useState(true);
@@ -1660,6 +1664,10 @@ export default function PanelPage() {
 
       setShowCalibrationModal(false);
       setCalibrationValue('');
+      setCalibrationFeet('');
+      setCalibrationInches('');
+      setCalibrationMeters('');
+      setCalibrationCentimeters('');
       setCalibrationLine(null);
       setTempCalibrationDistance(null); // Clear the temp preset data
       
@@ -1681,6 +1689,10 @@ export default function PanelPage() {
       setMode('none');
       setShowCalibrationModal(false);
       setCalibrationValue('');
+      setCalibrationFeet('');
+      setCalibrationInches('');
+      setCalibrationMeters('');
+      setCalibrationCentimeters('');
       setCalibrationLine(null);
       setTempCalibrationDistance(null);
     }
@@ -3950,34 +3962,285 @@ export default function PanelPage() {
             <h3 style={styles.modalTitle}>Calibration Setup</h3>
             
             <div style={styles.formGroup}>
-              <label style={styles.label}>Select Unit:</label>
+              <label style={styles.label}>SELECT UNIT:</label>
               <div style={styles.unitGrid}>
-                {CONVERSIONS[unitSystem].map((u) => (
-                  <button
-                    key={u.abbr}
-                    onClick={() => setCalibrationUnit(u.abbr)}
-                    style={{
-                      ...styles.unitGridBtn,
-                      ...(calibrationUnit === u.abbr ? styles.unitGridBtnActive : {})
-                    }}
-                  >
-                    {u.name}
-                  </button>
-                ))}
+                <button
+                  onClick={() => setCalibrationUnit('ft')}
+                  style={{
+                    ...styles.unitGridBtn,
+                    ...(calibrationUnit === 'ft' ? styles.unitGridBtnActive : {})
+                  }}
+                >
+                  Feet
+                </button>
+                <button
+                  onClick={() => setCalibrationUnit('in')}
+                  style={{
+                    ...styles.unitGridBtn,
+                    ...(calibrationUnit === 'in' ? styles.unitGridBtnActive : {})
+                  }}
+                >
+                  Inches
+                </button>
+                <button
+                  onClick={() => setCalibrationUnit('yd')}
+                  style={{
+                    ...styles.unitGridBtn,
+                    ...(calibrationUnit === 'yd' ? styles.unitGridBtnActive : {})
+                  }}
+                >
+                  Yards
+                </button>
+                <button
+                  onClick={() => setCalibrationUnit('mi')}
+                  style={{
+                    ...styles.unitGridBtn,
+                    ...(calibrationUnit === 'mi' ? styles.unitGridBtnActive : {})
+                  }}
+                >
+                  Miles
+                </button>
+                <button
+                  onClick={() => setCalibrationUnit('m')}
+                  style={{
+                    ...styles.unitGridBtn,
+                    ...(calibrationUnit === 'm' ? styles.unitGridBtnActive : {})
+                  }}
+                >
+                  Meters
+                </button>
+                <button
+                  onClick={() => setCalibrationUnit('cm')}
+                  style={{
+                    ...styles.unitGridBtn,
+                    ...(calibrationUnit === 'cm' ? styles.unitGridBtnActive : {})
+                  }}
+                >
+                  Centimeters
+                </button>
+                <button
+                  onClick={() => setCalibrationUnit('mm')}
+                  style={{
+                    ...styles.unitGridBtn,
+                    ...(calibrationUnit === 'mm' ? styles.unitGridBtnActive : {})
+                  }}
+                >
+                  Millimeters
+                </button>
+                <button
+                  onClick={() => setCalibrationUnit('km')}
+                  style={{
+                    ...styles.unitGridBtn,
+                    ...(calibrationUnit === 'km' ? styles.unitGridBtnActive : {})
+                  }}
+                >
+                  Kilometers
+                </button>
               </div>
             </div>
 
-            <div style={styles.formGroup}>
-              <label style={styles.label}>Enter Distance ({calibrationUnit}):</label>
-              <input
-                type="text"
-                value={calibrationValue}
-                onChange={(e) => setCalibrationValue(e.target.value)}
-                placeholder="e.g., 12.5 or 12' 6&quot; or 6&quot;"
-                style={styles.input}
-                autoFocus
-              />
-            </div>
+            {/* Imperial units - separate inputs for feet and inches */}
+            {(calibrationUnit === 'ft' || calibrationUnit === 'in') && (
+              <div style={styles.formGroup}>
+                <label style={styles.label}>ENTER DISTANCE (FT):</label>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <div style={{ flex: 1 }}>
+                    <input
+                      type="number"
+                      value={calibrationFeet}
+                      onChange={(e) => {
+                        setCalibrationFeet(e.target.value);
+                        // Calculate total and update calibrationValue
+                        const feet = parseFloat(e.target.value) || 0;
+                        const inches = parseFloat(calibrationInches) || 0;
+                        const totalFeet = feet + (inches / 12);
+                        if (calibrationUnit === 'ft') {
+                          setCalibrationValue(totalFeet.toString());
+                        }
+                      }}
+                      placeholder="Feet"
+                      style={{...styles.input, textAlign: 'center'}}
+                      autoFocus
+                      step="any"
+                      min="0"
+                    />
+                    <div style={{ 
+                      textAlign: 'center', 
+                      fontSize: '11px', 
+                      color: darkMode ? '#8e8e93' : '#718096',
+                      marginTop: '4px',
+                      fontWeight: '600'
+                    }}>
+                      FEET
+                    </div>
+                  </div>
+                  <div style={{ 
+                    fontSize: '20px', 
+                    fontWeight: '700',
+                    color: darkMode ? '#aeaeb2' : '#4a5568',
+                    padding: '0 4px'
+                  }}>
+                    +
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <input
+                      type="number"
+                      value={calibrationInches}
+                      onChange={(e) => {
+                        setCalibrationInches(e.target.value);
+                        // Calculate total and update calibrationValue
+                        const feet = parseFloat(calibrationFeet) || 0;
+                        const inches = parseFloat(e.target.value) || 0;
+                        const totalFeet = feet + (inches / 12);
+                        if (calibrationUnit === 'ft') {
+                          setCalibrationValue(totalFeet.toString());
+                        } else if (calibrationUnit === 'in') {
+                          setCalibrationValue((feet * 12 + inches).toString());
+                        }
+                      }}
+                      placeholder="Inches"
+                      style={{...styles.input, textAlign: 'center'}}
+                      step="any"
+                      min="0"
+                      max="11.99"
+                    />
+                    <div style={{ 
+                      textAlign: 'center', 
+                      fontSize: '11px', 
+                      color: darkMode ? '#8e8e93' : '#718096',
+                      marginTop: '4px',
+                      fontWeight: '600'
+                    }}>
+                      INCHES
+                    </div>
+                  </div>
+                </div>
+                {(calibrationFeet || calibrationInches) && (
+                  <div style={{
+                    marginTop: '8px',
+                    padding: '8px 12px',
+                    background: darkMode ? '#1c1c1e' : '#f7fafc',
+                    borderRadius: '6px',
+                    fontSize: '13px',
+                    color: darkMode ? '#8e8e93' : '#718096',
+                    textAlign: 'center'
+                  }}>
+                    Total: {formatFeetInches(parseFloat(calibrationValue) || 0)}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Metric units - separate inputs for meters and centimeters */}
+            {(calibrationUnit === 'm' || calibrationUnit === 'cm') && (
+              <div style={styles.formGroup}>
+                <label style={styles.label}>ENTER DISTANCE (METRIC):</label>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <div style={{ flex: 1 }}>
+                    <input
+                      type="number"
+                      value={calibrationMeters}
+                      onChange={(e) => {
+                        setCalibrationMeters(e.target.value);
+                        // Calculate total and update calibrationValue
+                        const meters = parseFloat(e.target.value) || 0;
+                        const cm = parseFloat(calibrationCentimeters) || 0;
+                        const totalMeters = meters + (cm / 100);
+                        if (calibrationUnit === 'm') {
+                          setCalibrationValue(totalMeters.toString());
+                        } else if (calibrationUnit === 'cm') {
+                          setCalibrationValue((meters * 100 + cm).toString());
+                        }
+                      }}
+                      placeholder="Meters"
+                      style={{...styles.input, textAlign: 'center'}}
+                      autoFocus
+                      step="any"
+                      min="0"
+                    />
+                    <div style={{ 
+                      textAlign: 'center', 
+                      fontSize: '11px', 
+                      color: darkMode ? '#8e8e93' : '#718096',
+                      marginTop: '4px',
+                      fontWeight: '600'
+                    }}>
+                      METERS
+                    </div>
+                  </div>
+                  <div style={{ 
+                    fontSize: '20px', 
+                    fontWeight: '700',
+                    color: darkMode ? '#aeaeb2' : '#4a5568',
+                    padding: '0 4px'
+                  }}>
+                    +
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <input
+                      type="number"
+                      value={calibrationCentimeters}
+                      onChange={(e) => {
+                        setCalibrationCentimeters(e.target.value);
+                        // Calculate total and update calibrationValue
+                        const meters = parseFloat(calibrationMeters) || 0;
+                        const cm = parseFloat(e.target.value) || 0;
+                        const totalMeters = meters + (cm / 100);
+                        if (calibrationUnit === 'm') {
+                          setCalibrationValue(totalMeters.toString());
+                        } else if (calibrationUnit === 'cm') {
+                          setCalibrationValue((meters * 100 + cm).toString());
+                        }
+                      }}
+                      placeholder="Centimeters"
+                      style={{...styles.input, textAlign: 'center'}}
+                      step="any"
+                      min="0"
+                      max="99.99"
+                    />
+                    <div style={{ 
+                      textAlign: 'center', 
+                      fontSize: '11px', 
+                      color: darkMode ? '#8e8e93' : '#718096',
+                      marginTop: '4px',
+                      fontWeight: '600'
+                    }}>
+                      CENTIMETERS
+                    </div>
+                  </div>
+                </div>
+                {(calibrationMeters || calibrationCentimeters) && (
+                  <div style={{
+                    marginTop: '8px',
+                    padding: '8px 12px',
+                    background: darkMode ? '#1c1c1e' : '#f7fafc',
+                    borderRadius: '6px',
+                    fontSize: '13px',
+                    color: darkMode ? '#8e8e93' : '#718096',
+                    textAlign: 'center'
+                  }}>
+                    Total: {formatNumber(parseFloat(calibrationValue) || 0, 2)} {calibrationUnit}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Other units - single input */}
+            {!['ft', 'in', 'm', 'cm'].includes(calibrationUnit) && (
+              <div style={styles.formGroup}>
+                <label style={styles.label}>ENTER DISTANCE ({calibrationUnit.toUpperCase()}):</label>
+                <input
+                  type="number"
+                  value={calibrationValue}
+                  onChange={(e) => setCalibrationValue(e.target.value)}
+                  placeholder={`e.g., 12.5 ${calibrationUnit}`}
+                  style={styles.input}
+                  autoFocus
+                  step="any"
+                  min="0"
+                />
+              </div>
+            )}
 
             <div style={styles.modalButtons}>
               <button onClick={handleCalibrationComplete} style={styles.btnPrimary}>
@@ -3987,6 +4250,10 @@ export default function PanelPage() {
                 onClick={() => {
                   setShowCalibrationModal(false);
                   setCalibrationValue('');
+                  setCalibrationFeet('');
+                  setCalibrationInches('');
+                  setCalibrationMeters('');
+                  setCalibrationCentimeters('');
                   setMode('none');
                 }}
                 style={styles.btnSecondary}
