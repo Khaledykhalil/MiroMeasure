@@ -1,7 +1,8 @@
 {
   "name": "miro-base",
   "version": "0.1.0",
-  "license": "MIT",
+  "license": "UNLICENSED",
+  "private": true,
   "scripts": {
     "build": "next build",
     "start": "next dev -p 3000",

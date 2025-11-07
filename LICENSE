@@ -1,21 +1,108 @@
-MIT License
+PROPRIETARY SOFTWARE LICENSE
 
-Copyright (c) 2025 khaledykhalil
+Copyright (c) 2025 Khaled Khalil. All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+NOTICE: This software and associated documentation files (the "Software") are the 
+exclusive property of Khaled Khalil and are protected by copyright law and 
+international treaties. Unauthorized reproduction or distribution of this Software, 
+or any portion of it, may result in severe civil and criminal penalties, and will 
+be prosecuted to the maximum extent possible under the law.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+================================================================================
+RESTRICTIONS ON USE
+================================================================================
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. NO COMMERCIAL USE
+   The Software may NOT be used for any commercial purpose whatsoever, including 
+   but not limited to:
+   - Creating commercial products or services
+   - Use within a commercial organization or business
+   - Generating revenue directly or indirectly
+   - Integration into commercial software or platforms
+   - White-labeling or rebranding for commercial purposes
+
+2. NO REPRODUCTION OR DISTRIBUTION
+   You may NOT:
+   - Copy, reproduce, or duplicate the Software
+   - Distribute, publish, or make the Software available to others
+   - Create derivative works based on the Software
+   - Reverse engineer, decompile, or disassemble the Software
+   - Remove or modify any proprietary notices or labels
+
+3. NO COMPETITIVE USE
+   You may NOT use the Software or any part thereof to create competing products 
+   or services, including but not limited to measurement tools, calibration 
+   systems, or Miro board integrations similar in nature to this Software.
+
+4. INTELLECTUAL PROPERTY PROTECTION
+   All rights, title, and interest in and to the Software, including all 
+   intellectual property rights, are and will remain the exclusive property of 
+   Khaled Khalil. This includes but is not limited to:
+   - Source code and object code
+   - Algorithms and methodologies
+   - User interface designs
+   - Documentation and technical specifications
+   - Trade secrets and proprietary information
+
+================================================================================
+PERMITTED USE
+================================================================================
+
+The Software is made available for:
+- PERSONAL, NON-COMMERCIAL viewing and evaluation purposes only
+- Educational review and learning (without reproduction or commercial application)
+- Portfolio demonstration purposes only
+
+NO OTHER RIGHTS ARE GRANTED.
+
+================================================================================
+COMMERCIAL LICENSING
+================================================================================
+
+If you wish to:
+- Use this Software commercially
+- License the technology for your organization
+- Purchase the code outright
+- Create derivative works
+- Integrate into commercial products
+
+You MUST contact the copyright holder to negotiate a commercial license:
+
+Email: support@measuremint.app
+Subject: Commercial License Inquiry - MeasureMint
+
+All commercial use without a valid commercial license agreement is strictly 
+prohibited and will be subject to legal action.
+
+================================================================================
+NO WARRANTY
+================================================================================
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+================================================================================
+ENFORCEMENT
+================================================================================
+
+Violation of this license will result in:
+- Immediate termination of any rights to view or access the Software
+- Legal action to protect intellectual property rights
+- Claims for damages and injunctive relief
+- Pursuit of criminal penalties where applicable
+
+By accessing, viewing, or downloading this Software, you acknowledge that you 
+have read this license, understand it, and agree to be bound by its terms and 
+conditions.
+
+================================================================================
+
+For licensing inquiries or questions about this license:
+Email: support@measuremint.app
+Website: https://measure-mint.vercel.app
+
+Last Updated: November 6, 2025

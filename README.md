@@ -3,14 +3,37 @@
 **Professional measurement and calibration tool for Miro boards**
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-Proprietary-red)
 ![Miro SDK](https://img.shields.io/badge/Miro%20SDK-v2.0-orange)
 
 ## ✨ Features
 
 ### 🎯 Core Capabilities
 - **Precise Scale Calibration** - Set scale using any known distance on your drawing
-- **Dual-Axis Calibration** - Separate X and Y axis calibration for distorted or stretched images
+## 📄 License
+
+**PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED**
+
+This software is proprietary and confidential. Copyright (c) 2025 Khaled Khalil.
+
+**🚫 Commercial use is strictly prohibited without a license agreement.**
+
+This code and its underlying concepts, algorithms, and implementations are protected intellectual property. You may NOT:
+- Use this software commercially in any way
+- Create derivative works or competing products
+- Reproduce, distribute, or republish any portion of this code
+- Integrate this software into commercial products or services
+
+**✅ Personal, non-commercial viewing for evaluation purposes only.**
+
+**💼 Interested in commercial licensing?**
+- Want to use this technology in your business?
+- Looking to license or purchase the code?
+- Need a custom solution based on this work?
+
+**Contact for licensing:** support@measuremint.app
+
+See the [LICENSE](LICENSE) file for complete terms and conditions.*Dual-Axis Calibration** - Separate X and Y axis calibration for distorted or stretched images
 - **Linear Distance Measurement** - Click two points to measure straight-line distances
 - **8 Unit Types** - ft, in, m, cm, mm, yd, mi, km with automatic conversions
 - **No Image Selection Required** - Measure anywhere on the board instantly
@@ -407,10 +430,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
    - Verify your authtoken is correctly set in .env
    - Check the ngrok container logs: `docker-compose logs ngrok`
    - Try restarting the containers: `npm run docker:down && npm run docker:dev`
-
-## �📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
