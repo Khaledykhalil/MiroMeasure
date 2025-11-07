@@ -1,3 +1,19 @@
+/**
+ * MeasureMint - Professional Measurement Tool for Miro
+ * 
+ * Copyright (c) 2025 Khaled Khalil. All Rights Reserved.
+ * 
+ * PROPRIETARY SOFTWARE - COMMERCIAL USE PROHIBITED
+ * 
+ * This source code is proprietary and confidential. Unauthorized copying,
+ * distribution, modification, or use of this code, in part or in whole,
+ * is strictly prohibited without explicit written permission.
+ * 
+ * For commercial licensing inquiries: support@measuremint.app
+ * 
+ * See LICENSE file for complete terms and conditions.
+ */
+
 'use client';
 
 import { useState, useEffect } from 'react';

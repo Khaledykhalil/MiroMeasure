@@ -1,4 +1,17 @@
 /**
+ * MeasureMint - Measurement & Calibration Utilities
+ * 
+ * Copyright (c) 2025 Khaled Khalil. All Rights Reserved.
+ * 
+ * PROPRIETARY SOFTWARE - COMMERCIAL USE PROHIBITED
+ * 
+ * This source code contains proprietary algorithms and methodologies.
+ * Unauthorized copying, distribution, modification, or use is strictly prohibited.
+ * 
+ * For commercial licensing: support@measuremint.app
+ */
+
+/**
  * MeasureMint Utility Functions
  * Pure functions for unit conversions, calculations, and formatting
  */
