@@ -9,7 +9,16 @@
 ## ✨ Features
 
 ### 🎯 Core Capabilities
-- **Precise Scale Calibration** - Set scale using any known distance on your drawing
+- **Precise Scale Calibration** - Set## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
 ## 📄 License
 
 **PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED**
@@ -33,7 +42,10 @@ This code and its underlying concepts, algorithms, and implementations are prote
 
 **Contact for licensing:** support@measuremint.app
 
-See the [LICENSE](LICENSE) file for complete terms and conditions.*Dual-Axis Calibration** - Separate X and Y axis calibration for distorted or stretched images
+See the [LICENSE](LICENSE) file for complete terms and conditions.
+
+## 📋 Troubleshootingg any known distance on your drawing
+- **Dual-Axis Calibration** - Separate X and Y axis calibration for distorted or stretched images
 - **Linear Distance Measurement** - Click two points to measure straight-line distances
 - **8 Unit Types** - ft, in, m, cm, mm, yd, mi, km with automatic conversions
 - **No Image Selection Required** - Measure anywhere on the board instantly
