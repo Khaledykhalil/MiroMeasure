@@ -3,7 +3,7 @@
 ## 🎯 Project Overview
 
 **Product Name:** MeasureMint  
-**Tagline:** Professional measurement and calibration tool for Miro boards  
+**Tagline:** Make Exact Measurements on Miro  
 **Website:** https://measuremint.app  
 **Current Version:** 1.0.0
 
@@ -39,7 +39,7 @@ The design should match the existing `/guide` page at https://measuremint.app/gu
 - Primary CTA: "Launch App" button (links to `/panel`)
 
 ### 2. Hero Section
-**Headline:** Make exact measurements on Miro boards  
+**Headline:** Make Exact Measurements on Miro  
 **Subheadline:** Professional measurement and calibration tool for architects, engineers, and construction professionals. Set scale once, measure anything with precision.
 
 **CTA Buttons:**
@@ -332,7 +332,7 @@ Design should match Vercel's ultra-minimal blog aesthetic:
 - Black primary buttons
 
 Include these sections:
-1. Hero with headline 'Make exact measurements on Miro boards' and CTA to /panel
+1. Hero with headline 'Make Exact Measurements on Miro' and CTA to /panel
 2. Problem/solution statement
 3. Key features (Calibration, Measurements, Unit Systems, Conversion Tables)
 4. Use cases (Construction, Floor Plans, Site Plans, Technical Drawings)
