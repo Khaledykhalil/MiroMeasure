@@ -13,8 +13,4 @@ module.exports = {
     },
   },
   plugins: [],
-  // Prevent Tailwind from affecting Mirotone styles in the panel
-  corePlugins: {
-    preflight: false,
-  },
 }
