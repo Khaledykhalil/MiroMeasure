@@ -802,6 +802,125 @@ export default function PanelPage() {
     }
   };
 
+  // Apply a scale preset - simplified one-click workflow
+  const applyScalePreset = async (scale) => {
+    try {
+      // Close the presets modal
+      setShowScalePresetsModal(false);
+      
+      // Determine unit based on scale type
+      const isMetric = scale.name.includes(':');
+      const presetUnit = isMetric ? 'm' : 'ft';
+      
+      // For scale presets, we need the user to draw a reference line
+      // that represents 1 unit on the drawing
+      const proceed = await showConfirm(
+        `Scale: ${scale.name}\n${scale.description}\n\n` +
+        `Draw a line that represents 1 ${presetUnit === 'ft' ? 'foot' : 'meter'} on your drawing.\n\n` +
+        `For example, if using 1/4" = 1', draw a line on a dimension that shows as 1 foot.`,
+        'Draw Reference Line'
+      );
+      
+      if (!proceed) return;
+      
+      // Wait for user to draw a line
+      await showAlert(
+        'Draw a connector line on your board, then select it and click OK.',
+        'Draw Line'
+      );
+      
+      const selection = await window.miro.board.getSelection();
+      
+      if (!selection || selection.length === 0) {
+        await showAlert('No line selected. Please try again.', 'Error');
+        return;
+      }
+      
+      const connector = selection.find(item => item.type === 'connector');
+      
+      if (!connector) {
+        await showAlert('Please select a connector line.', 'Error');
+        return;
+      }
+      
+      // Get the line's pixel length
+      const start = connector.start.position || connector.start;
+      const end = connector.end.position || connector.end;
+      
+      const dx = Math.abs(end.x - start.x);
+      const dy = Math.abs(end.y - start.y);
+      const pixelDistance = Math.sqrt(
+        Math.pow(end.x - start.x, 2) + 
+        Math.pow(end.y - start.y, 2)
+      );
+      
+      // Determine orientation
+      const orientation = dx > dy ? 'horizontal' : 'vertical';
+      
+      // The line represents 1 unit at the given scale
+      // So actual distance = 1 unit
+      const actualDistance = 1;
+      
+      // Calculate pixels per unit
+      const pixelsPerUnitX = orientation === 'horizontal' ? dx / actualDistance : dx / actualDistance;
+      const pixelsPerUnitY = orientation === 'vertical' ? dy / actualDistance : dy / actualDistance;
+      
+      // Create calibration
+      const newCalibration = {
+        pixelsPerUnit: pixelDistance / actualDistance,
+        pixelsPerUnitX: pixelsPerUnitX,
+        pixelsPerUnitY: pixelsPerUnitY,
+        pixelDistance: pixelDistance,
+        actualDistance: actualDistance,
+        unit: presetUnit,
+        orientation: orientation,
+        ratio: scale.ratio,
+        scaleName: scale.name,
+        timestamp: new Date().toISOString()
+      };
+      
+      setCalibration(newCalibration);
+      setCalibrationUnit(presetUnit);
+      
+      // Convert the line to a green calibration line
+      const calibrationLine = await window.miro.board.createConnector({
+        start: {
+          position: start
+        },
+        end: {
+          position: end
+        },
+        shape: 'straight',
+        style: {
+          strokeColor: '#10bb82',
+          strokeWidth: 2,
+          startStrokeCap: 'none',
+          endStrokeCap: 'none'
+        },
+        captions: [{
+          content: `Calibration: ${actualDistance} ${presetUnit} (${scale.name})`,
+          position: 0.5
+        }]
+      });
+      
+      // Remove the original line
+      await window.miro.board.remove(connector);
+      
+      // Store calibration line ID
+      setCalibrationLineId(calibrationLine.id);
+      
+      console.log('Scale preset applied:', scale.name, actualDistance, presetUnit);
+      
+      // Automatically start measurement mode
+      setMode('measure');
+      await startMeasurement();
+      
+    } catch (error) {
+      console.error('Error applying scale preset:', error);
+      await showAlert('Error applying preset: ' + error.message, 'Error');
+    }
+  };
+
   const startMeasurement = async () => {
     if (!calibration) {
       console.log('Please set up calibration first before measuring');
