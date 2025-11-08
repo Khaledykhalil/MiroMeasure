@@ -41,7 +41,7 @@ MeasureMint
 
 ### Tagline (Short Description - ~60 characters)
 ```
-Professional measurement and calibration tool for Miro boards
+Make Exact Measurements on Miro
 ```
 
 ### Category

@@ -1,6 +1,6 @@
 # 📏 MeasureMint for Miro
 
-**Professional measurement and calibration tool for Miro boards**
+**Make Exact Measurements on Miro**
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red)
