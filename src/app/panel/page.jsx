@@ -581,7 +581,6 @@ export default function PanelPage() {
       setSelectedImage(image);
     } catch (error) {
       console.error('Error selecting image:', error);
-      alert('Error selecting image. Please try again.');
     }
   };
 
@@ -590,7 +589,7 @@ export default function PanelPage() {
     
     // Check if Miro API is available
     if (!window.miro) {
-      await showAlert('Miro API not ready. Please wait a moment and try again.', 'Error');
+      console.error('Miro API not ready');
       return;
     }
 
@@ -654,10 +653,9 @@ export default function PanelPage() {
 
       console.log('Calibration line created:', line.id);
       setCalibrationLine(line);
-      await showAlert('Calibration line created! Drag the endpoints to match a known distance on your image, then click "Set Calibration Distance".', 'Success');
+      // Calibration line created - user can now drag endpoints
     } catch (error) {
       console.error('Error starting calibration:', error);
-      await showAlert('Error creating calibration line: ' + error.message, 'Error');
       setMode('none');
     }
   };
@@ -702,23 +700,17 @@ export default function PanelPage() {
       setShowCalibrationModal(true);
     } catch (error) {
       console.error('Error finishing calibration:', error);
-      alert('Error: ' + error.message);
     }
   };
 
   // NEW: Select and reuse an existing calibration line
   const selectExistingCalibration = async () => {
     try {
-      alert(
-        'Select an existing green calibration line on the board.\n\n' +
-        'The line\'s calibration values will be automatically loaded and reused for new measurements!'
-      );
-      
       // Get user selection
       const selection = await window.miro.board.getSelection();
       
       if (selection.length === 0) {
-        alert('No items selected. Please select a calibration line and try again.');
+        console.log('No items selected - please select a calibration line');
         return;
       }
       
@@ -726,7 +718,7 @@ export default function PanelPage() {
       const connector = selection.find(item => item.type === 'connector');
       
       if (!connector) {
-        alert('Please select a calibration line (connector/arrow).');
+        console.log('Selected item is not a connector');
         return;
       }
       
@@ -734,7 +726,7 @@ export default function PanelPage() {
       const caption = connector.captions?.[0]?.content || '';
       
       if (!caption.includes('Calibration:')) {
-        alert('This line doesn\'t appear to be a calibration line. Please select a green calibration line.');
+        console.log('Selected line is not a calibration line');
         return;
       }
       
@@ -743,7 +735,7 @@ export default function PanelPage() {
       const calibrationMatch = caption.match(/Calibration:\s*([0-9.'"\s]+)\s*([a-z]+)?/i);
       
       if (!calibrationMatch) {
-        alert('Could not parse calibration values from the selected line.');
+        console.log('Could not parse calibration values from caption');
         return;
       }
       
@@ -754,7 +746,7 @@ export default function PanelPage() {
       const actualDistance = parseFeetInches(calibrationText) || parseFloat(calibrationText);
       
       if (!actualDistance || actualDistance <= 0) {
-        alert('Could not parse calibration distance from the selected line.');
+        console.log('Could not parse calibration distance value');
         return;
       }
       
@@ -799,12 +791,7 @@ export default function PanelPage() {
       setCalibration(newCalibration);
       setCalibrationLineId(connector.id);
       
-      alert(
-        `✓ Calibration loaded successfully!\n\n` +
-        `Distance: ${formatMeasurement(actualDistance, unit, true)}\n` +
-        `Pixels: ${pixelDistance.toFixed(0)}px\n\n` +
-        `You can now start taking measurements!`
-      );
+      console.log('Calibration loaded successfully:', actualDistance, unit);
       
       // Automatically start measurement mode
       setMode('measure');
@@ -812,13 +799,12 @@ export default function PanelPage() {
       
     } catch (error) {
       console.error('Error selecting existing calibration:', error);
-      alert('Error loading calibration: ' + error.message);
     }
   };
 
   const startMeasurement = async () => {
     if (!calibration) {
-      alert('Please set up calibration first before measuring!');
+      console.log('Please set up calibration first before measuring');
       return;
     }
 
@@ -866,13 +852,12 @@ export default function PanelPage() {
       setCalibrationLine(line);
     } catch (error) {
       console.error('Error starting measurement:', error);
-      alert('Error creating measurement line: ' + error.message);
     }
   };
 
   const finishMeasurement = async () => {
     if (!calibrationLine) {
-      alert('No measurement line found. Please click "Distance" button first to create a measurement line.');
+      console.log('No measurement line found');
       return;
     }
 
@@ -981,7 +966,7 @@ export default function PanelPage() {
       await startMeasurement();
     } catch (error) {
       console.error('Error finishing measurement:', error);
-      alert('Error: ' + error.message);
+      console.error('Error:', error);
     }
   };
 
@@ -991,7 +976,7 @@ export default function PanelPage() {
       const selection = await window.miro.board.getSelection();
       
       if (selection.length === 0) {
-        alert('Please select a measurement line on the board first');
+        console.log('No measurement line selected');
         return;
       }
 
@@ -999,13 +984,13 @@ export default function PanelPage() {
       
       // Check if the selected item is a connector
       if (selectedItem.type !== 'connector') {
-        alert('Please select a measurement line (connector)');
+        console.log('Selected item is not a connector');
         return;
       }
 
       // Check if it's one of our measurement lines
       if (!measurementLines.includes(selectedItem.id)) {
-        alert('This line is not a measurement. Please select a blue measurement line.');
+        console.log('Selected line is not a measurement line');
         return;
       }
 
@@ -1093,17 +1078,16 @@ export default function PanelPage() {
       );
       setMeasurementLines(updatedLineIds);
 
-      alert('Measurement updated successfully!');
+      console.log('Measurement updated successfully');
     } catch (error) {
       console.error('Error updating measurement:', error);
-      alert('Error: ' + error.message);
     }
   };
 
   const updateCalibration = async () => {
     try {
       if (!calibrationLineId) {
-        alert('No calibration line found. Please calibrate first.');
+        console.log('No calibration line found - please calibrate first');
         return;
       }
 
@@ -1111,7 +1095,7 @@ export default function PanelPage() {
       const selection = await window.miro.board.getSelection();
       
       if (selection.length === 0) {
-        alert('Please select the green calibration line on the board first');
+        console.log('No calibration line selected');
         return;
       }
 
@@ -1119,7 +1103,7 @@ export default function PanelPage() {
       
       // Check if the selected item is the calibration line
       if (selectedItem.id !== calibrationLineId) {
-        alert('Please select the green calibration line to update it');
+        console.log('Please select the green calibration line to update it');
         return;
       }
 
@@ -1136,10 +1120,9 @@ export default function PanelPage() {
       setTempCalibrationDistance(pixelDistance);
       setShowCalibrationModal(true);
       
-      alert('Enter the actual distance for the repositioned calibration line');
+      console.log('Update calibration distance for repositioned line');
     } catch (error) {
       console.error('Error updating calibration:', error);
-      alert('Error: ' + error.message);
     }
   };
 
@@ -1540,7 +1523,7 @@ export default function PanelPage() {
     const parsedValue = parseFeetInches(calibrationValue);
     
     if (parsedValue === null || parsedValue <= 0) {
-      alert('Please enter a valid distance (e.g., 12.5, 12\' 6", or 6")');
+      console.log('Please enter a valid distance');
       return;
     }
     
@@ -1687,14 +1670,9 @@ export default function PanelPage() {
       setCalibrationLine(null);
       setTempCalibrationDistance(null); // Clear the temp preset data
       
-      // Show success message
+      // Calibration complete - log for debugging
       if (scalePreset) {
-        alert(
-          `✓ Scale preset applied successfully!\n\n` +
-          `${scalePreset.name} (1:${scalePreset.ratio})\n` +
-          `Calibration: ${formatMeasurement(actualDistance, calibrationUnit, true)}\n\n` +
-          `You can now start taking measurements!`
-        );
+        console.log('Scale preset applied:', scalePreset.name, actualDistance, calibrationUnit);
       }
       
       // Automatically start measurement mode
