@@ -165,20 +165,41 @@ Toggle between Imperial (🇺🇸) and Metric (🌍) systems or change specific 
 
 ### Project Structure
 
+```
 measuremint/
-├── LICENSE                 # License 
-├── index.html              # Main app interface
-├── app.js                  # Application logic
-├── package.json           # Dependencies
-├── privacy-policy.html    # Privacy policy
-├── terms-of-service.html  # Terms of service
-├── README.md             # This file
-└── .gitignore            # Git exclusions
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── page.jsx           # Landing page
+│   │   ├── panel/             # Main Miro app interface
+│   │   ├── privacy/           # Privacy policy page
+│   │   ├── terms/             # Terms of service page
+│   │   ├── support/           # Support form
+│   │   └── api/               # API routes (OAuth, support)
+│   ├── components/            # Reusable React components
+│   └── utils/                 # Utility functions
+├── public/                    # Static assets
+├── docs/                      # Documentation
+├── package.json              # Dependencies
+├── next.config.js            # Next.js configuration
+├── tailwind.config.js        # Tailwind CSS configuration
+└── README.md                 # This file
+```
+
+### Technology Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **Platform:** Miro Web SDK v2.0
+- **Deployment:** Vercel
+- **Language:** JavaScript/React
 
 ### Available Scripts
 
-- `npm start` - Start development server
-- `npm run dev` - Start development server (alias)
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm test` - Run tests
 
 ## 🌐 Deployment
 
@@ -254,10 +275,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
    - Verify your authtoken is correctly set in .env
    - Check the ngrok container logs: `docker-compose logs ngrok`
    - Try restarting the containers: `npm run docker:down && npm run docker:dev`
-
-## �📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
