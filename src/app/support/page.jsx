@@ -173,6 +173,15 @@ export default function SupportContact() {
           {error && (
             <div style={styles.errorBox}>
               <strong>❌ Error:</strong> {error}
+              <p style={{marginTop: '12px', fontSize: '0.9em'}}>
+                You can also email us directly at:{' '}
+                <a 
+                  href={`mailto:support@measuremint.app?subject=${encodeURIComponent(formData.subject || 'Support Request')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.category}\n\nMessage:\n${formData.message}`)}`}
+                  style={{color: '#3b82f6', textDecoration: 'underline'}}
+                >
+                  support@measuremint.app
+                </a>
+              </p>
             </div>
           )}
 
@@ -187,6 +196,16 @@ export default function SupportContact() {
           >
             {isSubmitting ? 'Sending...' : 'Send Message →'}
           </button>
+          
+          <div style={{textAlign: 'center', marginTop: '16px', color: '#64748b', fontSize: '0.9em'}}>
+            Having trouble? Email us directly at{' '}
+            <a 
+              href={`mailto:support@measuremint.app?subject=${encodeURIComponent(formData.subject || 'Support Request')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.category}\n\nMessage:\n${formData.message}`)}`}
+              style={{color: '#3b82f6', textDecoration: 'none', borderBottom: '1px solid #3b82f6'}}
+            >
+              support@measuremint.app
+            </a>
+          </div>
         </form>
 
         <div style={styles.infoSection}>
