@@ -12,23 +12,36 @@ export default function SupportContact() {
   });
   
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
     
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`[${formData.category.toUpperCase()}] ${formData.subject}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Category: ${formData.category}\n\n` +
-      `Message:\n${formData.message}\n\n` +
-      `---\n` +
-      `Sent from MeasureMint Support Form`
-    );
-    
-    window.location.href = `mailto:support@measuremint.app?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    try {
+      const response = await fetch('/api/support', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError(err.message || 'Failed to send your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -43,16 +56,27 @@ export default function SupportContact() {
       <div style={styles.container}>
         <div style={styles.successCard}>
           <div style={styles.successIcon}>✓</div>
-          <h1 style={styles.successTitle}>Email Client Opened!</h1>
+          <h1 style={styles.successTitle}>Message Sent Successfully!</h1>
           <p style={styles.successText}>
-            Your default email client should open with your message pre-filled.
-            If it didn't open automatically, please email us directly at:
+            Thank you for contacting MeasureMint support. We've received your message and will respond to <strong>{formData.email}</strong> within 24 hours.
+          </p>
+          <p style={styles.successSubtext}>
+            If you don't hear from us, please check your spam folder or email us directly at:
           </p>
           <a href="mailto:support@measuremint.app" style={styles.emailLink}>
             support@measuremint.app
           </a>
           <button 
-            onClick={() => setSubmitted(false)} 
+            onClick={() => {
+              setSubmitted(false);
+              setFormData({
+                name: '',
+                email: '',
+                subject: '',
+                category: 'technical',
+                message: '',
+              });
+            }} 
             style={styles.backButton}
           >
             ← Send Another Message
@@ -146,8 +170,22 @@ export default function SupportContact() {
             />
           </div>
 
-          <button type="submit" style={styles.submitButton}>
-            Send Message →
+          {error && (
+            <div style={styles.errorBox}>
+              <strong>❌ Error:</strong> {error}
+            </div>
+          )}
+
+          <button 
+            type="submit" 
+            style={{
+              ...styles.submitButton,
+              opacity: isSubmitting ? 0.6 : 1,
+              cursor: isSubmitting ? 'not-allowed' : 'pointer',
+            }}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Sending...' : 'Send Message →'}
           </button>
         </form>
 
@@ -342,5 +380,18 @@ const styles = {
     fontWeight: '600',
     cursor: 'pointer',
     transition: 'all 0.2s',
+  },
+  successSubtext: {
+    color: '#94a3b8',
+    fontSize: '0.9em',
+    marginBottom: '1em',
+  },
+  errorBox: {
+    padding: '16px',
+    background: '#fee2e2',
+    border: '2px solid #ef4444',
+    borderRadius: '8px',
+    color: '#991b1b',
+    marginBottom: '1em',
   },
 };
