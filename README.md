@@ -111,23 +111,23 @@ The app requires the following environment variables in your `.env` file:
 # Miro App credentials
 MIRO_CLIENT_ID=your_miro_client_id
 MIRO_CLIENT_SECRET=your_miro_client_secret
-MIRO_REDIRECT_URL=http://localhost:3000/auth
+MIRO_REDIRECT_URL=https://measuremint.app/api/redirect
 
 # Server configuration
 PORT=3000
-NODE_ENV=development
+NODE_ENV=production
 
 # Security
 ENCRYPTION_KEY=your_32_character_encryption_key
 
-# Database configuration
-DB_PATH=db/tokens.db
+# Email (Resend API)
+RESEND_API_KEY=your_resend_api_key
 ```
 ```bash
    npm start
 ```
    
-   The app will be available at `http://localhost:3000`
+   The app will be available at `https://measuremint.app`
 
 ### Miro Developer Setup
 
@@ -135,10 +135,10 @@ DB_PATH=db/tokens.db
 2. Click "Create new app"
 3. Configure:
    - **App name**: MeasureMint
-   - **App URL**: `http://localhost:3000`
-   - **Redirect URI**: `http://localhost:3000/`
+   - **App URL**: `https://measuremint.app`
+   - **Redirect URI**: `https://measuremint.app/api/redirect`
    - **Permissions**: `boards:read`, `boards:write`
-   - **SDK URI**: `http://localhost:3000/index.html`
+   - **SDK URI**: `https://measuremint.app/panel`
 4. Install the app to your Miro board
 
 ## 📖 How to Use
@@ -198,8 +198,10 @@ See full deployment guide in documentation.
 
 ## 📋 Marketplace Requirements
 
-- [x] Privacy Policy
-- [x] Terms of Service
+- [x] Privacy Policy (https://measuremint.app/privacy)
+- [x] Terms of Service (https://measuremint.app/terms)
+- [x] Production Domain (https://measuremint.app)
+- [x] Support Email (support@measuremint.app)
 - [ ] App Icon (512x512px)
 - [ ] Toolbar Icon (24x24px)
 - [ ] Screenshots (3-5 images, 1280x720px)
@@ -220,9 +222,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ### Common Issues
 
 1. **OAuth Error: redirect_uri_mismatch**
-   - Verify the redirect URI in your Miro app settings matches your .env file
-   - Make sure you're using HTTPS when required
-   - When using Docker, check the ngrok URL matches your Miro app settings
+   - Verify the redirect URI in your Miro app settings: `https://measuremint.app/api/redirect`
+   - Ensure you're using HTTPS (required for production)
+   - Check app-manifest.yaml has the correct production URLs
 
 2. **Cannot find module 'xyz'**
    - In Docker: Run `npm run docker:dev` to rebuild with new dependencies
@@ -259,16 +261,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
+- **Website:** [https://measuremint.app](https://measuremint.app)
+- **Privacy Policy:** [https://measuremint.app/privacy](https://measuremint.app/privacy)
+- **Terms of Service:** [https://measuremint.app/terms](https://measuremint.app/terms)
+- **Support:** [support@measuremint.app](mailto:support@measuremint.app)
 - [Miro Marketplace](https://miro.com/marketplace/) - Coming soon!
 - [Miro Developer Platform](https://developers.miro.com)
 - [Miro SDK Documentation](https://developers.miro.com/docs/)
-- [Report Issues](https://github.com/YOUR-USERNAME/measuremint/issues)
+- [GitHub Repository](https://github.com/Khaledykhalil/MeasureMint)
 
 ## 👤 Author
 
 **Khaled Khalil**
-- GitHub: [@khaledykhalil](https://github.com/YOUR-USERNAME)
-- Email: khaledykhalil09@gmail.com
+- GitHub: [@Khaledykhalil](https://github.com/Khaledykhalil)
+- Email: support@measuremint.app
 
 ## 🙏 Acknowledgments
 

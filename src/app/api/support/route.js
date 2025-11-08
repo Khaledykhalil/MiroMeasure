@@ -28,7 +28,8 @@ export async function POST(request) {
 
     // Send email using Resend
     const data = await resend.emails.send({
-      from: 'MeasureMint Support <onboarding@resend.dev>', // Resend's test domain
+      // Once domain is verified, change to: 'MeasureMint Support <noreply@measuremint.app>'
+      from: 'MeasureMint Support <onboarding@resend.dev>', // Resend's test domain (temporary)
       to: ['support@measuremint.app'], // Your support email
       replyTo: email, // User's email for easy replies
       subject: `[${category.toUpperCase()}] ${subject}`,

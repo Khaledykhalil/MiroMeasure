@@ -42,8 +42,7 @@ export default function Home() {
             Make exact Measurements on Miro
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl leading-relaxed">
-            Professional measurement and calibration tool for architects, engineers, and construction professionals. Set
-            scale once, measure anything with precision.
+            Professional measurement and calibration tool for architects, engineers, designers, and construction professionals. Scale on Miro - Measure on Miro.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/panel">
