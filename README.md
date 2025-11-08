@@ -6,106 +6,16 @@
 ![License](https://img.shields.io/badge/license-Proprietary-red)
 ![Miro SDK](https://img.shields.io/badge/Miro%20SDK-v2.0-orange)
 
-## ✨ Features
+## 🎯 Features
 
-### 🎯 Core Capabilities
-- **Precise Scale Calibration** - Set## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-**PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED**
-
-This software is proprietary and confidential. Copyright (c) 2025 Khaled Khalil.
-
-**🚫 Commercial use is strictly prohibited without a license agreement.**
-
-This code and its underlying concepts, algorithms, and implementations are protected intellectual property. You may NOT:
-- Use this software commercially in any way
-- Create derivative works or competing products
-- Reproduce, distribute, or republish any portion of this code
-- Integrate this software into commercial products or services
-
-**✅ Personal, non-commercial viewing for evaluation purposes only.**
-
-**💼 Interested in commercial licensing?**
-- Want to use this technology in your business?
-- Looking to license or purchase the code?
-- Need a custom solution based on this work?
-
-**Contact for licensing:** support@measuremint.app
-
-See the [LICENSE](LICENSE) file for complete terms and conditions.
-
-## 📋 Troubleshootingg any known distance on your drawing
-- **Dual-Axis Calibration** - Separate X and Y axis calibration for distorted or stretched images
-- **Linear Distance Measurement** - Click two points to measure straight-line distances
-- **8 Unit Types** - ft, in, m, cm, mm, yd, mi, km with automatic conversions
-- **No Image Selection Required** - Measure anywhere on the board instantly
-- **Visual Feedback** - See your measurements directly on the board with connecting lines
-- **Real-time Updates** - All measurements update when you change units
-
-### 📐 Measurement Tools
-
-#### **Linear Distance** 
-Click two points to measure straight-line distance. Perfect for dimensions, diagonals, and direct measurements on blueprints, floor plans, and technical drawings.
-
-### 🏗️ Built for Professionals
-Perfect for:
-- **Architecture** - Floor plans, elevations, site plans
-- **Engineering** - Technical drawings, schematics, diagrams
-- **Construction** - Blueprints, shop drawings, as-built documentation
-- **Interior Design** - Space planning, furniture layouts
-- **Real Estate** - Property measurements, site analysis, lot dimensions
-- **Project Management** - Visual project documentation
-
-### 🎯 Calibration System
-
-MeasureMint features a robust dual-axis calibration system to handle real-world drawings:
-
-#### **Draw Calibration Line**
-1. Click "Draw New Line" under Calibration
-2. Click two points on a known distance (e.g., a dimension line showing "20 ft")
-3. Enter the actual distance in the dialog
-4. Choose your unit (ft, in, m, cm, etc.)
-5. Choose which axis to calibrate (X, Y, or Both)
-6. Click "Set Calibration"
-
-#### **Reuse Existing Line**
-If you have existing lines or shapes on the board:
-1. Click "Reuse Existing Line"
-2. Select a line or connector from your board
-3. Enter the actual distance it represents
-4. Choose your unit and axis
-5. The app uses your existing line for calibration
-
-#### **Update Calibration**
-Modify your calibration settings at any time without redrawing:
-- Change the reference distance
-- Switch between units
-- Adjust X or Y axis independently
-- Perfect for handling distorted or stretched images
-
-### 🔄 Smart Unit Conversion
-Seamlessly convert between:
-- **Imperial**: feet, inches, yards, miles
-- **Metric**: meters, centimeters, millimeters, kilometers
-- All conversions happen automatically!
-
-### 🎨 User Experience
-- Clean, intuitive interface
-- No image selection required - measure anywhere
-- Works with any drawing, PDF, or image on Miro
-- Dual-axis support for distorted images
-- Professional measurement display
-- Persistent measurements on the board
+- **Scale Calibration** - Set a known distance to establish accurate scale
+- **Precise Measurements** - Measure any distance on calibrated drawings
+- **Dual Unit Systems** - Full Imperial and Metric support with instant conversion
+- **8 Unit Types** - Feet, inches, yards, miles, meters, centimeters, millimeters, kilometers
+- **Visual Feedback** - Clear markers and labels directly on the Miro board
+- **Measurement History** - Track all measurements with automatic unit conversions
+- **Conversion Tables** - View measurements across all units simultaneously
+- **Professional Grade** - Built for architects, engineers, and construction professionals
 
 ## 🎬 Demo
 
@@ -136,8 +46,8 @@ Choose one of the following setup methods:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Khaledykhalil/MeasureMint.git
-cd MeasureMint
+git clone https://github.com/YOUR-USERNAME/measuremint.git
+cd measuremint
 ```
 
 2. **Choose your setup method:**
@@ -233,58 +143,28 @@ DB_PATH=db/tokens.db
 
 ## 📖 How to Use
 
-### Quick Start (2 Simple Steps!)
+### 1. Select Image
+Click "Select Image" and choose a blueprint, floor plan, or technical drawing on your Miro board.
 
-#### 1. Calibrate Scale
-1. Click "Draw New Line" under Calibration
-2. Click two points on a known distance in your drawing (e.g., a dimension line showing "20 ft")
+### 2. Calibrate Scale
+1. Click "Calibrate Scale"
+2. Click two points on a known distance (e.g., a dimension line showing "20 ft")
 3. Enter the actual distance
-4. Choose your unit (ft, in, m, cm, etc.)
-5. Choose which axis to calibrate:
-   - **Both** - Normal drawings (default)
-   - **X-Axis Only** - If horizontal distances are distorted
-   - **Y-Axis Only** - If vertical distances are distorted
-6. Click "Set Calibration"
+4. Choose your unit
+5. Click "Set Calibration"
 
-**Alternative: Reuse Existing Line**
-- If you have lines already on the board, click "Reuse Existing Line"
-- Select any line or connector
-- Enter its actual distance
-- Perfect for using existing dimension lines!
+### 3. Measure Distances
+1. Click "Measure Distance"
+2. Click any two points on your calibrated image
+3. The measurement appears automatically with full unit conversions
 
-#### 2. Measure Distances
-1. Click "Measure Distance" under Measurements
-2. Click your start point on the board
-3. Click your end point
-4. See the measurement displayed with a connecting line
-5. Change units anytime using the unit dropdown
-
-### Advanced Features
-
-#### Update Calibration
-Made a mistake or need to adjust? Click "Update Calibration" to:
-- Change the reference distance
-- Switch between units
-- Modify which axis is calibrated
-- No need to redraw your calibration line!
-
-#### Dual-Axis Calibration
-For distorted or stretched images:
-1. Set X-axis calibration using a horizontal reference
-2. Set Y-axis calibration using a vertical reference
-3. MeasureMint automatically applies the correct scale based on measurement direction
-
-### Switch Units Anytime
-Change units without re-measuring:
-1. Use the unit selector on any measurement
-2. Choose from: ft, in, yd, mi, m, cm, mm, km
-3. All measurements update automatically
+### 4. Switch Units Anytime
+Toggle between Imperial (🇺🇸) and Metric (🌍) systems or change specific units - all measurements update automatically!
 
 ## 🛠️ Development
 
 ### Project Structure
 
-```
 measuremint/
 ├── LICENSE                 # License 
 ├── index.html              # Main app interface
@@ -293,82 +173,12 @@ measuremint/
 ├── privacy-policy.html    # Privacy policy
 ├── terms-of-service.html  # Terms of service
 ├── README.md             # This file
-├── jest.config.js        # Jest configuration
-├── jest.setup.js         # Test setup
-├── .gitignore            # Git exclusions
-├── src/
-│   ├── app/
-│   │   └── panel/
-│   │       └── page.jsx  # Main panel component
-│   └── utils/
-│       ├── measurements.js           # Utility functions
-│       ├── performance.js            # Performance monitoring
-│       └── __tests__/
-│           └── measurements.test.js  # Unit tests
-└── docs/
-    ├── USER_GUIDE.md     # User documentation
-    ├── TECHNICAL.md      # Technical documentation
-    ├── PERFORMANCE.md    # Performance guide
-    └── DEPLOYMENT.md     # Deployment guide
-```
+└── .gitignore            # Git exclusions
 
 ### Available Scripts
 
 - `npm start` - Start development server
 - `npm run dev` - Start development server (alias)
-- `npm run build` - Build for production
-- `npm test` - Run test suite
-- `npm run test:watch` - Run tests in watch mode
-- `npm run test:coverage` - Run tests with coverage report
-- `npm run test:ci` - Run tests in CI mode
-
-### Testing
-
-MeasureMint includes comprehensive unit tests for all utility functions:
-
-```bash
-# Run all tests
-npm test
-
-# Run tests in watch mode (during development)
-npm run test:watch
-
-# Generate coverage report
-npm run test:coverage
-```
-
-**Test Coverage:**
-- Unit conversions (ft, in, m, cm, mm, yd, mi, km)
-- Distance calculations (pixel distance, actual distance, dual-axis)
-- Measurement formatting (decimal, feet-inches)
-- Input parsing (feet-inches format)
-- Calibration validation
-- Angle calculations
-- Orientation detection
-
-### Performance
-
-Performance utilities and monitoring:
-
-```jsx
-import { measureAsync, debounce, throttle, memoize } from '@/utils/performance';
-
-// Measure operation performance
-await measureAsync(async () => {
-  // Your async operation
-}, 'Operation Label');
-
-// Debounce user input
-const debouncedHandler = debounce(handleInput, 300);
-
-// Throttle frequent events
-const throttledHandler = throttle(handleScroll, 100);
-
-// Memoize expensive calculations
-const memoizedCalc = memoize(expensiveFunction);
-```
-
-See [docs/PERFORMANCE.md](docs/PERFORMANCE.md) for detailed optimization guide.
 
 ## 🌐 Deployment
 
@@ -443,20 +253,21 @@ Contributions are welcome! Please feel free to submit a Pull Request.
    - Check the ngrok container logs: `docker-compose logs ngrok`
    - Try restarting the containers: `npm run docker:down && npm run docker:dev`
 
+## �📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## 🔗 Links
 
 - [Miro Marketplace](https://miro.com/marketplace/) - Coming soon!
 - [Miro Developer Platform](https://developers.miro.com)
 - [Miro SDK Documentation](https://developers.miro.com/docs/)
-- [Report Issues](https://github.com/Khaledykhalil/MeasureMint/issues)
-- [Privacy Policy](https://measuremint.app/privacy-policy)
-- [Terms of Service](https://measuremint.app/terms-of-service)
+- [Report Issues](https://github.com/YOUR-USERNAME/measuremint/issues)
 
 ## 👤 Author
 
 **Khaled Khalil**
-- GitHub: [@Khaledykhalil](https://github.com/Khaledykhalil)
-- Website: [measuremint.app](https://measuremint.app)
+- GitHub: [@khaledykhalil](https://github.com/YOUR-USERNAME)
 - Email: khaledykhalil09@gmail.com
 
 ## 🙏 Acknowledgments
@@ -471,39 +282,41 @@ None currently. Please report any issues on GitHub!
 
 ## 🗺️ Roadmap
 
-### Current Version ✅
-- [x] Linear distance measurements with visual feedback
-- [x] Dual-axis calibration system (X, Y, or Both)
-- [x] Draw new calibration line or reuse existing lines
-- [x] Update calibration without redrawing
-- [x] 8 unit types with automatic conversion
-- [x] No image selection required
-- [x] Real-time measurement display
-
-### Coming Soon 🚀
-- [ ] Area calculations with perimeter
-- [ ] Polyline (multi-point path) measurements
+- [ ] Area calculations
 - [ ] Angle measurements
-- [ ] Circle measurements (radius, diameter, circumference, area)
-- [ ] Volume calculations
-- [ ] Count tool with markers
-- [ ] Slope/pitch tool (rise:run, percentage, degrees)
 - [ ] Export measurements to CSV
-- [ ] Multiple scale regions for mixed-scale drawings
-- [ ] Scale presets (architectural scales)
-- [ ] Measurement templates and saved configurations
 - [ ] Custom unit definitions
+- [ ] Measurement templates
 - [ ] Multi-language support
-
-### Future Enhancements 🔮
-- [ ] Cutout/subtract areas
-- [ ] Feet-inches formatting for construction professionals
-- [ ] Measurement annotations and notes
-- [ ] Batch measurement operations
-- [ ] Advanced reporting features
 
 ---
 
 **MeasureMint** - Making measurements on Miro as easy as they should be.
 
 Made with ❤️ for architects, engineers, and construction professionals.
+
+## 📄 License
+
+**PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED**
+
+This software is proprietary and confidential. Copyright (c) 2025 Khaled Khalil.
+
+**🚫 Commercial use is strictly prohibited without a license agreement.**
+
+This code and its underlying concepts, algorithms, and implementations are protected intellectual property. You may NOT:
+- Use this software commercially in any way
+- Create derivative works or competing products
+- Reproduce, distribute, or republish any portion of this code
+- Integrate this software into commercial products or services
+
+**✅ Personal, non-commercial viewing for evaluation purposes only.**
+
+**💼 Interested in commercial licensing?**
+- Want to use this technology in your business?
+- Looking to license or purchase the code?
+- Need a custom solution based on this work?
+
+**Contact for licensing:** support@measuremint.app
+
+See the [LICENSE](LICENSE) file for complete terms and conditions.
+
