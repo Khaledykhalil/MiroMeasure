@@ -50,13 +50,9 @@ export default function Home() {
                 Launch App
               </button>
             </Link>
-            <Link
-              href="https://www.loom.com/share/3a2b1b94850946fa93a4db2961d2b62d"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="/waitlist">
               <button className="border border-gray-300 text-gray-900 hover:border-gray-400 bg-transparent px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                Watch Demo
+                Join Waitlist
               </button>
             </Link>
           </div>
