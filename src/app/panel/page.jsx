@@ -33,7 +33,15 @@ import {
   MdFormatListBulleted
 } from 'react-icons/md';
 import { 
-  TbRuler
+  TbRuler,
+  TbLayoutGridAdd,
+  TbNumbers,
+  TbVectorBezier2,
+  TbCube,
+  TbAngle,
+  TbCircle,
+  TbLayersDifference,
+  TbStairs
 } from 'react-icons/tb';
 
 const CONVERSIONS = {
