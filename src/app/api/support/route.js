@@ -29,9 +29,10 @@ export async function POST(request) {
     // Send email using Resend
     // Note: Using Gmail directly until domain is verified in Resend
     // Once verified, change back to: from: 'MeasureMint Support <noreply@measuremint.app>'
+    const adminEmail = process.env.ADMIN_EMAIL || 'support@measuremint.app';
     const data = await resend.emails.send({
       from: 'MeasureMint Support <onboarding@resend.dev>', // Temporary: using test domain
-      to: ['khaledykhalil09@gmail.com'], // Temporary: direct to Gmail (free tier requirement)
+      to: [adminEmail], // Use environment variable for admin email
       replyTo: email, // User's email for easy replies
       subject: `[${category.toUpperCase()}] ${subject}`,
       html: `

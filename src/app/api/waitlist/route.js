@@ -92,10 +92,11 @@ export async function POST(request) {
       );
     }
 
-    // Send notification email to you
+    // Send notification email to admin
+    const adminEmail = process.env.ADMIN_EMAIL || 'support@measuremint.app';
     await resend.emails.send({
       from: 'MeasureMint Waitlist <onboarding@resend.dev>',
-      to: ['khaledykhalil09@gmail.com'],
+      to: [adminEmail],
       replyTo: email,
       subject: `New Waitlist Signup: ${name}`,
       html: `
