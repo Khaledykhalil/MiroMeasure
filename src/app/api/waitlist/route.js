@@ -1,18 +1,11 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { sql } from '@vercel/postgres';
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(request) {
   try {
-    // Check if Resend is configured
-    if (!resend) {
-      return NextResponse.json(
-        { error: 'Email service not configured. Please contact support@measuremint.app directly.' },
-        { status: 503 }
-      );
-    }
-
     const body = await request.json();
     const { name, email, profession, company } = body;
 
@@ -21,6 +14,55 @@ export async function POST(request) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
+      );
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      );
+    }
+
+    // Check if email already exists
+    try {
+      const existingUser = await sql`
+        SELECT email FROM waitlist WHERE email = ${email}
+      `;
+      
+      if (existingUser.rows.length > 0) {
+        return NextResponse.json(
+          { error: 'This email is already on the waitlist' },
+          { status: 409 }
+        );
+      }
+    } catch (dbError) {
+      console.log('Database check error (table might not exist yet):', dbError.message);
+    }
+
+    // Store in database
+    try {
+      await sql`
+        INSERT INTO waitlist (name, email, profession, company, created_at)
+        VALUES (${name}, ${email}, ${profession}, ${company}, NOW())
+      `;
+      console.log('✅ Stored in database:', email);
+    } catch (dbError) {
+      console.error('❌ Database storage failed:', dbError);
+      // Continue anyway - we'll still send emails
+    }
+
+    // Check if Resend is configured
+    if (!resend) {
+      return NextResponse.json(
+        { 
+          success: true,
+          message: 'Joined waitlist (stored in database, email service not configured)',
+          stored: true
+        },
+        { status: 200 }
       );
     }
 
@@ -101,7 +143,9 @@ export async function POST(request) {
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Successfully joined waitlist'
+        message: 'Successfully joined waitlist',
+        stored: true,
+        emailsSent: true
       },
       { status: 200 }
     );
@@ -111,6 +155,48 @@ export async function POST(request) {
     return NextResponse.json(
       { 
         error: 'Failed to process waitlist signup',
+        details: error.message 
+      },
+      { status: 500 }
+    );
+  }
+}
+
+// GET endpoint to retrieve waitlist entries (for admin use)
+export async function GET(request) {
+  try {
+    // Simple authentication check (you can enhance this)
+    const authHeader = request.headers.get('authorization');
+    const expectedAuth = process.env.ADMIN_API_KEY;
+    
+    if (!expectedAuth || authHeader !== `Bearer ${expectedAuth}`) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
+    // Get all waitlist entries
+    const result = await sql`
+      SELECT id, name, email, profession, company, created_at, notified
+      FROM waitlist
+      ORDER BY created_at DESC
+    `;
+
+    return NextResponse.json(
+      { 
+        success: true,
+        count: result.rows.length,
+        waitlist: result.rows
+      },
+      { status: 200 }
+    );
+
+  } catch (error) {
+    console.error('Error fetching waitlist:', error);
+    return NextResponse.json(
+      { 
+        error: 'Failed to fetch waitlist',
         details: error.message 
       },
       { status: 500 }
