@@ -6,6 +6,29 @@
 ![License](https://img.shields.io/badge/license-Proprietary-red)
 ![Miro SDK](https://img.shields.io/badge/Miro%20SDK-v2.0-orange)
 
+---
+
+## ⚠️ PROPRIETARY SOFTWARE - NOT FOR REPLICATION
+
+**Copyright © 2025 Khaled Khalil. All Rights Reserved.**
+
+This software is **PROPRIETARY** and **CONFIDENTIAL**. It is **NOT open source** and **NOT licensed under MIT** or any permissive license.
+
+### 🚫 Strictly Prohibited:
+- ❌ Copying, reproducing, or replicating this code
+- ❌ Commercial use by anyone other than the copyright holder
+- ❌ Creating derivative works or competing products
+- ❌ Distribution or redistribution in any form
+- ❌ Reverse engineering or decompiling
+
+### ⚖️ Legal Notice:
+Unauthorized use, reproduction, or distribution will result in legal action. See [LICENSE](LICENSE) for full terms.
+
+### 💼 Commercial Licensing:
+For licensing inquiries: support@measuremint.app
+
+---
+
 ## 🎯 Features
 
 - **Scale Calibration** - Set a known distance to establish accurate scale
