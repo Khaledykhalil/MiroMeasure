@@ -18,13 +18,22 @@
 
 ---
 
-## 🔄 Phase 2: Constants Extraction (IN PROGRESS)
+## ✅ Phase 2: Constants Extraction (COMPLETE)
 
 - [x] Created folder structure (`constants/`, `utils/`, `hooks/`, `components/`)
 - [x] Extracted `CONVERSIONS` to `constants/conversions.js`
 - [x] Extracted `ARCHITECTURAL_SCALES` to `constants/scales.js`
-- [ ] Extract `getStyles()` to `constants/styles.js` (NEXT)
-- [ ] Update imports in `page.jsx`
+- [x] Extracted `getStyles()` to `constants/styles.js`
+- [x] Updated imports in `page.jsx`
+
+## ✅ Phase 3: Utilities Extraction (COMPLETE)
+
+- [x] Extracted `convertUnits()` to `utils/conversions.js`
+- [x] Extracted `getAllConversions()` to `utils/conversions.js`
+- [x] Extracted `formatNumber()` to `utils/formatting.js`
+- [x] Extracted `formatFeetInches()` to `utils/formatting.js`
+- [x] Extracted `formatMeasurement()` to `utils/formatting.js`
+- [x] Updated imports in `page.jsx`
 
 ---
 
@@ -76,8 +85,20 @@
 
 ## 📊 Progress
 
-**Current File Size:** 4,719 lines  
+**Current File Size:** 4,304 lines (down from 4,719)  
 **Target:** ~200 lines (main component) + ~20 focused files
 
-**Estimated Completion:** 50% of constants done, utilities/hooks/components remaining
+**Lines Removed:** 415 lines (8.8% reduction)
+
+**Completed:**
+- ✅ Documentation organization
+- ✅ Constants extraction (conversions, scales, styles)
+- ✅ Utilities extraction (conversions, formatting)
+- ✅ Removed unused dependencies
+- ✅ Updated .gitignore
+
+**Remaining:**
+- ⏸️ Hooks extraction (paused)
+- ⏸️ Components extraction (paused)
+- ⏸️ Final refactoring (paused)
 
