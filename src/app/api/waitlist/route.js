@@ -5,12 +5,25 @@ import { Pool } from 'pg';
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 // Create PostgreSQL connection pool
-const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
+// Configure SSL for Supabase (handles self-signed certificates)
+const getPoolConfig = () => {
+  const connectionString = process.env.POSTGRES_URL;
+  if (!connectionString) return null;
+  
+  // Remove query parameters as pg handles SSL via config object
+  const cleanConnectionString = connectionString.split('?')[0];
+  
+  return {
+    connectionString: cleanConnectionString,
+    // Supabase requires SSL, but we need to accept self-signed certificates
+    ssl: {
+      rejectUnauthorized: false
+    }
+  };
+};
+
+const poolConfig = getPoolConfig();
+const pool = poolConfig ? new Pool(poolConfig) : null;
 
 export async function POST(request) {
   try {
@@ -35,32 +48,36 @@ export async function POST(request) {
     }
 
     // Check if email already exists
-    try {
-      const existingUser = await pool.query(
-        'SELECT email FROM waitlist WHERE email = $1',
-        [email]
-      );
-      
-      if (existingUser.rows.length > 0) {
-        return NextResponse.json(
-          { error: 'This email is already on the waitlist' },
-          { status: 409 }
+    if (pool) {
+      try {
+        const existingUser = await pool.query(
+          'SELECT email FROM waitlist WHERE email = $1',
+          [email]
         );
+        
+        if (existingUser.rows.length > 0) {
+          return NextResponse.json(
+            { error: 'This email is already on the waitlist' },
+            { status: 409 }
+          );
+        }
+      } catch (dbError) {
+        console.log('Database check error (table might not exist yet):', dbError.message);
       }
-    } catch (dbError) {
-      console.log('Database check error (table might not exist yet):', dbError.message);
-    }
 
-    // Store in database
-    try {
-      await pool.query(
-        'INSERT INTO waitlist (name, email, profession, company, created_at) VALUES ($1, $2, $3, $4, NOW())',
-        [name, email, profession, company]
-      );
-      console.log('✅ Stored in database:', email);
-    } catch (dbError) {
-      console.error('❌ Database storage failed:', dbError);
-      // Continue anyway - we'll still send emails
+      // Store in database
+      try {
+        await pool.query(
+          'INSERT INTO waitlist (name, email, profession, company, created_at) VALUES ($1, $2, $3, $4, NOW())',
+          [name, email, profession, company]
+        );
+        console.log('✅ Stored in database:', email);
+      } catch (dbError) {
+        console.error('❌ Database storage failed:', dbError);
+        // Continue anyway - we'll still send emails
+      }
+    } else {
+      console.log('⚠️ Database pool not initialized - skipping database storage');
     }
 
     // Check if Resend is configured
@@ -186,6 +203,16 @@ export async function GET(request) {
     }
 
     // Get all waitlist entries
+    if (!pool) {
+      return NextResponse.json(
+        { 
+          error: 'Database not configured',
+          details: 'POSTGRES_URL not set'
+        },
+        { status: 500 }
+      );
+    }
+
     const result = await pool.query(
       'SELECT id, name, email, profession, company, created_at, notified FROM waitlist ORDER BY created_at DESC'
     );
