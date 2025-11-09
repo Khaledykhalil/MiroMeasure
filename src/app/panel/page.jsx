@@ -26,8 +26,6 @@ import {
   MdContentCopy,
   MdCheck,
   MdStraighten,
-  MdLightMode,
-  MdDarkMode,
   MdBuild,
   MdSwapHoriz,
   MdFormatListBulleted
@@ -52,6 +50,13 @@ import { getStyles } from './constants/styles';
 // Import utilities
 import { convertUnits, getAllConversions } from './utils/conversions';
 import { formatNumber, formatFeetInches, formatMeasurement } from './utils/formatting';
+
+// Import components
+import Header from './components/Header';
+import CustomModal from './components/CustomModal';
+
+// Import hooks
+import { useCustomModal } from './hooks/useCustomModal';
 
 export default function PanelPage() {
   const [mode, setMode] = useState('none');
@@ -89,51 +94,8 @@ export default function PanelPage() {
   // Dark mode state
   const [darkMode, setDarkMode] = useState(false);
 
-  // Custom modal state (replaces browser alerts)
-  const [customModal, setCustomModal] = useState({
-    show: false,
-    title: '',
-    message: '',
-    type: 'alert', // 'alert' or 'confirm'
-    onConfirm: null,
-    onCancel: null
-  });
-
-  // Custom modal helpers
-  const showAlert = (message, title = 'MeasureMint') => {
-    return new Promise((resolve) => {
-      setCustomModal({
-        show: true,
-        title,
-        message,
-        type: 'alert',
-        onConfirm: () => {
-          setCustomModal({ ...customModal, show: false });
-          resolve();
-        },
-        onCancel: null
-      });
-    });
-  };
-
-  const showConfirm = (message, title = 'MeasureMint') => {
-    return new Promise((resolve) => {
-      setCustomModal({
-        show: true,
-        title,
-        message,
-        type: 'confirm',
-        onConfirm: () => {
-          setCustomModal({ ...customModal, show: false });
-          resolve(true);
-        },
-        onCancel: () => {
-          setCustomModal({ ...customModal, show: false });
-          resolve(false);
-        }
-      });
-    });
-  };
+  // Custom modal hook
+  const { customModal, showAlert, showConfirm } = useCustomModal();
 
   // Generate styles based on dark mode
   const styles = getStyles(darkMode);
@@ -2877,42 +2839,7 @@ export default function PanelPage() {
     <div style={styles.body}>
       <div style={styles.container}>
         {/* Header */}
-        <header style={styles.header}>
-          <div style={styles.logoSection}>
-            <img 
-              src="/logo.svg" 
-              alt="MeasureMint Logo" 
-              style={{
-                width: '32px',
-                height: '32px',
-                marginRight: '4px'
-              }}
-            />
-            <div style={styles.brand}>
-              <div style={styles.brandName}>MeasureMint</div>
-              <div style={styles.brandTagline}>Professional Measurement Tool</div>
-            </div>
-          </div>
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            style={{
-              padding: '8px 12px',
-              border: 'none',
-              borderRadius: '8px',
-              background: darkMode ? '#2c2c2e' : 'white',
-              color: darkMode ? '#ffffff' : '#4a5568',
-              cursor: 'pointer',
-              fontSize: '18px',
-              transition: 'all 0.2s ease',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px'
-            }}
-            title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-          >
-            {darkMode ? <MdLightMode size={20} /> : <MdDarkMode size={20} />}
-          </button>
-        </header>
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
         {/* Set Calibration Distance Button - shown when in calibrate mode */}
         {mode === 'calibrate' && calibrationLine && (
@@ -4230,74 +4157,8 @@ export default function PanelPage() {
         </div>
       )}
 
-      {/* Custom Modal (replaces browser alerts/confirms) */}
-      {customModal.show && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 10000
-        }}>
-          <div style={{
-            background: darkMode ? '#2c2c2e' : 'white',
-            borderRadius: '12px',
-            padding: '24px',
-            maxWidth: '500px',
-            width: '90%',
-            boxShadow: darkMode ? '0 10px 40px rgba(0, 0, 0, 0.6)' : '0 10px 40px rgba(0, 0, 0, 0.2)'
-          }}>
-            <h3 style={{
-              margin: '0 0 16px 0',
-              fontSize: '18px',
-              fontWeight: '600',
-              color: darkMode ? '#ffffff' : '#1a202c'
-            }}>
-              {customModal.title}
-            </h3>
-            <p style={{
-              margin: '0 0 24px 0',
-              fontSize: '14px',
-              color: darkMode ? '#aeaeb2' : '#4a5568',
-              whiteSpace: 'pre-line',
-              lineHeight: '1.6'
-            }}>
-              {customModal.message}
-            </p>
-            <div style={{
-              display: 'flex',
-              gap: '12px',
-              justifyContent: 'flex-end'
-            }}>
-              {customModal.type === 'confirm' && (
-                <button
-                  onClick={customModal.onCancel}
-                  style={{
-                    ...styles.btnSecondary,
-                    padding: '10px 20px'
-                  }}
-                >
-                  Cancel
-                </button>
-              )}
-              <button
-                onClick={customModal.onConfirm}
-                style={{
-                  ...styles.btnPrimary,
-                  padding: '10px 20px'
-                }}
-              >
-                OK
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Custom Modal */}
+      <CustomModal customModal={customModal} darkMode={darkMode} />
     </div>
   );
 }
