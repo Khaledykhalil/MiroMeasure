@@ -190,3 +190,9 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vercel
 .env*.local
+
+# Test coverage
+coverage/
+
+# Database files
+db/tokens.db
