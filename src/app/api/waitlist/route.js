@@ -1,8 +1,16 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
-import { sql } from '@vercel/postgres';
+import { Pool } from 'pg';
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+
+// Create PostgreSQL connection pool
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 export async function POST(request) {
   try {
@@ -28,9 +36,10 @@ export async function POST(request) {
 
     // Check if email already exists
     try {
-      const existingUser = await sql`
-        SELECT email FROM waitlist WHERE email = ${email}
-      `;
+      const existingUser = await pool.query(
+        'SELECT email FROM waitlist WHERE email = $1',
+        [email]
+      );
       
       if (existingUser.rows.length > 0) {
         return NextResponse.json(
@@ -44,10 +53,10 @@ export async function POST(request) {
 
     // Store in database
     try {
-      await sql`
-        INSERT INTO waitlist (name, email, profession, company, created_at)
-        VALUES (${name}, ${email}, ${profession}, ${company}, NOW())
-      `;
+      await pool.query(
+        'INSERT INTO waitlist (name, email, profession, company, created_at) VALUES ($1, $2, $3, $4, NOW())',
+        [name, email, profession, company]
+      );
       console.log('✅ Stored in database:', email);
     } catch (dbError) {
       console.error('❌ Database storage failed:', dbError);
@@ -177,11 +186,9 @@ export async function GET(request) {
     }
 
     // Get all waitlist entries
-    const result = await sql`
-      SELECT id, name, email, profession, company, created_at, notified
-      FROM waitlist
-      ORDER BY created_at DESC
-    `;
+    const result = await pool.query(
+      'SELECT id, name, email, profession, company, created_at, notified FROM waitlist ORDER BY created_at DESC'
+    );
 
     return NextResponse.json(
       { 

@@ -189,3 +189,4 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vercel
+.env*.local

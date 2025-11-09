@@ -9,6 +9,9 @@
  * This will create the waitlist table in your database.
  */
 
+// Load environment variables from .env.local
+require('dotenv').config({ path: '.env.local' });
+
 const { sql } = require('@vercel/postgres');
 
 async function setupDatabase() {
