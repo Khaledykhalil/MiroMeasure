@@ -56,6 +56,8 @@ import Header from './components/Header';
 import CustomModal from './components/CustomModal';
 import CalibrationSection from './components/CalibrationSection';
 import MeasurementSection from './components/MeasurementSection';
+import LatestMeasurementDisplay from './components/LatestMeasurementDisplay';
+import MeasurementHistory from './components/MeasurementHistory';
 
 // Import hooks
 import { useCustomModal } from './hooks/useCustomModal';
@@ -3317,96 +3319,10 @@ export default function PanelPage() {
         </main>
 
         {/* Latest Measurement Display */}
-        {latestMeasurement && (
-          <div style={styles.panel}>
-            <h2 style={styles.panelTitle}>Latest Measurement</h2>
-            <div style={styles.measurementDisplay}>
-              <div style={styles.measurementValue}>
-                {latestMeasurement.type === 'area' ? formatNumber(latestMeasurement.area) : 
-                 latestMeasurement.type === 'polyline' ? formatNumber(latestMeasurement.totalLength) :
-                 latestMeasurement.type === 'count' ? latestMeasurement.number :
-                 latestMeasurement.type === 'volume' ? formatNumber(latestMeasurement.volume) :
-                 latestMeasurement.type === 'angle' ? formatNumber(latestMeasurement.angle, 1) :
-                 latestMeasurement.type === 'circle' ? formatNumber(latestMeasurement.radius) :
-                 latestMeasurement.type === 'cutout' ? formatNumber(latestMeasurement.netArea) :
-                 latestMeasurement.type === 'slope' ? latestMeasurement.riseRunRatio :
-                 formatNumber(latestMeasurement.distance)}
-              </div>
-              <div style={styles.measurementUnit}>
-                {latestMeasurement.type === 'area' ? `${latestMeasurement.unit}²` :
-                 latestMeasurement.type === 'volume' ? `${latestMeasurement.unit}³` :
-                 latestMeasurement.type === 'angle' ? '°' :
-                 latestMeasurement.type === 'circle' ? `${latestMeasurement.unit} radius` :
-                 latestMeasurement.type === 'cutout' ? `${latestMeasurement.unit}² net` :
-                 latestMeasurement.type === 'slope' ? `(${formatNumber(latestMeasurement.slopePercentage, 1)}%)` :
-                 latestMeasurement.type === 'count' ? 'items' :
-                 latestMeasurement.unit}
-              </div>
-            </div>
-            {latestMeasurement.type === 'cutout' && (
-              <div style={{textAlign: 'center', marginTop: '8px', color: '#718096', fontSize: '12px'}}>
-                <div>Gross: {formatNumber(latestMeasurement.grossArea)} {latestMeasurement.unit}²</div>
-                <div>Cutouts: {formatNumber(latestMeasurement.cutoutArea)} {latestMeasurement.unit}²</div>
-                <div style={{fontWeight: 'bold', color: '#10bb82'}}>Net: {formatNumber(latestMeasurement.netArea)} {latestMeasurement.unit}²</div>
-              </div>
-            )}
-            {latestMeasurement.type === 'slope' && (
-              <div style={{textAlign: 'center', marginTop: '8px', color: '#718096', fontSize: '12px'}}>
-                <div>Rise: {formatNumber(latestMeasurement.rise, 2)} {latestMeasurement.unit}</div>
-                <div>Run: {formatNumber(latestMeasurement.run, 2)} {latestMeasurement.unit}</div>
-                <div>Angle: {formatNumber(latestMeasurement.slopeDegrees, 1)}°</div>
-              </div>
-            )}
-            {latestMeasurement.type === 'area' && latestMeasurement.perimeter && (
-              <div style={{textAlign: 'center', marginTop: '8px', color: '#718096', fontSize: '12px'}}>
-                Perimeter: {formatNumber(latestMeasurement.perimeter)} {latestMeasurement.unit}
-              </div>
-            )}
-            {latestMeasurement.type === 'volume' && (
-              <div style={{textAlign: 'center', marginTop: '8px', color: '#718096', fontSize: '12px'}}>
-                Base: {formatNumber(latestMeasurement.baseArea)} {latestMeasurement.unit}² × Height: {formatNumber(latestMeasurement.height)} {latestMeasurement.unit}
-              </div>
-            )}
-            {latestMeasurement.type === 'circle' && (
-              <div style={{textAlign: 'center', marginTop: '8px', color: '#718096', fontSize: '12px'}}>
-                D: {formatNumber(latestMeasurement.diameter)} {latestMeasurement.unit} | C: {formatNumber(latestMeasurement.circumference)} {latestMeasurement.unit} | A: {formatNumber(latestMeasurement.area)} {latestMeasurement.unit}²
-              </div>
-            )}
-          </div>
-        )}
+        <LatestMeasurementDisplay latestMeasurement={latestMeasurement} darkMode={darkMode} />
 
         {/* Measurement History */}
-        {measurements.length > 1 && (
-          <div style={styles.panel}>
-            <h2 style={styles.panelTitle}>Measurement History ({measurements.length} total)</h2>
-            {measurements.slice(-5).reverse().map((m, idx) => (
-              <div key={m.id} style={styles.historyItem}>
-                <span style={styles.historyLabel}>
-                  {m.type === 'area' ? <><MdStraighten size={14} style={{marginRight: '4px'}} /> Area</> :
-                   m.type === 'count' ? <><TbNumbers size={14} style={{marginRight: '4px'}} /> Count</> :
-                   m.type === 'polyline' ? <><TbVectorBezier2 size={14} style={{marginRight: '4px'}} /> Path</> :
-                   m.type === 'volume' ? <><TbCube size={14} style={{marginRight: '4px'}} /> Volume</> :
-                   m.type === 'angle' ? <><TbAngle size={14} style={{marginRight: '4px'}} /> Angle</> :
-                   m.type === 'circle' ? <><TbCircle size={14} style={{marginRight: '4px'}} /> Circle</> :
-                   m.type === 'cutout' ? <><TbLayersDifference size={14} style={{marginRight: '4px'}} /> Cutout</> :
-                   m.type === 'slope' ? <><TbStairs size={14} style={{marginRight: '4px'}} /> Slope</> :
-                   <><TbRuler size={14} style={{marginRight: '4px'}} /> Linear</>} #{measurements.length - idx}
-                </span>
-                <span style={styles.historyValue}>
-                  {m.type === 'area' ? `${formatNumber(m.area)} ${m.unit}²` :
-                   m.type === 'count' ? `#${m.number}` :
-                   m.type === 'polyline' ? `${formatNumber(m.totalLength)} ${m.unit}` :
-                   m.type === 'volume' ? `${formatNumber(m.volume)} ${m.unit}³` :
-                   m.type === 'angle' ? `${formatNumber(m.angle, 1)}°` :
-                   m.type === 'circle' ? `R:${formatNumber(m.radius)} ${m.unit}` :
-                   m.type === 'cutout' ? `${formatNumber(m.netArea)} ${m.unit}² net` :
-                   m.type === 'slope' ? `${m.riseRunRatio} (${formatNumber(m.slopePercentage, 1)}%)` :
-                   `${formatNumber(m.distance)} ${m.unit}`}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
+        <MeasurementHistory measurements={measurements} darkMode={darkMode} />
       </div>
 
       {/* Volume Height Modal */}
