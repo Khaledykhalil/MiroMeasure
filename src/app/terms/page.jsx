@@ -60,7 +60,6 @@ export default function TermsOfService() {
             <ul className="list-disc pl-6 text-muted-foreground space-y-1">
               <li><strong>Website:</strong> <a href="https://measuremint.app" className="text-primary hover:underline">https://measuremint.app</a></li>
               <li><strong>Support:</strong> <a href="mailto:support@measuremint.app" className="text-primary hover:underline">support@measuremint.app</a></li>
-              <li><strong>Developer:</strong> Khaled Khalil</li>
             </ul>
           </section>
 
@@ -130,7 +129,7 @@ export default function TermsOfService() {
               <li>Documentation and help materials</li>
             </ul>
             <p className="text-muted-foreground leading-relaxed">
-              Are owned by Khaled Khalil / MeasureMint and protected by copyright, trademark, and other intellectual property laws.
+              Are owned by MeasureMint and protected by copyright, trademark, and other intellectual property laws.
             </p>
 
             <h3 className="text-xl font-semibold mb-3 text-foreground mt-6">4.2 Your Content</h3>

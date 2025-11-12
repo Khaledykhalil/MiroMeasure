@@ -62,7 +62,6 @@ export default function PrivacyPolicy() {
               <li><strong>Company:</strong> MeasureMint</li>
               <li><strong>Website:</strong> <a href="https://measuremint.app" className="text-primary hover:underline">https://measuremint.app</a></li>
               <li><strong>Support Email:</strong> <a href="mailto:support@measuremint.app" className="text-primary hover:underline">support@measuremint.app</a></li>
-              <li><strong>Developer:</strong> Khaled Khalil</li>
             </ul>
           </section>
 

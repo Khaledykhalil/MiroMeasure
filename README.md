@@ -285,13 +285,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [Miro Marketplace](https://miro.com/marketplace/) - Coming soon!
 - [Miro Developer Platform](https://developers.miro.com)
 - [Miro SDK Documentation](https://developers.miro.com/docs/)
-- [GitHub Repository](https://github.com/Khaledykhalil/MeasureMint)
-
-## 👤 Author
-
-**Khaled Khalil**
-- GitHub: [@Khaledykhalil](https://github.com/Khaledykhalil)
-- Email: support@measuremint.app
+- [GitHub Repository](https://github.com/measuremint/MeasureMint)
 
 ## 🙏 Acknowledgments
 
@@ -322,7 +316,7 @@ Made with ❤️ for architects, engineers, and construction professionals.
 
 **PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED**
 
-This software is proprietary and confidential. Copyright (c) 2025 Khaled Khalil.
+This software is proprietary and confidential. Copyright (c) 2025 MeasureMint.
 
 **🚫 Commercial use is strictly prohibited without a license agreement.**
 
