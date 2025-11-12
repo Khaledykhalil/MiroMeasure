@@ -39,10 +39,10 @@ export default function Home() {
         {/* Hero Section */}
         <section className="max-w-5xl mx-auto px-5 md:px-6 pt-20 md:pt-32 pb-16 md:pb-24">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-gray-900">
-            Make exact Measurements on Miro
+            Measurements on Miro, Finally!
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl leading-relaxed">
-            Professional measurement and calibration tool for architects, engineers, designers, and construction professionals. Scale on Miro - Measure on Miro.
+            Professional measurement and calibration tool for designers. Scaling and measuring drawings on Miro, for the first time ever!
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/panel">
