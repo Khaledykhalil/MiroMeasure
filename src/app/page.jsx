@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import { MdConstruction, MdHome, MdMap, MdDesignServices, MdArchitecture, MdChair } from "react-icons/md"
 
 export default function Home() {
   return (
@@ -143,32 +144,44 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16 text-gray-900">Perfect for</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div>
-              <div className="text-4xl mb-3">🏗️</div>
+              <div className="mb-3 text-[#10bb82]">
+                <MdConstruction size={48} />
+              </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">Construction Blueprints</h3>
               <p className="text-gray-700">Measure dimensions, verify specifications, check clearances</p>
             </div>
             <div>
-              <div className="text-4xl mb-3">🏠</div>
+              <div className="mb-3 text-[#10bb82]">
+                <MdHome size={48} />
+              </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">Floor Plans</h3>
               <p className="text-gray-700">Space planning, room dimensions, furniture layouts</p>
             </div>
             <div>
-              <div className="text-4xl mb-3">🗺️</div>
+              <div className="mb-3 text-[#10bb82]">
+                <MdMap size={48} />
+              </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">Site Plans</h3>
               <p className="text-gray-700">Property measurements, lot dimensions, site analysis</p>
             </div>
             <div>
-              <div className="text-4xl mb-3">📐</div>
+              <div className="mb-3 text-[#10bb82]">
+                <MdDesignServices size={48} />
+              </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">Technical Drawings</h3>
               <p className="text-gray-700">Engineering schematics, mechanical drawings, diagrams</p>
             </div>
             <div>
-              <div className="text-4xl mb-3">🎨</div>
+              <div className="mb-3 text-[#10bb82]">
+                <MdArchitecture size={48} />
+              </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">Architectural Designs</h3>
               <p className="text-gray-700">Elevations, sections, detail drawings</p>
             </div>
             <div>
-              <div className="text-4xl mb-3">🪑</div>
+              <div className="mb-3 text-[#10bb82]">
+                <MdChair size={48} />
+              </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">Interior Design</h3>
               <p className="text-gray-700">Furniture placement, fixture spacing, material calculations</p>
             </div>
