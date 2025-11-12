@@ -220,7 +220,7 @@ export default function SupportContact() {
 
           <div style={styles.contactMethod}>
             <strong>🐛 Bug Reports:</strong>
-            <a href="https://github.com/measuremint/MeasureMint/issues" target="_blank" rel="noopener noreferrer" style={styles.link}>
+            <a href="https://github.com/Khaledykhalil/MeasureMint/issues" target="_blank" rel="noopener noreferrer" style={styles.link}>
               GitHub Issues
             </a>
           </div>

@@ -18,7 +18,7 @@ export default function HelpCenter() {
     </ol>
     
     <h2>📖 Documentation</h2>
-    <p>For comprehensive documentation, see our <a href="https://github.com/measuremint/MeasureMint/blob/main/docs/USER_GUIDE.md" target="_blank">User Guide</a></p>
+    <p>For comprehensive documentation, see our <a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/USER_GUIDE.md" target="_blank">User Guide</a></p>
     
     <h2>❓ Frequently Asked Questions</h2>
     
@@ -78,7 +78,7 @@ export default function HelpCenter() {
     
     <div style="background: #f1f5f9; border-radius: 8px; padding: 1.5em; margin: 1.5em 0;">
       <h3 style="margin-top: 0;">🐛 Report a Bug</h3>
-      <p><strong>GitHub Issues:</strong> <a href="https://github.com/measuremint/MeasureMint/issues" target="_blank">github.com/measuremint/MeasureMint/issues</a></p>
+      <p><strong>GitHub Issues:</strong> <a href="https://github.com/Khaledykhalil/MeasureMint/issues" target="_blank">GitHub Issues</a></p>
       <p>Include: Browser, Miro plan, steps to reproduce, screenshots</p>
     </div>
     
@@ -96,9 +96,9 @@ export default function HelpCenter() {
     
     <h2>📚 Additional Resources</h2>
     <ul>
-      <li><a href="https://github.com/measuremint/MeasureMint/blob/main/docs/USER_GUIDE.md" target="_blank">User Guide</a></li>
-      <li><a href="https://github.com/measuremint/MeasureMint/blob/main/docs/TECHNICAL.md" target="_blank">Technical Documentation</a></li>
-      <li><a href="https://github.com/measuremint/MeasureMint" target="_blank">GitHub Repository</a></li>
+      <li><a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/USER_GUIDE.md" target="_blank">User Guide</a></li>
+      <li><a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/TECHNICAL.md" target="_blank">Technical Documentation</a></li>
+      <li><a href="https://github.com/Khaledykhalil/MeasureMint" target="_blank">GitHub Repository</a></li>
     </ul>
     
     <hr style="margin: 3em 0; border: none; border-top: 2px solid #e2e8f0;">

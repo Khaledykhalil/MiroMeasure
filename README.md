@@ -285,7 +285,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [Miro Marketplace](https://miro.com/marketplace/) - Coming soon!
 - [Miro Developer Platform](https://developers.miro.com)
 - [Miro SDK Documentation](https://developers.miro.com/docs/)
-- [GitHub Repository](https://github.com/measuremint/MeasureMint)
+- [GitHub Repository](https://github.com/Khaledykhalil/MeasureMint)
 
 ## 🙏 Acknowledgments
 
