@@ -124,9 +124,9 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Conversion Tables</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Measurement Tracking</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                View measurements across all units simultaneously. Compare Imperial and Metric instantly.
+                View the latest measurement that was calculated so you never lose track of your board.
               </p>
             </div>
             <div>
