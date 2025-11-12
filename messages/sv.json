@@ -1,0 +1,74 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "Professionellt Mätverktyg",
+    "launchApp": "Starta App",
+    "support": "Support",
+    "pricing": "Priser",
+    "guide": "Guide",
+    "help": "Hjälp"
+  },
+  "home": {
+    "hero": {
+      "title": "Gör Exakta Mätningar i Miro",
+      "subtitle": "Professionellt mät- och kalibreringsverktyg för arkitekter, ingenjörer och byggprofessionella. Ställ in skalan en gång, mät allt med precision.",
+      "ctaPrimary": "Starta App",
+      "ctaSecondary": "Titta på Demo"
+    },
+    "features": {
+      "title": "Varför MeasureMint?",
+      "calibration": {
+        "title": "Ett-Klick Kalibrering",
+        "description": "Ställ in din skalreferens en gång och mät allt noggrant."
+      },
+      "precision": {
+        "title": "Precisa Mätningar",
+        "description": "Få exakta dimensioner med full enhetsomvandling."
+      },
+      "units": {
+        "title": "Alla Enheter",
+        "description": "Växla mellan imperiala och metriska system direkt."
+      }
+    }
+  },
+  "subscribe": {
+    "title": "Välj Din Plan",
+    "subtitle": "Välj den plan som fungerar bäst för dig",
+    "monthly": {
+      "name": "Månadsplan",
+      "price": "$9.99",
+      "period": "per månad"
+    },
+    "sixMonth": {
+      "name": "6-Månaders Plan",
+      "price": "$49.99",
+      "period": "var 6:e månad",
+      "badge": "REKOMMENDERAS"
+    },
+    "annual": {
+      "name": "Årsplan",
+      "price": "$79.99",
+      "period": "per år",
+      "badge": "Bästa Värde"
+    },
+    "features": {
+      "unlimited": "Obegränsade mätningar",
+      "allUnits": "Alla 8 enheter tillgängliga (Imperial & Metrisk)",
+      "support": "Prioriterat e-poststöd",
+      "cancel": "Avbryt när som helst"
+    },
+    "cta": "Fortsätt till Kassan",
+    "secure": "Säker checkout via Paddle. Avbryt när som helst."
+  },
+  "support": {
+    "title": "Kontakta Support",
+    "subtitle": "Vi är här för att hjälpa",
+    "form": {
+      "name": "Namn",
+      "email": "E-post",
+      "message": "Meddelande",
+      "submit": "Skicka Meddelande"
+    }
+  }
+}
+

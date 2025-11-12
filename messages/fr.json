@@ -1,0 +1,74 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "Outil de Mesure Professionnel",
+    "launchApp": "Lancer l'App",
+    "support": "Support",
+    "pricing": "Tarifs",
+    "guide": "Guide",
+    "help": "Aide"
+  },
+  "home": {
+    "hero": {
+      "title": "Faites des Mesures Exactes sur Miro",
+      "subtitle": "Outil professionnel de mesure et d'étalonnage pour les architectes, ingénieurs et professionnels de la construction. Définissez l'échelle une fois, mesurez tout avec précision.",
+      "ctaPrimary": "Lancer l'App",
+      "ctaSecondary": "Voir la Démo"
+    },
+    "features": {
+      "title": "Pourquoi MeasureMint?",
+      "calibration": {
+        "title": "Étalonnage en Un Clic",
+        "description": "Définissez votre référence d'échelle une fois et mesurez tout avec précision."
+      },
+      "precision": {
+        "title": "Mesures Précises",
+        "description": "Obtenez des dimensions exactes avec conversion complète des unités."
+      },
+      "units": {
+        "title": "Toutes les Unités",
+        "description": "Basculez entre les systèmes impérial et métrique instantanément."
+      }
+    }
+  },
+  "subscribe": {
+    "title": "Choisissez Votre Plan",
+    "subtitle": "Sélectionnez le plan qui vous convient le mieux",
+    "monthly": {
+      "name": "Plan Mensuel",
+      "price": "$9.99",
+      "period": "par mois"
+    },
+    "sixMonth": {
+      "name": "Plan de 6 Mois",
+      "price": "$49.99",
+      "period": "tous les 6 mois",
+      "badge": "RECOMMANDÉ"
+    },
+    "annual": {
+      "name": "Plan Annuel",
+      "price": "$79.99",
+      "period": "par an",
+      "badge": "Meilleure Valeur"
+    },
+    "features": {
+      "unlimited": "Mesures illimitées",
+      "allUnits": "Toutes les 8 unités disponibles (Impérial et Métrique)",
+      "support": "Support email prioritaire",
+      "cancel": "Annulez à tout moment"
+    },
+    "cta": "Continuer vers le Paiement",
+    "secure": "Paiement sécurisé via Paddle. Annulez à tout moment."
+  },
+  "support": {
+    "title": "Contacter le Support",
+    "subtitle": "Nous sommes là pour vous aider",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer le Message"
+    }
+  }
+}
+

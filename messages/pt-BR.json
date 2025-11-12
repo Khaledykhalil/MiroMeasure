@@ -1,0 +1,74 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "Ferramenta Profissional de Medição",
+    "launchApp": "Abrir App",
+    "support": "Suporte",
+    "pricing": "Preços",
+    "guide": "Guia",
+    "help": "Ajuda"
+  },
+  "home": {
+    "hero": {
+      "title": "Faça Medições Precisas no Miro",
+      "subtitle": "Ferramenta profissional de medição e calibração para arquitetos, engenheiros e profissionais da construção. Defina a escala uma vez, meça qualquer coisa com precisão.",
+      "ctaPrimary": "Abrir App",
+      "ctaSecondary": "Assistir Demo"
+    },
+    "features": {
+      "title": "Por que MeasureMint?",
+      "calibration": {
+        "title": "Calibração com Um Clique",
+        "description": "Defina sua referência de escala uma vez e meça tudo com precisão."
+      },
+      "precision": {
+        "title": "Medições Precisas",
+        "description": "Obtenha dimensões exatas com conversão completa de unidades."
+      },
+      "units": {
+        "title": "Todas as Unidades",
+        "description": "Alterne entre sistemas Imperial e Métrico instantaneamente."
+      }
+    }
+  },
+  "subscribe": {
+    "title": "Escolha Seu Plano",
+    "subtitle": "Selecione o plano que funciona melhor para você",
+    "monthly": {
+      "name": "Plano Mensal",
+      "price": "$9.99",
+      "period": "por mês"
+    },
+    "sixMonth": {
+      "name": "Plano de 6 Meses",
+      "price": "$49.99",
+      "period": "a cada 6 meses",
+      "badge": "RECOMENDADO"
+    },
+    "annual": {
+      "name": "Plano Anual",
+      "price": "$79.99",
+      "period": "por ano",
+      "badge": "Melhor Valor"
+    },
+    "features": {
+      "unlimited": "Medições ilimitadas",
+      "allUnits": "Todas as 8 unidades disponíveis (Imperial e Métrico)",
+      "support": "Suporte prioritário por email",
+      "cancel": "Cancele a qualquer momento"
+    },
+    "cta": "Continuar para Pagamento",
+    "secure": "Pagamento seguro via Paddle. Cancele a qualquer momento."
+  },
+  "support": {
+    "title": "Contatar Suporte",
+    "subtitle": "Estamos aqui para ajudar",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "submit": "Enviar Mensagem"
+    }
+  }
+}
+

@@ -1,0 +1,74 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "Professioneel Meetgereedschap",
+    "launchApp": "App starten",
+    "support": "Ondersteuning",
+    "pricing": "Prijzen",
+    "guide": "Gids",
+    "help": "Help"
+  },
+  "home": {
+    "hero": {
+      "title": "Maak Exacte Metingen in Miro",
+      "subtitle": "Professioneel meet- en kalibratiegereedschap voor architecten, ingenieurs en bouwprofessionals. Stel de schaal eenmaal in, meet alles met precisie.",
+      "ctaPrimary": "App starten",
+      "ctaSecondary": "Demo bekijken"
+    },
+    "features": {
+      "title": "Waarom MeasureMint?",
+      "calibration": {
+        "title": "Eén-Klik Kalibratie",
+        "description": "Stel uw schaalreferentie eenmaal in en meet alles nauwkeurig."
+      },
+      "precision": {
+        "title": "Precieze Metingen",
+        "description": "Krijg exacte afmetingen met volledige eenheidsconversie."
+      },
+      "units": {
+        "title": "Alle Eenheden",
+        "description": "Schakel direct tussen imperiale en metrische systemen."
+      }
+    }
+  },
+  "subscribe": {
+    "title": "Kies Uw Plan",
+    "subtitle": "Selecteer het plan dat het beste bij u past",
+    "monthly": {
+      "name": "Maandelijks Plan",
+      "price": "$9.99",
+      "period": "per maand"
+    },
+    "sixMonth": {
+      "name": "6-Maanden Plan",
+      "price": "$49.99",
+      "period": "elke 6 maanden",
+      "badge": "AANBEVOLEN"
+    },
+    "annual": {
+      "name": "Jaarplan",
+      "price": "$79.99",
+      "period": "per jaar",
+      "badge": "Beste Waarde"
+    },
+    "features": {
+      "unlimited": "Onbeperkte metingen",
+      "allUnits": "Alle 8 eenheden beschikbaar (Imperiaal & Metrisch)",
+      "support": "Prioritaire e-mailondersteuning",
+      "cancel": "Altijd opzegbaar"
+    },
+    "cta": "Doorgaan naar Afrekenen",
+    "secure": "Veilige checkout via Paddle. Altijd opzegbaar."
+  },
+  "support": {
+    "title": "Contact Ondersteuning",
+    "subtitle": "We zijn er om te helpen",
+    "form": {
+      "name": "Naam",
+      "email": "E-mail",
+      "message": "Bericht",
+      "submit": "Bericht Verzenden"
+    }
+  }
+}
+

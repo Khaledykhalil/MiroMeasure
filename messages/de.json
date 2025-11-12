@@ -1,0 +1,74 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "Professionelles Messwerkzeug",
+    "launchApp": "App starten",
+    "support": "Support",
+    "pricing": "Preise",
+    "guide": "Anleitung",
+    "help": "Hilfe"
+  },
+  "home": {
+    "hero": {
+      "title": "Machen Sie genaue Messungen in Miro",
+      "subtitle": "Professionelles Mess- und Kalibrierungstool für Architekten, Ingenieure und Bauprofis. Setzen Sie den Maßstab einmal fest, messen Sie alles mit Präzision.",
+      "ctaPrimary": "App starten",
+      "ctaSecondary": "Demo ansehen"
+    },
+    "features": {
+      "title": "Warum MeasureMint?",
+      "calibration": {
+        "title": "Ein-Klick-Kalibrierung",
+        "description": "Setzen Sie Ihre Maßstabsreferenz einmal fest und messen Sie alles genau."
+      },
+      "precision": {
+        "title": "Präzise Messungen",
+        "description": "Erhalten Sie genaue Abmessungen mit vollständiger Einheitenumrechnung."
+      },
+      "units": {
+        "title": "Alle Einheiten",
+        "description": "Wechseln Sie sofort zwischen imperialen und metrischen Systemen."
+      }
+    }
+  },
+  "subscribe": {
+    "title": "Wählen Sie Ihren Plan",
+    "subtitle": "Wählen Sie den Plan, der am besten zu Ihnen passt",
+    "monthly": {
+      "name": "Monatsplan",
+      "price": "$9.99",
+      "period": "pro Monat"
+    },
+    "sixMonth": {
+      "name": "6-Monats-Plan",
+      "price": "$49.99",
+      "period": "alle 6 Monate",
+      "badge": "EMPFOHLEN"
+    },
+    "annual": {
+      "name": "Jahresplan",
+      "price": "$79.99",
+      "period": "pro Jahr",
+      "badge": "Bester Wert"
+    },
+    "features": {
+      "unlimited": "Unbegrenzte Messungen",
+      "allUnits": "Alle 8 Einheiten verfügbar (Imperial & Metrisch)",
+      "support": "Prioritäts-E-Mail-Support",
+      "cancel": "Jederzeit kündbar"
+    },
+    "cta": "Zur Kasse",
+    "secure": "Sicherer Checkout über Paddle. Jederzeit kündbar."
+  },
+  "support": {
+    "title": "Support kontaktieren",
+    "subtitle": "Wir sind hier, um zu helfen",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "submit": "Nachricht senden"
+    }
+  }
+}
+

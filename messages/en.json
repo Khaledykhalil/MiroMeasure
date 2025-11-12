@@ -1,0 +1,74 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "Professional Measurement Tool",
+    "launchApp": "Launch App",
+    "support": "Support",
+    "pricing": "Pricing",
+    "guide": "Guide",
+    "help": "Help"
+  },
+  "home": {
+    "hero": {
+      "title": "Make Exact Measurements on Miro",
+      "subtitle": "Professional measurement and calibration tool for architects, engineers, and construction professionals. Set scale once, measure anything with precision.",
+      "ctaPrimary": "Launch App",
+      "ctaSecondary": "Watch Demo"
+    },
+    "features": {
+      "title": "Why MeasureMint?",
+      "calibration": {
+        "title": "One-Click Calibration",
+        "description": "Set your scale reference once and measure everything accurately."
+      },
+      "precision": {
+        "title": "Precise Measurements",
+        "description": "Get exact dimensions with full unit conversions."
+      },
+      "units": {
+        "title": "All Units",
+        "description": "Switch between Imperial and Metric systems instantly."
+      }
+    }
+  },
+  "subscribe": {
+    "title": "Choose Your Plan",
+    "subtitle": "Select the plan that works best for you",
+    "monthly": {
+      "name": "Monthly Plan",
+      "price": "$9.99",
+      "period": "per month"
+    },
+    "sixMonth": {
+      "name": "6-Month Plan",
+      "price": "$49.99",
+      "period": "every 6 months",
+      "badge": "RECOMMENDED"
+    },
+    "annual": {
+      "name": "Annual Plan",
+      "price": "$79.99",
+      "period": "per year",
+      "badge": "Best Value"
+    },
+    "features": {
+      "unlimited": "Unlimited measurements",
+      "allUnits": "All 8 units available (Imperial & Metric)",
+      "support": "Priority email support",
+      "cancel": "Cancel anytime"
+    },
+    "cta": "Continue to Checkout",
+    "secure": "Secure checkout powered by Paddle. Cancel anytime."
+  },
+  "support": {
+    "title": "Contact Support",
+    "subtitle": "We're here to help",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  }
+}
+
