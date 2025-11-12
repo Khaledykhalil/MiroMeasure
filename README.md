@@ -328,12 +328,5 @@ This code and its underlying concepts, algorithms, and implementations are prote
 
 **✅ Personal, non-commercial viewing for evaluation purposes only.**
 
-**💼 Interested in commercial licensing?**
-- Want to use this technology in your business?
-- Looking to license or purchase the code?
-- Need a custom solution based on this work?
-
-**Contact for licensing:** support@measuremint.app
-
 See the [LICENSE](LICENSE) file for complete terms and conditions.
 
