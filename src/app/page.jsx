@@ -132,7 +132,7 @@ export default function Home() {
             <div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Professional Grade</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Built for architects, engineers, and construction professionals. Designed for the AEC industry.
+                Built by and for architects, engineers, and design professionals.
               </p>
             </div>
           </div>
