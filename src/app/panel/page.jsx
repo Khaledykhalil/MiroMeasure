@@ -58,6 +58,7 @@ import CalibrationSection from './components/CalibrationSection';
 import MeasurementSection from './components/MeasurementSection';
 import LatestMeasurementDisplay from './components/LatestMeasurementDisplay';
 import MeasurementHistory from './components/MeasurementHistory';
+import UnitSelector from './components/UnitSelector';
 
 // Import hooks
 import { useCustomModal } from './hooks/useCustomModal';
@@ -97,6 +98,11 @@ export default function PanelPage() {
 
   // Dark mode state
   const [darkMode, setDarkMode] = useState(false);
+
+  // Unit selection for measurement updates
+  const [showMeasurementUnitModal, setShowMeasurementUnitModal] = useState(false);
+  const [pendingMeasurementUpdate, setPendingMeasurementUpdate] = useState(null);
+  const [selectedMeasurementUnit, setSelectedMeasurementUnit] = useState('ft');
 
   // Custom modal hook
   const { customModal, showAlert, showConfirm } = useCustomModal();
@@ -672,6 +678,25 @@ export default function PanelPage() {
         return;
       }
 
+      // Find the existing measurement to get its current unit
+      const existingMeasurement = measurements.find(m => m.lineId === selectedItem.id);
+      const currentUnit = existingMeasurement?.unit || calibration?.unit || 'ft';
+      
+      // Store the selected item for later processing
+      setPendingMeasurementUpdate(selectedItem);
+      setSelectedMeasurementUnit(currentUnit);
+      setShowMeasurementUnitModal(true);
+      
+    } catch (error) {
+      console.error('Error updating measurement:', error);
+    }
+  };
+
+  const applyMeasurementUpdate = async () => {
+    if (!pendingMeasurementUpdate) return;
+
+    try {
+      const selectedItem = pendingMeasurementUpdate;
       const line = selectedItem;
       const start = line.start.position;
       const end = line.end.position;
@@ -701,13 +726,15 @@ export default function PanelPage() {
         actualDistance = pixelDistance / calibration.pixelsPerUnit;
       }
 
+      // Convert the distance to the selected unit
+      const distanceInSelectedUnit = convertUnits(actualDistance, calibration.unit, selectedMeasurementUnit);
+
       // Calculate the actual measurement
-      const conversions = getAllConversions(actualDistance, calibration.unit);
+      const conversions = getAllConversions(distanceInSelectedUnit, selectedMeasurementUnit);
 
       // Format the measurement for display
-      const primaryUnit = calibration.unit;
-      const formattedValue = formatMeasurement(actualDistance, primaryUnit, showFeetInches);
-      const measurementText = primaryUnit === 'ft' && showFeetInches ? formattedValue : `${formattedValue} ${primaryUnit}`;
+      const formattedValue = formatMeasurement(distanceInSelectedUnit, selectedMeasurementUnit, showFeetInches);
+      const measurementText = selectedMeasurementUnit === 'ft' && showFeetInches ? formattedValue : `${formattedValue} ${selectedMeasurementUnit}`;
 
       // Create updated line with new measurement
       const updatedLine = await window.miro.board.createConnector({
@@ -740,7 +767,8 @@ export default function PanelPage() {
           return {
             ...m,
             lineId: updatedLine.id,
-            distance: actualDistance,
+            distance: distanceInSelectedUnit,
+            unit: selectedMeasurementUnit,
             conversions: conversions,
             timestamp: new Date()
           };
@@ -756,9 +784,15 @@ export default function PanelPage() {
       );
       setMeasurementLines(updatedLineIds);
 
+      // Close modal and reset
+      setShowMeasurementUnitModal(false);
+      setPendingMeasurementUpdate(null);
+
       console.log('Measurement updated successfully');
     } catch (error) {
       console.error('Error updating measurement:', error);
+      setShowMeasurementUnitModal(false);
+      setPendingMeasurementUpdate(null);
     }
   };
 
@@ -3679,6 +3713,38 @@ export default function PanelPage() {
       )}
 
       {/* Units Modal */}
+      {/* Measurement Unit Selection Modal */}
+      {showMeasurementUnitModal && (
+        <div style={styles.modal} onClick={() => {
+          setShowMeasurementUnitModal(false);
+          setPendingMeasurementUpdate(null);
+        }}>
+          <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <h3 style={styles.modalTitle}>Select Unit for Measurement</h3>
+            <UnitSelector
+              selectedUnit={selectedMeasurementUnit}
+              onUnitSelect={setSelectedMeasurementUnit}
+              darkMode={darkMode}
+              title="Choose Unit"
+            />
+            <div style={styles.modalButtons}>
+              <button onClick={applyMeasurementUpdate} style={styles.btnPrimary}>
+                Update Measurement
+              </button>
+              <button
+                onClick={() => {
+                  setShowMeasurementUnitModal(false);
+                  setPendingMeasurementUpdate(null);
+                }}
+                style={styles.btnSecondary}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {showUnitsModal && latestMeasurement && (
         <div style={styles.modal} onClick={() => setShowUnitsModal(false)}>
           <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
