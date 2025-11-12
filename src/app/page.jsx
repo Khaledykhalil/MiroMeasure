@@ -207,8 +207,7 @@ export default function Home() {
               <div>
                 <h3 className="text-2xl font-bold mb-2 text-gray-900">Switch Units Anytime</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Toggle between Imperial (🇺🇸) and Metric (🌍). All measurements update automatically. View conversion
-                  tables for all units.
+                  Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer.
                 </p>
               </div>
             </div>
