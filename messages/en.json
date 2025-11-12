@@ -10,10 +10,13 @@
   },
   "home": {
     "hero": {
-      "title": "Make Exact Measurements on Miro",
-      "subtitle": "Professional measurement and calibration tool for architects, engineers, and construction professionals. Set scale once, measure anything with precision.",
+      "title": "Measurements on Miro, Finally!",
+      "subtitle": "Professional measurement and calibration tool for designers. Scaling and measuring drawings on Miro, for the first time ever!",
       "ctaPrimary": "Launch App",
-      "ctaSecondary": "Watch Demo"
+      "ctaSecondary": "Join Waitlist"
+    },
+    "video": {
+      "title": "MeasureMint Demo Video"
     },
     "features": {
       "title": "Why MeasureMint?",

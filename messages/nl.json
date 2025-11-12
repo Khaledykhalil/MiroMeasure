@@ -15,6 +15,9 @@
       "ctaPrimary": "App starten",
       "ctaSecondary": "Demo bekijken"
     },
+    "video": {
+      "title": "MeasureMint Demo Video"
+    },
     "features": {
       "title": "Waarom MeasureMint?",
       "calibration": {

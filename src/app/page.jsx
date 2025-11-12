@@ -1,8 +1,116 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from "next/link"
 import Image from "next/image"
 import { MdConstruction, MdHome, MdMap, MdDesignServices, MdArchitecture, MdChair } from "react-icons/md"
+import LanguageSelector from "@/components/LanguageSelector"
+import { getLoomEmbedUrl } from "@/config/loom-videos"
+import { detectLanguageSync, detectUserLanguage } from "@/utils/languageDetection"
 
 export default function Home() {
+  // Initialize locale with automatic detection
+  const getInitialLocale = () => {
+    if (typeof window === 'undefined') return 'en'
+    // Use sync detection for initial render (fast)
+    return detectLanguageSync()
+  }
+
+  const [locale, setLocale] = useState(getInitialLocale)
+  const [translations, setTranslations] = useState(null)
+  const [isDetecting, setIsDetecting] = useState(false)
+  
+  // Auto-detect language on mount (if not explicitly set)
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const urlLocale = urlParams.get('lang')
+    
+    // If user explicitly selected language via URL, use it
+    if (urlLocale) {
+      setLocale(urlLocale)
+      localStorage.setItem('locale', urlLocale)
+      return
+    }
+    
+    // If locale already stored, use it
+    const storedLocale = localStorage.getItem('locale')
+    if (storedLocale && storedLocale !== locale) {
+      setLocale(storedLocale)
+      return
+    }
+    
+    // Auto-detect language (async, may use IP geolocation)
+    setIsDetecting(true)
+    detectUserLanguage().then((detectedLang) => {
+      if (detectedLang && detectedLang !== locale) {
+        setLocale(detectedLang)
+        localStorage.setItem('locale', detectedLang)
+        
+        // Update URL without reload (optional - you can remove this if you don't want URL to change)
+        const url = new URL(window.location.href)
+        url.searchParams.set('lang', detectedLang)
+        window.history.replaceState({}, '', url)
+      }
+      setIsDetecting(false)
+    }).catch(() => {
+      setIsDetecting(false)
+    })
+  }, [])
+
+  // Load translations when locale changes
+  useEffect(() => {
+    // Reset translations when locale changes
+    setTranslations(null)
+    
+    const loadTranslations = async () => {
+      try {
+        console.log(`Loading translations for locale: ${locale}`)
+        const mod = await import(`../../messages/${locale}.json`)
+        console.log(`Translations loaded for ${locale}:`, mod.default)
+        setTranslations(mod.default)
+      } catch (err) {
+        console.error(`Failed to load translations for ${locale}:`, err)
+        // Fallback to English
+        try {
+          const mod = await import('../../messages/en.json')
+          console.log('Fallback to English translations')
+          setTranslations(mod.default)
+        } catch (fallbackErr) {
+          console.error('Failed to load English translations')
+          setTranslations({}) // Empty object as last resort
+        }
+      }
+    }
+    
+    if (locale) {
+      loadTranslations()
+    }
+  }, [locale])
+
+  const t = (key) => {
+    if (!translations) {
+      // Return key as fallback while loading
+      return key.split('.').pop() || key
+    }
+    const keys = key.split('.')
+    let value = translations
+    for (const k of keys) {
+      value = value?.[k]
+    }
+    return value || key
+  }
+
+  // Show loading state while translations load
+  if (!translations) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#10bb82] mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -17,19 +125,23 @@ export default function Home() {
               className="transition-transform group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-gray-900">MeasureMint</span>
+              <span className="text-xl font-bold tracking-tight text-gray-900">{t('common.appName')}</span>
               <span className="text-[10px] tracking-widest text-gray-500 uppercase">
-                Professional Measurement Tool
+                {t('common.tagline')}
               </span>
             </div>
           </Link>
-          <nav className="flex items-center gap-6">
+          <nav className="flex items-center gap-4">
             <Link href="/support" className="text-sm text-gray-600 hover:text-gray-900">
-              Support
+              {t('common.support')}
             </Link>
+            <Link href="/subscribe" className="text-sm text-gray-600 hover:text-gray-900">
+              {t('common.pricing')}
+            </Link>
+            <LanguageSelector />
             <Link href="/panel">
               <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                Launch App
+                {t('common.launchApp')}
               </button>
             </Link>
           </nav>
@@ -40,20 +152,20 @@ export default function Home() {
         {/* Hero Section */}
         <section className="max-w-5xl mx-auto px-5 md:px-6 pt-20 md:pt-32 pb-16 md:pb-24">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-gray-900">
-            Measurements on Miro, Finally!
+            {t('home.hero.title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl leading-relaxed">
-            Professional measurement and calibration tool for designers. Scaling and measuring drawings on Miro, for the first time ever!
+            {t('home.hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/panel">
               <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                Launch App
+                {t('home.hero.ctaPrimary')}
               </button>
             </Link>
             <Link href="/waitlist">
               <button className="border border-gray-300 text-gray-900 hover:border-gray-400 bg-transparent px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                Join Waitlist
+                {t('home.hero.ctaSecondary')}
               </button>
             </Link>
           </div>
@@ -63,10 +175,12 @@ export default function Home() {
         <section className="max-w-5xl mx-auto px-5 md:px-6 pb-32">
           <div className="aspect-video w-full rounded-lg overflow-hidden border border-gray-200 shadow-lg">
             <iframe
-              src="https://www.loom.com/embed/3a2b1b94850946fa93a4db2961d2b62d"
+              key={locale} // Force re-render when locale changes
+              src={getLoomEmbedUrl(locale)}
               className="w-full h-full"
               allowFullScreen
-              title="MeasureMint Demo"
+              title={t('home.video.title') || 'MeasureMint Demo'}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
         </section>

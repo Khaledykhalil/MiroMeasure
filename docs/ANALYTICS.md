@@ -4,7 +4,7 @@
 
 ## Overview
 
-MeasureMint now includes Vercel Analytics and Speed Insights to track user behavior and monitor application performance in production.
+MeasureMint now includes Vercel Analytics and Speed Insights to track user behavior and monitor application performance in production. Additionally, Microsoft Clarity is integrated for heatmaps and session recordings to visualize user interactions.
 
 ---
 
@@ -16,6 +16,14 @@ MeasureMint now includes Vercel Analytics and Speed Insights to track user behav
 - **Custom Events** - Track specific user interactions (can be added later)
 - **Visitor Demographics** - Geographic and device information
 - **Traffic Sources** - See where users come from
+
+### Microsoft Clarity (Heatmaps)
+- **Click Heatmaps** - Visualize where users click on your pages
+- **Scroll Heatmaps** - See how far users scroll on each page
+- **Move Heatmaps** - Track mouse movements
+- **Session Recordings** - Watch video replays of user sessions
+- **Dead Clicks** - Identify clicks that don't work
+- **Rage Clicks** - Detect frustrated users
 
 ### Speed Insights
 - **Core Web Vitals** - LCP, FID, CLS, TTFB, FCP, INP
@@ -42,6 +50,7 @@ Location: `src/app/layout.jsx`
 ```jsx
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Script from 'next/script';
 
 export default function RootLayout({ children }) {
   return (
@@ -50,6 +59,19 @@ export default function RootLayout({ children }) {
         {children}
         <Analytics />
         <SpeedInsights />
+        
+        {/* Microsoft Clarity - Heatmap and Session Recording */}
+        {process.env.NEXT_PUBLIC_CLARITY_ID && (
+          <Script id="clarity-script" strategy="afterInteractive">
+            {`
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
+            `}
+          </Script>
+        )}
       </body>
     </html>
   );
@@ -78,6 +100,13 @@ export default function RootLayout({ children }) {
 3. Click on **Speed Insights** tab
 4. View Core Web Vitals, performance scores, and device data
 
+### Microsoft Clarity Dashboard
+1. Go to [clarity.microsoft.com](https://clarity.microsoft.com)
+2. Sign in with your Microsoft account
+3. Select your project: **measure-mint**
+4. View heatmaps, session recordings, and insights
+5. Wait 24-48 hours for initial data to accumulate
+
 ---
 
 ## 🎯 Key Metrics to Monitor
@@ -102,8 +131,26 @@ export default function RootLayout({ children }) {
 
 ✅ **Analytics Enabled** - Tracking all production traffic  
 ✅ **Speed Insights Enabled** - Collecting performance data  
+✅ **Clarity Ready** - Heatmap tracking configured (requires Project ID)  
 ✅ **Deployed** - Live on measure-mint.vercel.app  
-✅ **Zero Configuration** - Works automatically on Vercel  
+✅ **Zero Configuration** - Works automatically on Vercel
+
+### Setting Up Microsoft Clarity
+
+1. **Create Account**
+   - Go to [clarity.microsoft.com](https://clarity.microsoft.com)
+   - Sign up with Microsoft account (free)
+   - Create a new project
+   - Copy your Project ID
+
+2. **Add Environment Variable**
+   - Add `NEXT_PUBLIC_CLARITY_ID=your_project_id` to `.env.local`
+   - Add the same to Vercel Environment Variables
+   - Redeploy your app
+
+3. **View Data**
+   - Wait 24-48 hours for data to accumulate
+   - View heatmaps and recordings in Clarity dashboard  
 
 ### Data Collection
 - **Starts:** After deployment completes
@@ -205,8 +252,10 @@ sendWebVitals({
 
 - [Vercel Analytics Docs](https://vercel.com/docs/analytics)
 - [Speed Insights Docs](https://vercel.com/docs/speed-insights)
+- [Microsoft Clarity Docs](https://docs.microsoft.com/en-us/clarity/)
 - [Core Web Vitals Guide](https://web.dev/vitals/)
 - [Next.js Analytics Guide](https://nextjs.org/docs/app/building-your-application/optimizing/analytics)
+- [Heatmap Tracking Guide](./development/HEATMAP_TRACKING.md) - Detailed guide on heatmap options
 
 ---
 

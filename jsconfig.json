@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "typeRoots": ["./node_modules/@types", "./node_modules/@mirohq"]
+    "typeRoots": ["./node_modules/@types", "./node_modules/@mirohq"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules"]

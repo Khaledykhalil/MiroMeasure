@@ -15,6 +15,9 @@
       "ctaPrimary": "تشغيل التطبيق",
       "ctaSecondary": "مشاهدة العرض التوضيحي"
     },
+    "video": {
+      "title": "فيديو تجريبي لـ MeasureMint"
+    },
     "features": {
       "title": "لماذا MeasureMint؟",
       "calibration": {

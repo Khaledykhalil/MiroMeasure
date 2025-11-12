@@ -1,0 +1,77 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "專業測量工具",
+    "launchApp": "啟動應用",
+    "support": "支援",
+    "pricing": "價格",
+    "guide": "指南",
+    "help": "幫助"
+  },
+  "home": {
+    "hero": {
+      "title": "在Miro上進行精確測量",
+      "subtitle": "面向建築師、工程師和建築專業人士的專業測量和校準工具。設置一次比例，即可精確測量任何內容。",
+      "ctaPrimary": "啟動應用",
+      "ctaSecondary": "觀看演示"
+    },
+    "video": {
+      "title": "MeasureMint示範影片"
+    },
+    "features": {
+      "title": "為什麼選擇MeasureMint？",
+      "calibration": {
+        "title": "一鍵校準",
+        "description": "設置一次比例參考，即可精確測量所有內容。"
+      },
+      "precision": {
+        "title": "精確測量",
+        "description": "獲得精確尺寸，支援完整的單位轉換。"
+      },
+      "units": {
+        "title": "所有單位",
+        "description": "可在英制和公制系統之間即時切換。"
+      }
+    }
+  },
+  "subscribe": {
+    "title": "選擇您的計劃",
+    "subtitle": "選擇最適合您的計劃",
+    "monthly": {
+      "name": "月度計劃",
+      "price": "$9.99",
+      "period": "每月"
+    },
+    "sixMonth": {
+      "name": "6個月計劃",
+      "price": "$49.99",
+      "period": "每6個月",
+      "badge": "推薦"
+    },
+    "annual": {
+      "name": "年度計劃",
+      "price": "$79.99",
+      "period": "每年",
+      "badge": "最佳價值"
+    },
+    "features": {
+      "unlimited": "無限測量",
+      "allUnits": "所有8個單位可用（英制和公制）",
+      "support": "優先電子郵件支援",
+      "cancel": "隨時取消"
+    },
+    "cta": "繼續結帳",
+    "secure": "通過Paddle安全結帳。隨時取消。"
+  },
+  "support": {
+    "title": "聯繫支援",
+    "subtitle": "我們隨時為您提供幫助",
+    "form": {
+      "name": "姓名",
+      "email": "電子郵件",
+      "message": "訊息",
+      "submit": "發送訊息"
+    }
+  }
+}
+

@@ -1,0 +1,77 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "プロフェッショナル測定ツール",
+    "launchApp": "アプリを起動",
+    "support": "サポート",
+    "pricing": "料金",
+    "guide": "ガイド",
+    "help": "ヘルプ"
+  },
+  "home": {
+    "hero": {
+      "title": "Miroで正確な測定を行う",
+      "subtitle": "建築家、エンジニア、建設専門家向けのプロフェッショナルな測定・キャリブレーションツール。スケールを一度設定すれば、何でも正確に測定できます。",
+      "ctaPrimary": "アプリを起動",
+      "ctaSecondary": "デモを見る"
+    },
+    "video": {
+      "title": "MeasureMintデモビデオ"
+    },
+    "features": {
+      "title": "MeasureMintを選ぶ理由",
+      "calibration": {
+        "title": "ワンクリックキャリブレーション",
+        "description": "スケール参照を一度設定すれば、すべてを正確に測定できます。"
+      },
+      "precision": {
+        "title": "精密測定",
+        "description": "完全な単位変換で正確な寸法を取得します。"
+      },
+      "units": {
+        "title": "すべての単位",
+        "description": "インペリアルとメートル法の間を瞬時に切り替えられます。"
+      }
+    }
+  },
+  "subscribe": {
+    "title": "プランを選択",
+    "subtitle": "あなたに最適なプランを選択してください",
+    "monthly": {
+      "name": "月額プラン",
+      "price": "$9.99",
+      "period": "月額"
+    },
+    "sixMonth": {
+      "name": "6ヶ月プラン",
+      "price": "$49.99",
+      "period": "6ヶ月ごと",
+      "badge": "おすすめ"
+    },
+    "annual": {
+      "name": "年間プラン",
+      "price": "$79.99",
+      "period": "年間",
+      "badge": "最高の価値"
+    },
+    "features": {
+      "unlimited": "無制限の測定",
+      "allUnits": "全8単位利用可能（インペリアル＆メートル法）",
+      "support": "優先メールサポート",
+      "cancel": "いつでもキャンセル可能"
+    },
+    "cta": "チェックアウトに進む",
+    "secure": "Paddleによる安全なチェックアウト。いつでもキャンセル可能。"
+  },
+  "support": {
+    "title": "サポートに連絡",
+    "subtitle": "お手伝いいたします",
+    "form": {
+      "name": "名前",
+      "email": "メール",
+      "message": "メッセージ",
+      "submit": "メッセージを送信"
+    }
+  }
+}
+

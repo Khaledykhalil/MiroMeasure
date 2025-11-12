@@ -1,7 +1,6 @@
-/**
- * Next.js configuration
- * Adds security headers to allow embedding the app inside Miro.
- */
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.js');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,7 +13,7 @@ const nextConfig = {
 					// Allow being embedded by Miro (and keep it permissive otherwise)
 					{
 						key: 'Content-Security-Policy',
-						value: "frame-ancestors 'self' https://miro.com https://*.miro.com;",
+						value: "frame-ancestors 'self' https://miro.com https://*.miro.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;",
 					},
 					// Keep referrer minimal
 					{ key: 'Referrer-Policy', value: 'no-referrer' },
@@ -38,5 +37,6 @@ const nextConfig = {
 	},
 };
 
-module.exports = nextConfig;
-
+// For now, don't use next-intl plugin since we're using query params
+// export default withNextIntl(nextConfig);
+export default nextConfig;

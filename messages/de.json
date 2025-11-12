@@ -10,10 +10,13 @@
   },
   "home": {
     "hero": {
-      "title": "Machen Sie genaue Messungen in Miro",
-      "subtitle": "Professionelles Mess- und Kalibrierungstool für Architekten, Ingenieure und Bauprofis. Setzen Sie den Maßstab einmal fest, messen Sie alles mit Präzision.",
+      "title": "Messungen in Miro, endlich!",
+      "subtitle": "Professionelles Mess- und Kalibrierungstool für Designer. Skalieren und Messen von Zeichnungen in Miro, zum ersten Mal überhaupt!",
       "ctaPrimary": "App starten",
-      "ctaSecondary": "Demo ansehen"
+      "ctaSecondary": "Warteliste beitreten"
+    },
+    "video": {
+      "title": "MeasureMint Demo-Video"
     },
     "features": {
       "title": "Warum MeasureMint?",

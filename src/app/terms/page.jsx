@@ -208,6 +208,7 @@ export default function TermsOfService() {
             <ul className="list-disc pl-6 text-muted-foreground space-y-2">
               <li>Modify, suspend, or discontinue features</li>
               <li>Update the Service for improvements or security</li>
+              <li>Change pricing or features (with notice)</li>
             </ul>
           </section>
 
@@ -245,7 +246,7 @@ export default function TermsOfService() {
               <li>Third-party actions or Miro platform issues</li>
             </ul>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong>Maximum Liability:</strong> Our total liability shall not exceed $100.
+              <strong>Maximum Liability:</strong> Our total liability shall not exceed $1.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               <strong>Exceptions:</strong> Some jurisdictions do not allow limitation of liability for personal injury or 
@@ -303,7 +304,30 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground">13. Dispute Resolution</h2>
             
-            <h3 className="text-xl font-semibold mb-3 text-foreground">13.1 Informal Resolution</h3>
+            <h3 className="text-xl font-semibold mb-3 text-foreground">13.1 Current Pricing</h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              MeasureMint is currently offered free of charge. We reserve the right to introduce paid features or 
+              subscriptions in the future with:
+            </p>
+            <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
+              <li>At least 30 days advance notice</li>
+              <li>Option to continue using free features (if available)</li>
+              <li>Grandfathered pricing for early users (at our discretion)</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mb-3 text-foreground">13.2 Future Paid Features</h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">If we introduce paid features:</p>
+            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+              <li>Pricing will be displayed clearly before purchase</li>
+              <li>Payments processed through secure third-party processors</li>
+              <li>Refund policy will be provided at time of purchase</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground">14. Dispute Resolution</h2>
+            
+            <h3 className="text-xl font-semibold mb-3 text-foreground">14.1 Informal Resolution</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Before filing a legal claim, you agree to contact us at <a href="mailto:support@measuremint.app" className="text-primary hover:underline">support@measuremint.app</a> to 
               resolve the dispute informally. We will attempt to resolve within 60 days.

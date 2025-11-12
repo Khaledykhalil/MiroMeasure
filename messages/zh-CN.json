@@ -1,0 +1,77 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "专业测量工具",
+    "launchApp": "启动应用",
+    "support": "支持",
+    "pricing": "价格",
+    "guide": "指南",
+    "help": "帮助"
+  },
+  "home": {
+    "hero": {
+      "title": "在Miro上进行精确测量",
+      "subtitle": "面向建筑师、工程师和建筑专业人士的专业测量和校准工具。设置一次比例，即可精确测量任何内容。",
+      "ctaPrimary": "启动应用",
+      "ctaSecondary": "观看演示"
+    },
+    "video": {
+      "title": "MeasureMint演示视频"
+    },
+    "features": {
+      "title": "为什么选择MeasureMint？",
+      "calibration": {
+        "title": "一键校准",
+        "description": "设置一次比例参考，即可精确测量所有内容。"
+      },
+      "precision": {
+        "title": "精确测量",
+        "description": "获得精确尺寸，支持完整的单位转换。"
+      },
+      "units": {
+        "title": "所有单位",
+        "description": "可在英制和公制系统之间即时切换。"
+      }
+    }
+  },
+  "subscribe": {
+    "title": "选择您的计划",
+    "subtitle": "选择最适合您的计划",
+    "monthly": {
+      "name": "月度计划",
+      "price": "$9.99",
+      "period": "每月"
+    },
+    "sixMonth": {
+      "name": "6个月计划",
+      "price": "$49.99",
+      "period": "每6个月",
+      "badge": "推荐"
+    },
+    "annual": {
+      "name": "年度计划",
+      "price": "$79.99",
+      "period": "每年",
+      "badge": "最佳价值"
+    },
+    "features": {
+      "unlimited": "无限测量",
+      "allUnits": "所有8个单位可用（英制和公制）",
+      "support": "优先电子邮件支持",
+      "cancel": "随时取消"
+    },
+    "cta": "继续结账",
+    "secure": "通过Paddle安全结账。随时取消。"
+  },
+  "support": {
+    "title": "联系支持",
+    "subtitle": "我们随时为您提供帮助",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮件",
+      "message": "消息",
+      "submit": "发送消息"
+    }
+  }
+}
+

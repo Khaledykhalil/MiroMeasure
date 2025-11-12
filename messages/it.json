@@ -1,0 +1,77 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "Strumento di Misurazione Professionale",
+    "launchApp": "Avvia App",
+    "support": "Supporto",
+    "pricing": "Prezzi",
+    "guide": "Guida",
+    "help": "Aiuto"
+  },
+  "home": {
+    "hero": {
+      "title": "Misure su Miro, Finalmente!",
+      "subtitle": "Strumento professionale di misurazione e calibrazione per designer. Scalare e misurare disegni su Miro, per la prima volta!",
+      "ctaPrimary": "Avvia App",
+      "ctaSecondary": "Unisciti alla Lista d'Attesa"
+    },
+    "video": {
+      "title": "Video Dimostrativo MeasureMint"
+    },
+    "features": {
+      "title": "Perché MeasureMint?",
+      "calibration": {
+        "title": "Calibrazione con Un Click",
+        "description": "Imposta il riferimento di scala una volta e misura tutto con precisione."
+      },
+      "precision": {
+        "title": "Misure Precise",
+        "description": "Ottieni dimensioni esatte con conversione completa delle unità."
+      },
+      "units": {
+        "title": "Tutte le Unità",
+        "description": "Passa istantaneamente tra sistemi Imperiali e Metrici."
+      }
+    }
+  },
+  "subscribe": {
+    "title": "Scegli il Tuo Piano",
+    "subtitle": "Seleziona il piano che funziona meglio per te",
+    "monthly": {
+      "name": "Piano Mensile",
+      "price": "$9.99",
+      "period": "al mese"
+    },
+    "sixMonth": {
+      "name": "Piano 6 Mesi",
+      "price": "$49.99",
+      "period": "ogni 6 mesi",
+      "badge": "CONSIGLIATO"
+    },
+    "annual": {
+      "name": "Piano Annuale",
+      "price": "$79.99",
+      "period": "all'anno",
+      "badge": "Miglior Valore"
+    },
+    "features": {
+      "unlimited": "Misure illimitate",
+      "allUnits": "Tutte le 8 unità disponibili (Imperiale e Metrica)",
+      "support": "Supporto email prioritario",
+      "cancel": "Cancella in qualsiasi momento"
+    },
+    "cta": "Vai al Checkout",
+    "secure": "Checkout sicuro tramite Paddle. Cancella in qualsiasi momento."
+  },
+  "support": {
+    "title": "Contatta il Supporto",
+    "subtitle": "Siamo qui per aiutare",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Messaggio",
+      "submit": "Invia Messaggio"
+    }
+  }
+}
+

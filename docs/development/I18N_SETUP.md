@@ -15,6 +15,9 @@
 7. **Swedish (sv)**
 8. **French (fr)**
 9. **Arabic (ar)**
+10. **Japanese (ja)**
+11. **Mandarin Chinese (zh-CN)**
+12. **Cantonese (zh-HK)**
 
 ---
 

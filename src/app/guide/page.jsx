@@ -1,7 +1,23 @@
-import React from 'react';
+'use client'
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { getLoomShareUrl } from '@/config/loom-videos';
+import { detectLanguageSync } from '@/utils/languageDetection';
 
 export default function GuidePage() {
+  const [locale, setLocale] = useState('en')
+  
+  useEffect(() => {
+    // Get locale from URL, localStorage, or auto-detect
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      const urlLocale = urlParams.get('lang')
+      const storedLocale = localStorage.getItem('locale')
+      const currentLocale = urlLocale || storedLocale || detectLanguageSync()
+      setLocale(currentLocale)
+    }
+  }, [])
   const steps = [
     {
       number: 1,
@@ -114,7 +130,7 @@ export default function GuidePage() {
             A step-by-step guide to measuring and scaling drawings on Miro Board with precision.
           </p>
           <a 
-            href="https://loom.com/share/3a2b1b94850946fa93a4db2961d2b62d" 
+            href={getLoomShareUrl(locale)} 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline text-lg"
@@ -140,7 +156,7 @@ export default function GuidePage() {
               </div>
               
               <a 
-                href={`https://loom.com/share/3a2b1b94850946fa93a4db2961d2b62d?t=${step.timestamp}`}
+                href={getLoomShareUrl(locale, step.timestamp)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group"

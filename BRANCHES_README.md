@@ -15,6 +15,9 @@ This repository contains multiple branches for different language versions of Me
 | `i18n/sv` | Swedish | `sv` |
 | `i18n/fr` | French | `fr` |
 | `i18n/ar` | Arabic | `ar` |
+| `i18n/ja` | Japanese | `ja` |
+| `i18n/zh-CN` | Mandarin Chinese | `zh-CN` |
+| `i18n/zh-HK` | Cantonese | `zh-HK` |
 
 ## 🚀 Quick Start
 

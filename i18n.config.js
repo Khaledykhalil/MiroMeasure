@@ -10,9 +10,12 @@
  * - Swedish (sv)
  * - French (fr)
  * - Arabic (ar)
+ * - Japanese (ja)
+ * - Mandarin Chinese (zh-CN)
+ * - Cantonese (zh-HK)
  */
 
-export const locales = ['en', 'ru', 'pt-BR', 'es', 'de', 'nl', 'sv', 'fr', 'ar'] as const;
+export const locales = ['en', 'ru', 'pt-BR', 'es', 'de', 'nl', 'sv', 'fr', 'it', 'ar', 'ja', 'zh-CN', 'zh-HK'] as const;
 export const defaultLocale = 'en' as const;
 
 export type Locale = (typeof locales)[number];
