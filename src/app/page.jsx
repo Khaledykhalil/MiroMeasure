@@ -107,14 +107,13 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Professional Measurements</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board.
-                Track measurement history with automatic conversions.
               </p>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Dual Unit Systems</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Full Imperial and Metric support. 8 unit types: Feet, inches, yards, miles, meters, centimeters,
-                millimeters, kilometers. Instant conversion between any units.
+                millimeters, kilometers.
               </p>
             </div>
             <div>
@@ -127,15 +126,13 @@ export default function Home() {
             <div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Conversion Tables</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                View measurements across all units simultaneously. Compare Imperial and Metric instantly. Export-ready
-                measurement data.
+                View measurements across all units simultaneously. Compare Imperial and Metric instantly.
               </p>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Professional Grade</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Built for architects, engineers, and construction professionals. Inspired by Bluebeam Revu's measurement
-                tools. Designed for the AEC industry.
+                Built for architects, engineers, and construction professionals. Designed for the AEC industry.
               </p>
             </div>
           </div>
