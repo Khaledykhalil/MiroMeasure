@@ -167,6 +167,11 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-2 text-gray-900">Architectural Designs</h3>
               <p className="text-gray-700">Elevations, sections, detail drawings</p>
             </div>
+            <div>
+              <div className="text-4xl mb-3">🪑</div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Interior Design</h3>
+              <p className="text-gray-700">Furniture placement, fixture spacing, material calculations</p>
+            </div>
           </div>
         </section>
 
