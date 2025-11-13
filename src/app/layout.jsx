@@ -8,7 +8,7 @@ import { MiroSDKInit } from '../components/SDKInit';
 import './globals.css';
 
 const notoSansArabic = Noto_Sans_Arabic({
-  subsets: ['latin', 'arabic'],
+  subsets: ['arabic'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-arabic',
   display: 'swap',
