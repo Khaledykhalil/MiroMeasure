@@ -18,20 +18,99 @@
     "video": {
       "title": "MeasureMint Demo Video"
     },
+    "problem": {
+      "title": "The Problem",
+      "description": "Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds."
+    },
+    "solution": {
+      "title": "The Solution",
+      "description": "MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything."
+    },
     "features": {
-      "title": "Why MeasureMint?",
+      "title": "Built for professionals",
       "calibration": {
-        "title": "One-Click Calibration",
-        "description": "Set your scale reference once and measure everything accurately."
+        "title": "Precise Scale Calibration",
+        "description": "Set a known distance to establish accurate scale. Works with any drawing, blueprint, or technical diagram. One-time calibration per drawing."
       },
-      "precision": {
-        "title": "Precise Measurements",
-        "description": "Get exact dimensions with full unit conversions."
+      "measurements": {
+        "title": "Professional Measurements",
+        "description": "Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board."
       },
       "units": {
-        "title": "All Units",
-        "description": "Switch between Imperial and Metric systems instantly."
+        "title": "Dual Unit Systems",
+        "description": "Full Imperial and Metric support. 8 unit types: Feet, inches, yards, miles, meters, centimeters, millimeters, kilometers."
+      },
+      "noSelection": {
+        "title": "No Image Selection Required",
+        "description": "Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow."
+      },
+      "tracking": {
+        "title": "Measurement Tracking",
+        "description": "View the latest measurement that was calculated so you never lose track of your board."
+      },
+      "professionalGrade": {
+        "title": "Professional Grade",
+        "description": "Built by and for architects, engineers, and design professionals."
       }
+    },
+    "useCases": {
+      "title": "Perfect for",
+      "construction": {
+        "title": "Construction Blueprints",
+        "description": "Measure dimensions, verify specifications, check clearances"
+      },
+      "floorPlans": {
+        "title": "Floor Plans",
+        "description": "Space planning, room dimensions, furniture layouts"
+      },
+      "sitePlans": {
+        "title": "Site Plans",
+        "description": "Property measurements, lot dimensions, site analysis"
+      },
+      "technicalDrawings": {
+        "title": "Technical Drawings",
+        "description": "Engineering schematics, mechanical drawings, diagrams"
+      },
+      "architecturalDesigns": {
+        "title": "Architectural Designs",
+        "description": "Elevations, sections, detail drawings"
+      },
+      "interiorDesign": {
+        "title": "Interior Design",
+        "description": "Furniture placement, fixture spacing, material calculations"
+      }
+    },
+    "howItWorks": {
+      "title": "Get started in 60 seconds",
+      "step1": {
+        "title": "Calibrate Scale",
+        "description": "Click two points on a known distance (like \"20 ft\" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set."
+      },
+      "step2": {
+        "title": "Measure Anything",
+        "description": "Click \"Measure Distance\". Click any two points on your drawing. See instant measurements with full unit conversions."
+      },
+      "step3": {
+        "title": "Switch Units Anytime",
+        "description": "Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer."
+      },
+      "guideLink": "See detailed guide →"
+    },
+    "targetAudience": {
+      "title": "Built for professionals who demand precision",
+      "item1": "Architects and architectural firms",
+      "item2": "Engineers (civil, mechanical, structural)",
+      "item3": "Construction project managers",
+      "item4": "Interior designers",
+      "item5": "Real estate professionals",
+      "item6": "Facility managers",
+      "item7": "Anyone who works with technical drawings on Miro"
+    },
+    "finalCta": {
+      "title": "Ready to measure with precision?",
+      "subtitle": "Join architects and engineers who trust MeasureMint for accurate measurements on Miro.",
+      "launchApp": "Launch MeasureMint",
+      "viewDocumentation": "View Documentation"
     }
   },
   "subscribe": {
@@ -242,6 +321,12 @@
       "technical": "Technical Documentation",
       "github": "GitHub Repository"
     }
+  },
+  "footer": {
+    "copyright": "© 2025 MeasureMint. All rights reserved.",
+    "support": "Support",
+    "privacy": "Privacy",
+    "terms": "Terms"
   }
 }
 

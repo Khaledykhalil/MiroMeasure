@@ -180,17 +180,19 @@ export default function Home() {
         <section className="max-w-5xl mx-auto px-5 md:px-6 pb-32">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-gray-900">The Problem</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-gray-900">
+                {translations ? t('home.problem.title') : 'The Problem'}
+              </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints,
-                floor plans, or technical drawings without complex workarounds.
+                {translations ? t('home.problem.description') : 'Measuring drawings on Miro boards is frustrating. You can\'t get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds.'}
               </p>
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-gray-900">The Solution</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-gray-900">
+                {translations ? t('home.solution.title') : 'The Solution'}
+              </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate
-                once, measure anything.
+                {translations ? t('home.solution.description') : 'MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything.'}
               </p>
             </div>
           </div>
@@ -199,46 +201,55 @@ export default function Home() {
         {/* Key Features Section */}
         <section className="max-w-5xl mx-auto px-5 md:px-6 pb-32">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16 text-gray-900">
-            Built for professionals
+            {translations ? t('home.features.title') : 'Built for professionals'}
           </h2>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
             <div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Precise Scale Calibration</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                {translations ? t('home.features.calibration.title') : 'Precise Scale Calibration'}
+              </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Set a known distance to establish accurate scale. Works with any drawing, blueprint, or technical
-                diagram. One-time calibration per drawing.
+                {translations ? t('home.features.calibration.description') : 'Set a known distance to establish accurate scale. Works with any drawing, blueprint, or technical diagram. One-time calibration per drawing.'}
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Professional Measurements</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                {translations ? t('home.features.measurements.title') : 'Professional Measurements'}
+              </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board.
+                {translations ? t('home.features.measurements.description') : 'Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board.'}
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Dual Unit Systems</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                {translations ? t('home.features.units.title') : 'Dual Unit Systems'}
+              </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Full Imperial and Metric support. 8 unit types: Feet, inches, yards, miles, meters, centimeters,
-                millimeters, kilometers.
+                {translations ? t('home.features.units.description') : 'Full Imperial and Metric support. 8 unit types: Feet, inches, yards, miles, meters, centimeters, millimeters, kilometers.'}
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">No Image Selection Required</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                {translations ? t('home.features.noSelection.title') : 'No Image Selection Required'}
+              </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration
-                with Miro workflow.
+                {translations ? t('home.features.noSelection.description') : 'Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow.'}
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Measurement Tracking</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                {translations ? t('home.features.tracking.title') : 'Measurement Tracking'}
+              </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                View the latest measurement that was calculated so you never lose track of your board.
+                {translations ? t('home.features.tracking.description') : 'View the latest measurement that was calculated so you never lose track of your board.'}
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Professional Grade</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                {translations ? t('home.features.professionalGrade.title') : 'Professional Grade'}
+              </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Built by and for architects, engineers, and design professionals.
+                {translations ? t('home.features.professionalGrade.description') : 'Built by and for architects, engineers, and design professionals.'}
               </p>
             </div>
           </div>
@@ -246,49 +257,75 @@ export default function Home() {
 
         {/* Use Cases Section */}
         <section className="max-w-5xl mx-auto px-5 md:px-6 pb-32">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16 text-gray-900">Perfect for</h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16 text-gray-900">
+            {translations ? t('home.useCases.title') : 'Perfect for'}
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div>
               <div className="mb-3 text-[#10bb82]">
                 <MdConstruction size={48} />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Construction Blueprints</h3>
-              <p className="text-gray-700">Measure dimensions, verify specifications, check clearances</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">
+                {translations ? t('home.useCases.construction.title') : 'Construction Blueprints'}
+              </h3>
+              <p className="text-gray-700">
+                {translations ? t('home.useCases.construction.description') : 'Measure dimensions, verify specifications, check clearances'}
+              </p>
             </div>
             <div>
               <div className="mb-3 text-[#10bb82]">
                 <MdHome size={48} />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Floor Plans</h3>
-              <p className="text-gray-700">Space planning, room dimensions, furniture layouts</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">
+                {translations ? t('home.useCases.floorPlans.title') : 'Floor Plans'}
+              </h3>
+              <p className="text-gray-700">
+                {translations ? t('home.useCases.floorPlans.description') : 'Space planning, room dimensions, furniture layouts'}
+              </p>
             </div>
             <div>
               <div className="mb-3 text-[#10bb82]">
                 <MdMap size={48} />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Site Plans</h3>
-              <p className="text-gray-700">Property measurements, lot dimensions, site analysis</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">
+                {translations ? t('home.useCases.sitePlans.title') : 'Site Plans'}
+              </h3>
+              <p className="text-gray-700">
+                {translations ? t('home.useCases.sitePlans.description') : 'Property measurements, lot dimensions, site analysis'}
+              </p>
             </div>
             <div>
               <div className="mb-3 text-[#10bb82]">
                 <MdDesignServices size={48} />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Technical Drawings</h3>
-              <p className="text-gray-700">Engineering schematics, mechanical drawings, diagrams</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">
+                {translations ? t('home.useCases.technicalDrawings.title') : 'Technical Drawings'}
+              </h3>
+              <p className="text-gray-700">
+                {translations ? t('home.useCases.technicalDrawings.description') : 'Engineering schematics, mechanical drawings, diagrams'}
+              </p>
             </div>
             <div>
               <div className="mb-3 text-[#10bb82]">
                 <MdArchitecture size={48} />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Architectural Designs</h3>
-              <p className="text-gray-700">Elevations, sections, detail drawings</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">
+                {translations ? t('home.useCases.architecturalDesigns.title') : 'Architectural Designs'}
+              </h3>
+              <p className="text-gray-700">
+                {translations ? t('home.useCases.architecturalDesigns.description') : 'Elevations, sections, detail drawings'}
+              </p>
             </div>
             <div>
               <div className="mb-3 text-[#10bb82]">
                 <MdChair size={48} />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Interior Design</h3>
-              <p className="text-gray-700">Furniture placement, fixture spacing, material calculations</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">
+                {translations ? t('home.useCases.interiorDesign.title') : 'Interior Design'}
+              </h3>
+              <p className="text-gray-700">
+                {translations ? t('home.useCases.interiorDesign.description') : 'Furniture placement, fixture spacing, material calculations'}
+              </p>
             </div>
           </div>
         </section>
@@ -296,7 +333,7 @@ export default function Home() {
         {/* How It Works Section */}
         <section className="max-w-5xl mx-auto px-5 md:px-6 pb-32">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 text-gray-900">
-            Get started in 60 seconds
+            {translations ? t('home.howItWorks.title') : 'Get started in 60 seconds'}
           </h2>
           <div className="space-y-12 mt-12">
             <div className="flex gap-6">
@@ -304,10 +341,11 @@ export default function Home() {
                 1
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">Calibrate Scale</h3>
+                <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                  {translations ? t('home.howItWorks.step1.title') : 'Calibrate Scale'}
+                </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Click two points on a known distance (like "20 ft" on your drawing). Enter the actual distance. Choose
-                  your unit. Done! Your scale is set.
+                  {translations ? t('home.howItWorks.step1.description') : 'Click two points on a known distance (like "20 ft" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set.'}
                 </p>
               </div>
             </div>
@@ -316,10 +354,11 @@ export default function Home() {
                 2
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">Measure Anything</h3>
+                <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                  {translations ? t('home.howItWorks.step2.title') : 'Measure Anything'}
+                </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Click "Measure Distance". Click any two points on your drawing. See instant measurements with full
-                  unit conversions.
+                  {translations ? t('home.howItWorks.step2.description') : 'Click "Measure Distance". Click any two points on your drawing. See instant measurements with full unit conversions.'}
                 </p>
               </div>
             </div>
@@ -328,16 +367,18 @@ export default function Home() {
                 3
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">Switch Units Anytime</h3>
+                <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                  {translations ? t('home.howItWorks.step3.title') : 'Switch Units Anytime'}
+                </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer.
+                  {translations ? t('home.howItWorks.step3.description') : 'Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer.'}
                 </p>
               </div>
             </div>
           </div>
           <div className="mt-10">
             <Link href="/guide" className="text-blue-500 hover:underline text-lg">
-              {translations ? t('guide.watchVideo') : 'See detailed guide →'}
+              {translations ? t('home.howItWorks.guideLink') : 'See detailed guide →'}
             </Link>
           </div>
         </section>
@@ -345,19 +386,19 @@ export default function Home() {
         {/* Target Audience Section */}
         <section className="max-w-5xl mx-auto px-5 md:px-6 pb-32">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 text-gray-900">
-            Built for professionals who demand precision
+            {translations ? t('home.targetAudience.title') : 'Built for professionals who demand precision'}
           </h2>
           <div className="grid md:grid-cols-2 gap-6 text-lg text-gray-700">
             <ul className="space-y-2">
-              <li>• Architects and architectural firms</li>
-              <li>• Engineers (civil, mechanical, structural)</li>
-              <li>• Construction project managers</li>
-              <li>• Interior designers</li>
+              <li>• {translations ? t('home.targetAudience.item1') : 'Architects and architectural firms'}</li>
+              <li>• {translations ? t('home.targetAudience.item2') : 'Engineers (civil, mechanical, structural)'}</li>
+              <li>• {translations ? t('home.targetAudience.item3') : 'Construction project managers'}</li>
+              <li>• {translations ? t('home.targetAudience.item4') : 'Interior designers'}</li>
             </ul>
             <ul className="space-y-2">
-              <li>• Real estate professionals</li>
-              <li>• Facility managers</li>
-              <li>• Anyone who works with technical drawings on Miro</li>
+              <li>• {translations ? t('home.targetAudience.item5') : 'Real estate professionals'}</li>
+              <li>• {translations ? t('home.targetAudience.item6') : 'Facility managers'}</li>
+              <li>• {translations ? t('home.targetAudience.item7') : 'Anyone who works with technical drawings on Miro'}</li>
             </ul>
           </div>
         </section>
@@ -366,20 +407,20 @@ export default function Home() {
         <section className="max-w-5xl mx-auto px-5 md:px-6 pb-32">
           <div className="bg-gray-50 rounded-lg p-12 md:p-16 text-center border border-gray-200">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-gray-900">
-              Ready to measure with precision?
+              {translations ? t('home.finalCta.title') : 'Ready to measure with precision?'}
             </h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              Join architects and engineers who trust MeasureMint for accurate measurements on Miro.
+              {translations ? t('home.finalCta.subtitle') : 'Join architects and engineers who trust MeasureMint for accurate measurements on Miro.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/panel">
                 <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                  Launch MeasureMint
+                  {translations ? t('home.finalCta.launchApp') : 'Launch MeasureMint'}
                 </button>
               </Link>
               <Link href="/help">
                 <button className="border border-gray-300 text-gray-900 hover:border-gray-400 bg-transparent px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                  {translations ? (t('help.title') || 'View Documentation') : 'View Documentation'}
+                  {translations ? t('home.finalCta.viewDocumentation') : 'View Documentation'}
                 </button>
               </Link>
             </div>
@@ -391,16 +432,18 @@ export default function Home() {
       <footer className="border-t border-gray-200">
         <div className="max-w-5xl mx-auto px-5 md:px-6 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-600">© 2025 MeasureMint. All rights reserved.</p>
+            <p className="text-sm text-gray-600">
+              {translations ? t('footer.copyright') : '© 2025 MeasureMint. All rights reserved.'}
+            </p>
             <div className="flex items-center gap-6">
               <Link href="/support" className="text-sm text-gray-600 hover:text-gray-900">
-                Support
+                {translations ? t('footer.support') : 'Support'}
               </Link>
               <Link href="/privacy" className="text-sm text-gray-600 hover:text-gray-900">
-                Privacy
+                {translations ? t('footer.privacy') : 'Privacy'}
               </Link>
               <Link href="/terms" className="text-sm text-gray-600 hover:text-gray-900">
-                Terms
+                {translations ? t('footer.terms') : 'Terms'}
               </Link>
             </div>
           </div>
