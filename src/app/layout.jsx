@@ -12,7 +12,7 @@ const notoSansArabic = Noto_Sans_Arabic({
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-arabic',
   display: 'swap',
-  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+  fallback: ['Arial Unicode MS', 'Tahoma', 'Geeza Pro', 'Arabic Typesetting', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const notoSansJP = Noto_Sans_JP({
@@ -21,7 +21,7 @@ const notoSansJP = Noto_Sans_JP({
   variable: '--font-noto-sans-jp',
   display: 'swap',
   preload: true,
-  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+  fallback: ['Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', 'MS PGothic', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const notoSansSC = Noto_Sans_SC({
@@ -30,7 +30,7 @@ const notoSansSC = Noto_Sans_SC({
   variable: '--font-noto-sans-sc',
   display: 'swap',
   preload: true,
-  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+  fallback: ['Hiragino Sans GB', 'Microsoft YaHei', 'SimHei', 'SimSun', 'STHeiti', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const notoSansTC = Noto_Sans_TC({
@@ -39,7 +39,7 @@ const notoSansTC = Noto_Sans_TC({
   variable: '--font-noto-sans-tc',
   display: 'swap',
   preload: true,
-  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+  fallback: ['Microsoft JhengHei', 'PMingLiU', 'Apple LiGothic', 'Apple LiSung', 'STHeiti', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const notoSansKR = Noto_Sans_KR({
@@ -48,7 +48,7 @@ const notoSansKR = Noto_Sans_KR({
   variable: '--font-noto-sans-kr',
   display: 'swap',
   preload: true,
-  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+  fallback: ['Nanum Gothic', 'Malgun Gothic', 'Apple SD Gothic Neo', 'AppleGothic', 'Gulim', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 export const metadata = {
