@@ -100,17 +100,6 @@ export default function Home() {
     return value || key
   }
 
-  // Show loading state while translations load
-  if (!translations) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#10bb82] mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
-        </div>
-      </div>
-    )
-  }
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -125,15 +114,17 @@ export default function Home() {
               className="transition-transform group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-gray-900">{t('common.appName')}</span>
+              <span className="text-xl font-bold tracking-tight text-gray-900">
+                {translations ? t('common.appName') : 'MeasureMint'}
+              </span>
               <span className="text-[10px] tracking-widest text-gray-500 uppercase">
-                {t('common.tagline')}
+                {translations ? t('common.tagline') : 'Professional Measurement Tool'}
               </span>
             </div>
           </Link>
           <nav className="flex items-center gap-4">
             <Link href="/support" className="text-sm text-gray-600 hover:text-gray-900">
-              {t('common.support')}
+              {translations ? t('common.support') : 'Support'}
             </Link>
             <Link href="/subscribe" className="text-sm text-gray-600 hover:text-gray-900">
               {t('common.pricing')}
@@ -141,7 +132,7 @@ export default function Home() {
             <LanguageSelector />
             <Link href="/panel">
               <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                {t('common.launchApp')}
+                {translations ? t('common.launchApp') : 'Launch App'}
               </button>
             </Link>
           </nav>
@@ -152,20 +143,20 @@ export default function Home() {
         {/* Hero Section */}
         <section className="max-w-5xl mx-auto px-5 md:px-6 pt-20 md:pt-32 pb-16 md:pb-24">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-gray-900">
-            {t('home.hero.title')}
+            {translations ? t('home.hero.title') : 'Measurements on Miro, Finally!'}
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl leading-relaxed">
-            {t('home.hero.subtitle')}
+            {translations ? t('home.hero.subtitle') : 'Professional measurement and calibration tool for designers. Scaling and measuring drawings on Miro, for the first time ever!'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/panel">
               <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                {t('home.hero.ctaPrimary')}
+                {translations ? t('home.hero.ctaPrimary') : 'Launch App'}
               </button>
             </Link>
             <Link href="/waitlist">
               <button className="border border-gray-300 text-gray-900 hover:border-gray-400 bg-transparent px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                {t('home.hero.ctaSecondary')}
+                {translations ? t('home.hero.ctaSecondary') : 'Join Waitlist'}
               </button>
             </Link>
           </div>
@@ -179,7 +170,7 @@ export default function Home() {
               src={getLoomEmbedUrl(locale)}
               className="w-full h-full"
               allowFullScreen
-              title={t('home.video.title') || 'MeasureMint Demo'}
+              title={translations ? (t('home.video.title') || 'MeasureMint Demo') : 'MeasureMint Demo'}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
