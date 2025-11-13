@@ -65,14 +65,14 @@ export default function Home() {
     const loadTranslations = async () => {
       try {
         console.log(`Loading translations for locale: ${locale}`)
-        const mod = await import(`../../../messages/${locale}.json`)
+        const mod = await import(`../../messages/${locale}.json`)
         console.log(`Translations loaded for ${locale}:`, mod.default)
         setTranslations(mod.default)
       } catch (err) {
         console.error(`Failed to load translations for ${locale}:`, err)
         // Fallback to English
         try {
-          const mod = await import('../../../messages/en.json')
+          const mod = await import('../../messages/en.json')
           console.log('Fallback to English translations')
           setTranslations(mod.default)
         } catch (fallbackErr) {
