@@ -29,19 +29,24 @@
   }
 
   /* Arabic font support - Cairo font for RTL/Arabic content */
-  html[lang="ar"],
+  :root {
+    --font-cairo: 'Cairo', sans-serif;
+  }
+
   [dir="rtl"],
   [lang="ar"],
-  [dir="rtl"] body,
-  [lang="ar"] body {
+  .font-cairo {
     font-family: var(--font-cairo), 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif !important;
   }
 
   [dir="rtl"] *,
-  [lang="ar"] * {
-    font-family: inherit;
+  [lang="ar"] *,
+  [dir="rtl"] body,
+  [lang="ar"] body,
+  .font-cairo * {
+    font-family: inherit !important;
   }
 
   button {

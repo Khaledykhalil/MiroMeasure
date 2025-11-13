@@ -12,6 +12,7 @@ const cairo = Cairo({
   weight: ['400', '500', '600', '700'],
   variable: '--font-cairo',
   display: 'swap',
+  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 export const metadata = {

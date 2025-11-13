@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         'measuremint': '#10bb82',
       },
+      fontFamily: {
+        'cairo': ['var(--font-cairo)', 'Cairo', 'sans-serif'],
+      },
     },
   },
   plugins: [],

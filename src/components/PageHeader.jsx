@@ -65,7 +65,7 @@ export default function PageHeader({ showPricing = false }) {
   const isRTL = locale === 'ar'
 
   return (
-    <header className="border-b border-gray-200 bg-white" dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
+    <header className={`border-b border-gray-200 bg-white ${isRTL ? 'font-cairo' : ''}`} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
       <div className="max-w-5xl mx-auto px-5 md:px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <Image
