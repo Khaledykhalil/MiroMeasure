@@ -1,7 +1,61 @@
-import React from 'react';
+'use client'
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { getLoomShareUrl } from '@/config/loom-videos';
+import { detectLanguageSync } from '@/utils/languageDetection';
+import PageHeader from '@/components/PageHeader';
 
 export default function GuidePage() {
+  const [locale, setLocale] = useState('en')
+  const [translations, setTranslations] = useState(null)
+  
+  useEffect(() => {
+    // Get locale from URL, localStorage, or auto-detect
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      const urlLocale = urlParams.get('lang')
+      const storedLocale = localStorage.getItem('locale')
+      const currentLocale = urlLocale || storedLocale || detectLanguageSync()
+      setLocale(currentLocale)
+    }
+  }, [])
+
+  // Load translations
+  useEffect(() => {
+    if (!locale) return
+    
+    const loadTranslations = async () => {
+      try {
+        const mod = await import(`../../../messages/${locale}.json`)
+        setTranslations(mod.default)
+      } catch (err) {
+        try {
+          const mod = await import('../../../messages/en.json')
+          setTranslations(mod.default)
+        } catch {
+          setTranslations({})
+        }
+      }
+    }
+    
+    loadTranslations()
+  }, [locale])
+
+  const t = (key, fallback = null) => {
+    if (!translations) {
+      return fallback || key.split('.').pop() || key
+    }
+    const keys = key.split('.')
+    let value = translations
+    for (const k of keys) {
+      value = value?.[k]
+      if (value === undefined) {
+        return fallback || keys[keys.length - 1] || key
+      }
+    }
+    return value || fallback || key
+  }
   const steps = [
     {
       number: 1,
@@ -95,31 +149,29 @@ export default function GuidePage() {
     "Familiarize yourself with the known distances on your drawings to expedite the calibration process."
   ];
 
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+
   return (
-    <div className="bg-white min-h-screen">
-      {/* Ultra Minimal Header */}
-      <header className="container mx-auto max-w-5xl px-5 py-12">
-        <Link href="/" className="text-4xl font-bold tracking-tighter hover:underline">
-          MeasureMint.
-        </Link>
-      </header>
+    <div className="bg-white min-h-screen" dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
+      <PageHeader />
 
       {/* Hero */}
       <main className="container mx-auto max-w-5xl px-5">
         <section className="mb-20">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight mb-8">
-            How to Use MeasureMint
+            {translations ? t('guide.title') : 'How to Use MeasureMint'}
           </h1>
           <p className="text-lg md:text-xl mb-4 max-w-2xl">
-            A step-by-step guide to measuring and scaling drawings on Miro Board with precision.
+            {translations ? t('guide.subtitle') : 'A step-by-step guide to measuring and scaling drawings on Miro Board with precision.'}
           </p>
           <a 
-            href="https://loom.com/share/3a2b1b94850946fa93a4db2961d2b62d" 
+            href={getLoomShareUrl(locale)} 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline text-lg"
           >
-            Watch Full Video Tutorial →
+            {translations ? t('guide.watchVideo') : 'Watch Full Video Tutorial →'}
           </a>
         </section>
 
@@ -129,7 +181,7 @@ export default function GuidePage() {
             <article key={step.number}>
               <div className="mb-8">
                 <div className="text-gray-500 text-sm mb-2">
-                  STEP {step.number} · {step.time}
+                  {translations ? t('guide.step') : 'STEP'} {step.number} · {step.time}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight mb-4">
                   {step.title}
@@ -140,7 +192,7 @@ export default function GuidePage() {
               </div>
               
               <a 
-                href={`https://loom.com/share/3a2b1b94850946fa93a4db2961d2b62d?t=${step.timestamp}`}
+                href={getLoomShareUrl(locale, step.timestamp)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group"

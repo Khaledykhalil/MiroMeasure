@@ -1,8 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import PageHeader from '@/components/PageHeader';
+import { detectLanguageSync, detectUserLanguage } from '@/utils/languageDetection';
 
 export default function SupportContact() {
+  const [locale, setLocale] = useState('en')
+  const [translations, setTranslations] = useState(null)
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +19,53 @@ export default function SupportContact() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
+
+  // Initialize locale
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      const urlLocale = urlParams.get('lang')
+      const storedLocale = localStorage.getItem('locale')
+      const currentLocale = urlLocale || storedLocale || detectLanguageSync()
+      setLocale(currentLocale)
+    }
+  }, [])
+
+  // Load translations
+  useEffect(() => {
+    if (!locale) return
+    
+    const loadTranslations = async () => {
+      try {
+        const mod = await import(`../../../messages/${locale}.json`)
+        setTranslations(mod.default)
+      } catch (err) {
+        try {
+          const mod = await import('../../../messages/en.json')
+          setTranslations(mod.default)
+        } catch {
+          setTranslations({})
+        }
+      }
+    }
+    
+    loadTranslations()
+  }, [locale])
+
+  const t = (key, fallback = null) => {
+    if (!translations) {
+      return fallback || key.split('.').pop() || key
+    }
+    const keys = key.split('.')
+    let value = translations
+    for (const k of keys) {
+      value = value?.[k]
+      if (value === undefined) {
+        return fallback || keys[keys.length - 1] || key
+      }
+    }
+    return value || fallback || key
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,17 +103,21 @@ export default function SupportContact() {
     });
   };
 
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+
   if (submitted) {
     return (
-      <div style={styles.container}>
+      <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
+        <PageHeader />
         <div style={styles.successCard}>
           <div style={styles.successIcon}>✓</div>
-          <h1 style={styles.successTitle}>Message Sent Successfully!</h1>
+          <h1 style={styles.successTitle}>{t('support.success.title')}</h1>
           <p style={styles.successText}>
-            Thank you for contacting MeasureMint support. We've received your message and will respond to <strong>{formData.email}</strong> within 24 hours.
+            {t('support.success.text')} <strong>{formData.email}</strong> within 24 hours.
           </p>
           <p style={styles.successSubtext}>
-            If you don't hear from us, please check your spam folder or email us directly at:
+            {t('support.success.subtext')}
           </p>
           <a href="mailto:support@measuremint.app" style={styles.emailLink}>
             support@measuremint.app
@@ -79,7 +135,7 @@ export default function SupportContact() {
             }} 
             style={styles.backButton}
           >
-            ← Send Another Message
+            {t('support.success.sendAnother')}
           </button>
         </div>
       </div>
@@ -87,11 +143,12 @@ export default function SupportContact() {
   }
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
+      <PageHeader />
       <div style={styles.formCard}>
-        <h1 style={styles.title}>📧 Contact Support</h1>
+        <h1 style={styles.title}>📧 {t('support.title')}</h1>
         <p style={styles.subtitle}>
-          Need help? We're here for you! Fill out the form below and we'll get back to you within 24 hours.
+          {t('support.subtitle')}
         </p>
 
         <form onSubmit={handleSubmit} style={styles.form}>
@@ -194,7 +251,7 @@ export default function SupportContact() {
             }}
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Sending...' : 'Send Message →'}
+            {isSubmitting ? t('support.form.sending') : t('support.form.submit') + ' →'}
           </button>
           
           <div style={{textAlign: 'center', marginTop: '16px', color: '#64748b', fontSize: '0.9em'}}>
@@ -209,26 +266,26 @@ export default function SupportContact() {
         </form>
 
         <div style={styles.infoSection}>
-          <h3 style={styles.infoTitle}>Other Ways to Reach Us</h3>
+          <h3 style={styles.infoTitle}>{t('support.otherWays.title')}</h3>
           
           <div style={styles.contactMethod}>
-            <strong>📧 Direct Email:</strong>
+            <strong>📧 {t('support.otherWays.directEmail')}</strong>
             <a href="mailto:support@measuremint.app" style={styles.link}>
               support@measuremint.app
             </a>
           </div>
 
           <div style={styles.contactMethod}>
-            <strong>🐛 Bug Reports:</strong>
+            <strong>🐛 {t('support.otherWays.bugReports')}</strong>
             <a href="https://github.com/Khaledykhalil/MeasureMint/issues" target="_blank" rel="noopener noreferrer" style={styles.link}>
               GitHub Issues
             </a>
           </div>
 
           <div style={styles.contactMethod}>
-            <strong>📚 Documentation:</strong>
+            <strong>📚 {t('support.otherWays.documentation')}</strong>
             <a href="/help" style={styles.link}>
-              Help Center
+              {t('support.otherWays.helpCenter')}
             </a>
           </div>
         </div>
@@ -262,6 +319,7 @@ const styles = {
     padding: '60px 40px',
     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
     textAlign: 'center',
+    margin: '40px auto',
   },
   title: {
     fontSize: '2.5em',

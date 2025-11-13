@@ -1,10 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import PageHeader from '@/components/PageHeader';
+import { detectLanguageSync } from '@/utils/languageDetection';
 
 export default function WaitlistPage() {
+  const [locale, setLocale] = useState('en')
+  const [translations, setTranslations] = useState(null)
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +19,53 @@ export default function WaitlistPage() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
+
+  // Initialize locale
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      const urlLocale = urlParams.get('lang')
+      const storedLocale = localStorage.getItem('locale')
+      const currentLocale = urlLocale || storedLocale || detectLanguageSync()
+      setLocale(currentLocale)
+    }
+  }, [])
+
+  // Load translations
+  useEffect(() => {
+    if (!locale) return
+    
+    const loadTranslations = async () => {
+      try {
+        const mod = await import(`../../../messages/${locale}.json`)
+        setTranslations(mod.default)
+      } catch (err) {
+        try {
+          const mod = await import('../../../messages/en.json')
+          setTranslations(mod.default)
+        } catch {
+          setTranslations({})
+        }
+      }
+    }
+    
+    loadTranslations()
+  }, [locale])
+
+  const t = (key, fallback = null) => {
+    if (!translations) {
+      return fallback || key.split('.').pop() || key
+    }
+    const keys = key.split('.')
+    let value = translations
+    for (const k of keys) {
+      value = value?.[k]
+      if (value === undefined) {
+        return fallback || keys[keys.length - 1] || key
+      }
+    }
+    return value || fallback || key
+  }
 
   const handleChange = (e) => {
     setFormData({
@@ -51,57 +103,45 @@ export default function WaitlistPage() {
     }
   };
 
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+
   if (submitted) {
     return (
-      <div style={styles.container}>
-        <header style={styles.header}>
-          <Link href="/" style={styles.logoLink}>
-            <div style={styles.logo}>M</div>
-            <div style={styles.brandContainer}>
-              <span style={styles.brandName}>MeasureMint</span>
-              <span style={styles.brandTagline}>Professional Measurement Tool</span>
-            </div>
-          </Link>
-          <nav style={styles.nav}>
-            <Link href="/support" style={styles.navLink}>Support</Link>
-            <Link href="/panel">
-              <button style={styles.launchButton}>Launch App</button>
-            </Link>
-          </nav>
-        </header>
-
+      <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
+        <PageHeader />
         <main style={styles.main}>
           <div style={styles.successCard}>
             <div style={styles.successIcon}>✓</div>
-            <h1 style={styles.successTitle}>You're on the list!</h1>
+            <h1 style={styles.successTitle}>{t('waitlist.success.title')}</h1>
             <p style={styles.successText}>
-              Thank you for joining the MeasureMint waitlist, <strong>{formData.name}</strong>!
+              {t('waitlist.success.text')} <strong>{formData.name}</strong>!
             </p>
             <p style={styles.successSubtext}>
-              We'll send updates and early access information to <strong>{formData.email}</strong>
+              {t('waitlist.success.subtext')} <strong>{formData.email}</strong>
             </p>
             <div style={styles.nextStepsContainer}>
-              <h2 style={styles.nextStepsTitle}>What happens next?</h2>
+              <h2 style={styles.nextStepsTitle}>{t('waitlist.success.nextSteps')}</h2>
               <div style={styles.stepsGrid}>
                 <div style={styles.step}>
                   <div style={styles.stepIcon}>📧</div>
-                  <h3 style={styles.stepTitle}>Confirmation Email</h3>
-                  <p style={styles.stepText}>Check your inbox for a confirmation</p>
+                  <h3 style={styles.stepTitle}>{t('waitlist.success.confirmation.title')}</h3>
+                  <p style={styles.stepText}>{t('waitlist.success.confirmation.text')}</p>
                 </div>
                 <div style={styles.step}>
                   <div style={styles.stepIcon}>🎉</div>
-                  <h3 style={styles.stepTitle}>Launch Notification</h3>
-                  <p style={styles.stepText}>Be first to know when we launch</p>
+                  <h3 style={styles.stepTitle}>{t('waitlist.success.launch.title')}</h3>
+                  <p style={styles.stepText}>{t('waitlist.success.launch.text')}</p>
                 </div>
                 <div style={styles.step}>
                   <div style={styles.stepIcon}>🌟</div>
-                  <h3 style={styles.stepTitle}>Early Access</h3>
-                  <p style={styles.stepText}>Get exclusive early access</p>
+                  <h3 style={styles.stepTitle}>{t('waitlist.success.earlyAccess.title')}</h3>
+                  <p style={styles.stepText}>{t('waitlist.success.earlyAccess.text')}</p>
                 </div>
               </div>
             </div>
             <Link href="/">
-              <button style={styles.backButton}>← Back to Home</button>
+              <button style={styles.backButton}>{t('waitlist.success.backToHome')}</button>
             </Link>
           </div>
         </main>
@@ -121,40 +161,25 @@ export default function WaitlistPage() {
   }
 
   return (
-    <div style={styles.container}>
-      <header style={styles.header}>
-        <Link href="/" style={styles.logoLink}>
-          <div style={styles.logo}>M</div>
-          <div style={styles.brandContainer}>
-            <span style={styles.brandName}>MeasureMint</span>
-            <span style={styles.brandTagline}>Professional Measurement Tool</span>
-          </div>
-        </Link>
-        <nav style={styles.nav}>
-          <Link href="/support" style={styles.navLink}>Support</Link>
-          <Link href="/panel">
-            <button style={styles.launchButton}>Launch App</button>
-          </Link>
-        </nav>
-      </header>
-
+    <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
+      <PageHeader />
       <main style={styles.main}>
         <div style={styles.heroSection}>
-          <h1 style={styles.heroTitle}>Join the Waitlist</h1>
+          <h1 style={styles.heroTitle}>{t('waitlist.title')}</h1>
           <p style={styles.heroSubtitle}>
-            Be the first to know when MeasureMint launches. Get early access and exclusive updates.
+            {t('waitlist.subtitle')}
           </p>
         </div>
 
         <div style={styles.formCard}>
           <form onSubmit={handleSubmit} style={styles.form}>
             <div style={styles.formGroup}>
-              <label htmlFor="name" style={styles.label}>Full Name *</label>
+              <label htmlFor="name" style={styles.label}>{t('waitlist.form.name')} *</label>
               <input
                 id="name"
                 name="name"
                 type="text"
-                placeholder="John Doe"
+                placeholder={t('waitlist.form.placeholders.name')}
                 required
                 value={formData.name}
                 onChange={handleChange}
@@ -163,12 +188,12 @@ export default function WaitlistPage() {
             </div>
 
             <div style={styles.formGroup}>
-              <label htmlFor="email" style={styles.label}>Email Address *</label>
+              <label htmlFor="email" style={styles.label}>{t('waitlist.form.email')} *</label>
               <input
                 id="email"
                 name="email"
                 type="email"
-                placeholder="john@company.com"
+                placeholder={t('waitlist.form.placeholders.email')}
                 required
                 value={formData.email}
                 onChange={handleChange}
@@ -177,12 +202,12 @@ export default function WaitlistPage() {
             </div>
 
             <div style={styles.formGroup}>
-              <label htmlFor="profession" style={styles.label}>Profession *</label>
+              <label htmlFor="profession" style={styles.label}>{t('waitlist.form.profession')} *</label>
               <input
                 id="profession"
                 name="profession"
                 type="text"
-                placeholder="e.g., Architect, Engineer, Project Manager"
+                placeholder={t('waitlist.form.placeholders.profession')}
                 required
                 value={formData.profession}
                 onChange={handleChange}
@@ -191,12 +216,12 @@ export default function WaitlistPage() {
             </div>
 
             <div style={styles.formGroup}>
-              <label htmlFor="company" style={styles.label}>Company Name *</label>
+              <label htmlFor="company" style={styles.label}>{t('waitlist.form.company')} *</label>
               <input
                 id="company"
                 name="company"
                 type="text"
-                placeholder="Your Company"
+                placeholder={t('waitlist.form.placeholders.company')}
                 required
                 value={formData.company}
                 onChange={handleChange}
@@ -220,33 +245,33 @@ export default function WaitlistPage() {
                 }}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+                {isSubmitting ? t('waitlist.form.submitting') : t('waitlist.form.submit')}
               </button>
             </div>
           </form>
 
           <p style={styles.privacyNote}>
-            We respect your privacy. Your information will only be used to contact you about MeasureMint.
+            {t('waitlist.privacyNote')}
           </p>
         </div>
 
         <div style={styles.nextStepsContainer}>
-          <h2 style={styles.nextStepsTitle}>What happens next?</h2>
+          <h2 style={styles.nextStepsTitle}>{t('waitlist.success.nextSteps')}</h2>
           <div style={styles.stepsGrid}>
             <div style={styles.step}>
               <div style={styles.stepIcon}>📧</div>
-              <h3 style={styles.stepTitle}>Confirmation Email</h3>
-              <p style={styles.stepText}>You'll receive a confirmation email immediately</p>
+              <h3 style={styles.stepTitle}>{t('waitlist.success.confirmation.title')}</h3>
+              <p style={styles.stepText}>{t('waitlist.success.confirmation.text')}</p>
             </div>
             <div style={styles.step}>
               <div style={styles.stepIcon}>🎉</div>
-              <h3 style={styles.stepTitle}>Launch Notification</h3>
-              <p style={styles.stepText}>Be the first to know when we launch</p>
+              <h3 style={styles.stepTitle}>{t('waitlist.success.launch.title')}</h3>
+              <p style={styles.stepText}>{t('waitlist.success.launch.text')}</p>
             </div>
             <div style={styles.step}>
               <div style={styles.stepIcon}>🌟</div>
-              <h3 style={styles.stepTitle}>Early Access</h3>
-              <p style={styles.stepText}>Get exclusive early access to new features</p>
+              <h3 style={styles.stepTitle}>{t('waitlist.success.earlyAccess.title')}</h3>
+              <p style={styles.stepText}>{t('waitlist.success.earlyAccess.text')}</p>
             </div>
           </div>
         </div>

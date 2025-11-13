@@ -1,104 +1,154 @@
-export const metadata = {
-  title: 'Help Center - MeasureMint',
-  description: 'MeasureMint Help Center - Guides, FAQ, and Support',
-};
+'use client'
+
+import { useEffect, useState } from 'react'
+import PageHeader from '@/components/PageHeader'
+import { detectLanguageSync } from '@/utils/languageDetection'
 
 export default function HelpCenter() {
+  const [locale, setLocale] = useState('en')
+  const [translations, setTranslations] = useState(null)
+
+  // Initialize locale
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      const urlLocale = urlParams.get('lang')
+      const storedLocale = localStorage.getItem('locale')
+      const currentLocale = urlLocale || storedLocale || detectLanguageSync()
+      setLocale(currentLocale)
+    }
+  }, [])
+
+  // Load translations
+  useEffect(() => {
+    if (!locale) return
+    
+    const loadTranslations = async () => {
+      try {
+        const mod = await import(`../../../messages/${locale}.json`)
+        setTranslations(mod.default)
+      } catch (err) {
+        try {
+          const mod = await import('../../../messages/en.json')
+          setTranslations(mod.default)
+        } catch {
+          setTranslations({})
+        }
+      }
+    }
+    
+    loadTranslations()
+  }, [locale])
+
+  const t = (key, fallback = null) => {
+    if (!translations) {
+      return fallback || key.split('.').pop() || key
+    }
+    const keys = key.split('.')
+    let value = translations
+    for (const k of keys) {
+      value = value?.[k]
+      if (value === undefined) {
+        return fallback || keys[keys.length - 1] || key
+      }
+    }
+    return value || fallback || key
+  }
   // Render help center directly in JSX for better Next.js compatibility
   const htmlContent = `
-    <h1>📚 MeasureMint Help Center</h1>
-    <p>Welcome to the MeasureMint Help Center! Find quick answers, tutorials, and troubleshooting tips.</p>
+    <h1>📚 ${t('help.title')}</h1>
+    <p>${t('help.welcome')}</p>
     
-    <h2>🚀 Quick Start (30 seconds)</h2>
+    <h2>🚀 ${t('help.quickStart.title')}</h2>
     <ol>
-      <li><strong>Open the app</strong> in your Miro board (click the Apps panel, search "MeasureMint")</li>
-      <li><strong>Set calibration</strong> - Click a known distance on your image and enter its actual measurement</li>
-      <li><strong>Start measuring</strong> - Click two points anywhere to measure distance</li>
-      <li><strong>Done!</strong> Switch units anytime, measurements update automatically</li>
+      <li><strong>${t('help.quickStart.step1')}</strong></li>
+      <li><strong>${t('help.quickStart.step2')}</strong></li>
+      <li><strong>${t('help.quickStart.step3')}</strong></li>
+      <li><strong>${t('help.quickStart.step4')}</strong></li>
     </ol>
     
-    <h2>📖 Documentation</h2>
-    <p>For comprehensive documentation, see our <a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/USER_GUIDE.md" target="_blank">User Guide</a></p>
+    <h2>📖 ${t('help.documentation.title')}</h2>
+    <p>${t('help.documentation.text')} <a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/USER_GUIDE.md" target="_blank">${t('help.resources.userGuide')}</a></p>
     
-    <h2>❓ Frequently Asked Questions</h2>
+    <h2>❓ ${t('help.faq.title')}</h2>
     
-    <h3>General Questions</h3>
-    <p><strong>Q: Do I need to select an image before measuring?</strong><br/>
-    A: No! MeasureMint works anywhere on your Miro board. Just calibrate and measure.</p>
+    <h3>${t('help.faq.general.title')}</h3>
+    <p><strong>Q: ${t('help.faq.general.q1')}</strong><br/>
+    A: ${t('help.faq.general.a1')}</p>
     
-    <p><strong>Q: Can multiple people use the same calibration?</strong><br/>
-    A: Yes! Once calibrated, anyone on the board can take measurements using that calibration.</p>
+    <p><strong>Q: ${t('help.faq.general.q2')}</strong><br/>
+    A: ${t('help.faq.general.a2')}</p>
     
-    <p><strong>Q: Do measurements save with the board?</strong><br/>
-    A: Yes! Measurement lines and captions are standard Miro elements that save automatically.</p>
+    <p><strong>Q: ${t('help.faq.general.q3')}</strong><br/>
+    A: ${t('help.faq.general.a3')}</p>
     
-    <h3>Calibration Questions</h3>
-    <p><strong>Q: How accurate is MeasureMint?</strong><br/>
-    A: Accuracy depends on your calibration. With accurate calibration and high-quality images, measurements are typically within 1-2% of actual dimensions.</p>
+    <h3>${t('help.faq.calibration.title')}</h3>
+    <p><strong>Q: ${t('help.faq.calibration.q1')}</strong><br/>
+    A: ${t('help.faq.calibration.a1')}</p>
     
-    <p><strong>Q: Do I need to recalibrate for each measurement?</strong><br/>
-    A: No! Calibrate once per image/scale. All measurements use that calibration.</p>
+    <p><strong>Q: ${t('help.faq.calibration.q2')}</strong><br/>
+    A: ${t('help.faq.calibration.a2')}</p>
     
-    <h3>Measurement Questions</h3>
-    <p><strong>Q: Can I change units after measuring?</strong><br/>
-    A: Absolutely! Switch units anytime - all measurements update automatically.</p>
+    <h3>${t('help.faq.measurement.title')}</h3>
+    <p><strong>Q: ${t('help.faq.measurement.q1')}</strong><br/>
+    A: ${t('help.faq.measurement.a1')}</p>
     
-    <p><strong>Q: Can I measure curved lines?</strong><br/>
-    A: Yes! Use Multi-Point Distance and click points along the curve.</p>
+    <p><strong>Q: ${t('help.faq.measurement.q2')}</strong><br/>
+    A: ${t('help.faq.measurement.a2')}</p>
     
-    <h2>🔧 Troubleshooting</h2>
+    <h2>🔧 ${t('help.troubleshooting.title')}</h2>
     
-    <h3>Calibration Issues</h3>
-    <p><strong>Problem:</strong> "Calibration failed" error</p>
+    <h3>${t('help.troubleshooting.calibration.title')}</h3>
+    <p><strong>${t('help.troubleshooting.calibration.problem')}</strong></p>
     <ul>
-      <li>Ensure you clicked two different points</li>
-      <li>Make sure you entered a valid number</li>
-      <li>Check that the known distance is not zero</li>
-      <li>Try drawing a new calibration line</li>
+      <li>${t('help.troubleshooting.calibration.solutions.0')}</li>
+      <li>${t('help.troubleshooting.calibration.solutions.1')}</li>
+      <li>${t('help.troubleshooting.calibration.solutions.2')}</li>
+      <li>${t('help.troubleshooting.calibration.solutions.3')}</li>
     </ul>
     
-    <h3>Measurement Issues</h3>
-    <p><strong>Problem:</strong> Can't create measurements</p>
+    <h3>${t('help.troubleshooting.measurement.title')}</h3>
+    <p><strong>${t('help.troubleshooting.measurement.problem')}</strong></p>
     <ul>
-      <li>Ensure calibration is set first</li>
-      <li>Check that you're clicking on the board</li>
-      <li>Zoom in for better precision</li>
-      <li>Try clicking directly on the image</li>
+      <li>${t('help.troubleshooting.measurement.solutions.0')}</li>
+      <li>${t('help.troubleshooting.measurement.solutions.1')}</li>
+      <li>${t('help.troubleshooting.measurement.solutions.2')}</li>
+      <li>${t('help.troubleshooting.measurement.solutions.3')}</li>
     </ul>
     
-    <h2>📧 Contact Support</h2>
-    <p>Need more help? We're here for you!</p>
+    <h2>📧 ${t('help.contact.title')}</h2>
+    <p>${t('help.contact.text')}</p>
     
     <div style="background: #f1f5f9; border-radius: 8px; padding: 1.5em; margin: 1.5em 0;">
-      <h3 style="margin-top: 0;">📧 Email Support</h3>
-      <p><strong>Email:</strong> <a href="mailto:support@measuremint.app">support@measuremint.app</a></p>
-      <p><strong>Response time:</strong> Within 24 hours (business days)</p>
-      <p><strong>Best for:</strong> Technical issues, bug reports, feature requests</p>
+      <h3 style="margin-top: 0;">📧 ${t('help.contact.email')}</h3>
+      <p><strong>${t('help.contact.emailAddress')}:</strong> <a href="mailto:support@measuremint.app">support@measuremint.app</a></p>
+      <p><strong>${t('help.contact.responseTime')}</strong></p>
+      <p><strong>${t('help.contact.bestFor')}</strong></p>
     </div>
     
     <div style="background: #f1f5f9; border-radius: 8px; padding: 1.5em; margin: 1.5em 0;">
-      <h3 style="margin-top: 0;">🐛 Report a Bug</h3>
-      <p><strong>GitHub Issues:</strong> <a href="https://github.com/Khaledykhalil/MeasureMint/issues" target="_blank">GitHub Issues</a></p>
-      <p>Include: Browser, Miro plan, steps to reproduce, screenshots</p>
+      <h3 style="margin-top: 0;">🐛 ${t('help.contact.bugReports')}</h3>
+      <p><strong>${t('help.contact.githubIssues')}:</strong> <a href="https://github.com/Khaledykhalil/MeasureMint/issues" target="_blank">GitHub Issues</a></p>
+      <p>${t('help.contact.include')}</p>
     </div>
     
-    <h2>🌍 Supported Units</h2>
+    <h2>🌍 ${t('help.units.title')}</h2>
     <ul>
-      <li><strong>Feet (ft)</strong> - US/Imperial</li>
-      <li><strong>Inches (in)</strong> - US/Imperial</li>
-      <li><strong>Meters (m)</strong> - Metric</li>
-      <li><strong>Centimeters (cm)</strong> - Metric</li>
-      <li><strong>Millimeters (mm)</strong> - Metric</li>
-      <li><strong>Yards (yd)</strong> - US/Imperial</li>
-      <li><strong>Miles (mi)</strong> - US/Imperial</li>
-      <li><strong>Kilometers (km)</strong> - Metric</li>
+      <li><strong>${t('help.units.imperial.ft')}</strong></li>
+      <li><strong>${t('help.units.imperial.in')}</strong></li>
+      <li><strong>${t('help.units.metric.m')}</strong></li>
+      <li><strong>${t('help.units.metric.cm')}</strong></li>
+      <li><strong>${t('help.units.metric.mm')}</strong></li>
+      <li><strong>${t('help.units.imperial.yd')}</strong></li>
+      <li><strong>${t('help.units.imperial.mi')}</strong></li>
+      <li><strong>${t('help.units.metric.km')}</strong></li>
     </ul>
     
-    <h2>📚 Additional Resources</h2>
+    <h2>📚 ${t('help.resources.title')}</h2>
     <ul>
-      <li><a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/USER_GUIDE.md" target="_blank">User Guide</a></li>
-      <li><a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/TECHNICAL.md" target="_blank">Technical Documentation</a></li>
-      <li><a href="https://github.com/Khaledykhalil/MeasureMint" target="_blank">GitHub Repository</a></li>
+      <li><a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/USER_GUIDE.md" target="_blank">${t('help.resources.userGuide')}</a></li>
+      <li><a href="https://github.com/Khaledykhalil/MeasureMint/blob/main/docs/TECHNICAL.md" target="_blank">${t('help.resources.technical')}</a></li>
+      <li><a href="https://github.com/Khaledykhalil/MeasureMint" target="_blank">${t('help.resources.github')}</a></li>
     </ul>
     
     <hr style="margin: 3em 0; border: none; border-top: 2px solid #e2e8f0;">
@@ -110,8 +160,11 @@ export default function HelpCenter() {
     </p>
   `;
   
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+
   return (
-    <>
+    <div dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
       <style dangerouslySetInnerHTML={{
         __html: `
           body {
@@ -124,7 +177,7 @@ export default function HelpCenter() {
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: inherit;
             line-height: 1.7;
             color: #1e293b;
             background: white;
@@ -325,10 +378,11 @@ export default function HelpCenter() {
           }
         `
       }} />
+      <PageHeader />
       <div className="help-center-container">
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
         <a href="#" className="back-to-top" title="Back to top">↑</a>
       </div>
-    </>
+    </div>
   );
 }

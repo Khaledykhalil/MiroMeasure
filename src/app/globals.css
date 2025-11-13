@@ -28,6 +28,91 @@
     line-height: 1.5;
   }
 
+  /* Arabic font support - Noto Sans Arabic font for RTL/Arabic content */
+  /* Fallbacks: Arial Unicode MS (Windows), Tahoma (Windows), Geeza Pro (macOS), Arabic Typesetting (Windows) */
+  /* Next.js font optimization creates --font-noto-sans-arabic variable and className automatically */
+  [dir="rtl"],
+  [lang="ar"],
+  [dir="rtl"] body,
+  [lang="ar"] body {
+    font-family: var(--font-noto-sans-arabic), 'Noto Sans Arabic', 'Arial Unicode MS', 'Tahoma', 'Geeza Pro', 'Arabic Typesetting', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  /* Apply Arabic font to all children of RTL/Arabic elements */
+  [dir="rtl"] *,
+  [lang="ar"] * {
+    font-family: var(--font-noto-sans-arabic), 'Noto Sans Arabic', 'Arial Unicode MS', 'Tahoma', 'Geeza Pro', 'Arabic Typesetting', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  .font-noto-sans-arabic,
+  .font-noto-sans-arabic * {
+    font-family: var(--font-noto-sans-arabic), 'Noto Sans Arabic', sans-serif !important;
+  }
+
+  /* Japanese font support - Noto Sans JP with system font fallbacks */
+  /* Fallbacks: Hiragino Sans (macOS/iOS), Yu Gothic (Windows), Meiryo (Windows), MS PGothic (Windows) */
+  [lang="ja"],
+  [lang="ja"] body {
+    font-family: var(--font-noto-sans-jp), 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', 'MS PGothic', 'MS Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  [lang="ja"] * {
+    font-family: var(--font-noto-sans-jp), 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', 'MS PGothic', 'MS Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+
+  /* Mandarin Chinese (Simplified) font support - Noto Sans SC with system font fallbacks */
+  /* Fallbacks: Hiragino Sans GB (macOS), Microsoft YaHei (Windows), SimHei (Windows), SimSun (Windows) */
+  [lang="zh-CN"],
+  [lang="zh-CN"] body {
+    font-family: var(--font-noto-sans-sc), 'Noto Sans SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'SimHei', 'SimSun', 'STHeiti', 'WenQuanYi Micro Hei', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  [lang="zh-CN"] * {
+    font-family: var(--font-noto-sans-sc), 'Noto Sans SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'SimHei', 'SimSun', 'STHeiti', 'WenQuanYi Micro Hei', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+
+  /* Cantonese (Traditional Chinese) font support - Noto Sans TC with system font fallbacks */
+  /* Fallbacks: Microsoft JhengHei (Windows), PMingLiU (Windows), Apple LiGothic (macOS) */
+  [lang="zh-HK"],
+  [lang="zh-HK"] body {
+    font-family: var(--font-noto-sans-tc), 'Noto Sans TC', 'Microsoft JhengHei', 'PMingLiU', 'Apple LiGothic', 'Apple LiSung', 'STHeiti', 'WenQuanYi Zen Hei', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  [lang="zh-HK"] * {
+    font-family: var(--font-noto-sans-tc), 'Noto Sans TC', 'Microsoft JhengHei', 'PMingLiU', 'Apple LiGothic', 'Apple LiSung', 'STHeiti', 'WenQuanYi Zen Hei', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+
+  /* Korean font support - Noto Sans KR with system font fallbacks */
+  /* Fallbacks: Nanum Gothic (open source), Malgun Gothic (Windows), Apple SD Gothic Neo (macOS/iOS) */
+  [lang="ko"],
+  [lang="ko"] body {
+    font-family: var(--font-noto-sans-kr), 'Noto Sans KR', 'Nanum Gothic', 'Malgun Gothic', 'Apple SD Gothic Neo', 'AppleGothic', 'Gulim', 'Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  [lang="ko"] * {
+    font-family: var(--font-noto-sans-kr), 'Noto Sans KR', 'Nanum Gothic', 'Malgun Gothic', 'Apple SD Gothic Neo', 'AppleGothic', 'Gulim', 'Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+
   button {
     cursor: pointer;
     transition: all 0.2s ease;

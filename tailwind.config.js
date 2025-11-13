@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         'measuremint': '#10bb82',
       },
+      fontFamily: {
+        'noto-sans-arabic': ['var(--font-noto-sans-arabic)', 'Noto Sans Arabic', 'sans-serif'],
+      },
     },
   },
   plugins: [],

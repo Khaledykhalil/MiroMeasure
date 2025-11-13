@@ -1,0 +1,335 @@
+{
+  "common": {
+    "appName": "MeasureMint",
+    "tagline": "أداة القياس الاحترافية",
+    "launchApp": "تشغيل التطبيق",
+    "support": "الدعم",
+    "pricing": "الأسعار",
+    "guide": "الدليل",
+    "help": "المساعدة"
+  },
+  "home": {
+    "hero": {
+      "title": "القياسات في Miro، أخيراً!",
+      "subtitle": "أداة قياس ومعايرة احترافية للمصممين. قياس وتوسيع الرسومات في Miro، لأول مرة على الإطلاق!",
+      "ctaPrimary": "تشغيل التطبيق",
+      "ctaSecondary": "الانضمام إلى قائمة الانتظار"
+    },
+    "video": {
+      "title": "فيديو تجريبي لـ MeasureMint"
+    },
+    "features": {
+      "title": "مبني للمحترفين",
+      "calibration": {
+        "title": "معايرة المقياس الدقيقة",
+        "description": "قم بتعيين مسافة معروفة لإنشاء مقياس دقيق. يعمل مع أي رسم أو مخطط أو مخطط تقني. معايرة لمرة واحدة لكل رسم."
+      },
+      "precision": {
+        "title": "قياسات دقيقة",
+        "description": "احصل على أبعاد دقيقة مع تحويل كامل للوحدات."
+      },
+      "units": {
+        "title": "أنظمة وحدات مزدوجة",
+        "description": "دعم كامل للإمبراطورية والمترية. 8 أنواع من الوحدات: أقدام، بوصات، ياردات، أميال، أمتار، سنتيمترات، ملليمترات، كيلومترات."
+      },
+      "measurements": {
+        "title": "قياسات احترافية",
+        "description": "قم بقياس أي مسافة على الرسومات المعايرة. ردود فعل بصرية مع علامات واضحة مباشرة على اللوحة."
+      },
+      "noSelection": {
+        "title": "لا يلزم اختيار الصورة",
+        "description": "قم بالقياس في أي مكان على اللوحة على الفور. يعمل مع أي رسم أو PDF أو صورة. تكامل سلس مع سير عمل Miro."
+      },
+      "tracking": {
+        "title": "تتبع القياسات",
+        "description": "عرض آخر قياس تم حسابه حتى لا تفقد أبداً تتبع لوحتك."
+      },
+      "professionalGrade": {
+        "title": "مستوى احترافي",
+        "description": "مبني من قبل المهندسين المعماريين والمهندسين ومحترفي التصميم."
+      }
+    },
+    "problem": {
+      "title": "المشكلة",
+      "description": "قياس الرسومات على لوحات Miro محبط. لا يمكنك الحصول على أبعاد دقيقة من المخططات أو المخططات الأرضية أو الرسومات التقنية دون حلول معقدة."
+    },
+    "solution": {
+      "title": "الحل",
+      "description": "MeasureMint يحل هذا بأدوات قياس احترافية مدمجة مباشرة في Miro. قم بالمعايرة مرة واحدة، وقياس أي شيء."
+    },
+    "useCases": {
+      "title": "مثالي لـ",
+      "construction": {
+        "title": "مخططات البناء",
+        "description": "قياس الأبعاد، التحقق من المواصفات، فحص المسافات"
+      },
+      "floorPlans": {
+        "title": "المخططات الأرضية",
+        "description": "تخطيط المساحة، أبعاد الغرف، تخطيط الأثاث"
+      },
+      "sitePlans": {
+        "title": "مخططات الموقع",
+        "description": "قياسات الممتلكات، أبعاد القطع، تحليل الموقع"
+      },
+      "technicalDrawings": {
+        "title": "الرسومات التقنية",
+        "description": "المخططات الهندسية، الرسومات الميكانيكية، المخططات"
+      },
+      "architecturalDesigns": {
+        "title": "التصاميم المعمارية",
+        "description": "الواجهات، المقاطع، رسومات التفاصيل"
+      },
+      "interiorDesign": {
+        "title": "التصميم الداخلي",
+        "description": "وضع الأثاث، تباعد التركيبات، حسابات المواد"
+      }
+    },
+    "howItWorks": {
+      "title": "ابدأ في 60 ثانية",
+      "step1": {
+        "title": "معايرة المقياس",
+        "description": "انقر على نقطتين بمسافة معروفة (مثل \"20 قدم\" على الرسم الخاص بك). أدخل المسافة الفعلية. اختر وحدتك. تم! تم تعيين المقياس الخاص بك."
+      },
+      "step2": {
+        "title": "قم بقياس أي شيء",
+        "description": "انقر على \"قياس المسافة\". انقر على أي نقطتين على الرسم الخاص بك. شاهد القياسات الفورية مع تحويلات الوحدات الكاملة."
+      },
+      "step3": {
+        "title": "قم بتبديل الوحدات في أي وقت",
+        "description": "التبديل بين الإمبراطورية (🇺🇸) والمترية (🌍). عند تعيين خط المعايرة أو حساب قياس، انقر على الوحدة التي تفضلها."
+      },
+      "guideLink": "راجع الدليل التفصيلي →"
+    },
+    "targetAudience": {
+      "title": "مبني للمحترفين الذين يطالبون بالدقة",
+      "item1": "المهندسون المعماريون وشركات الهندسة المعمارية",
+      "item2": "المهندسون (المدنيون، الميكانيكيون، الهيكليون)",
+      "item3": "مديرو مشاريع البناء",
+      "item4": "مصممو الديكور الداخلي",
+      "item5": "المهنيون العقاريون",
+      "item6": "مديرو المرافق",
+      "item7": "أي شخص يعمل مع الرسومات التقنية في Miro"
+    },
+    "finalCta": {
+      "title": "هل أنت مستعد للقياس بدقة؟",
+      "subtitle": "انضم إلى المهندسين المعماريين والمهندسين الذين يثقون في MeasureMint للقياسات الدقيقة في Miro.",
+      "launchApp": "تشغيل MeasureMint",
+      "viewDocumentation": "عرض الوثائق"
+    }
+  },
+  "subscribe": {
+    "title": "اختر خطتك",
+    "subtitle": "اختر الخطة التي تناسبك بشكل أفضل",
+    "monthly": {
+      "name": "الخطة الشهرية",
+      "price": "$9.99",
+      "period": "شهرياً"
+    },
+    "sixMonth": {
+      "name": "خطة 6 أشهر",
+      "price": "$49.99",
+      "period": "كل 6 أشهر",
+      "badge": "موصى به"
+    },
+    "annual": {
+      "name": "الخطة السنوية",
+      "price": "$79.99",
+      "period": "سنوياً",
+      "badge": "أفضل قيمة"
+    },
+    "features": {
+      "unlimited": "قياسات غير محدودة",
+      "allUnits": "جميع الوحدات الـ 8 متاحة (إمبراطورية ومترية)",
+      "support": "دعم بريد إلكتروني ذو أولوية",
+      "cancel": "إلغاء في أي وقت"
+    },
+    "cta": "المتابعة إلى الدفع",
+    "secure": "دفع آمن عبر Paddle. إلغاء في أي وقت."
+  },
+  "support": {
+    "title": "اتصل بالدعم",
+    "subtitle": "نحن هنا للمساعدة",
+    "form": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "message": "الرسالة",
+      "submit": "إرسال الرسالة",
+      "category": "Category",
+      "subject": "Subject",
+      "sending": "Sending...",
+      "categories": {
+        "technical": "Technical Issue",
+        "bug": "Bug Report",
+        "feature": "Feature Request",
+        "question": "General Question",
+        "feedback": "Feedback",
+        "other": "Other"
+      },
+      "placeholders": {
+        "name": "Your full name",
+        "email": "your.email@example.com",
+        "subject": "Brief description of your issue",
+        "message": "Please provide as much detail as possible..."
+      }
+    },
+    "success": {
+      "title": "Message Sent Successfully!",
+      "text": "Thank you for contacting MeasureMint support. We've received your message and will respond to",
+      "subtext": "If you don't hear from us, please check your spam folder or email us directly at:",
+      "sendAnother": "← Send Another Message"
+    },
+    "otherWays": {
+      "title": "Other Ways to Reach Us",
+      "directEmail": "Direct Email:",
+      "bugReports": "Bug Reports:",
+      "documentation": "Documentation:",
+      "helpCenter": "Help Center"
+    }
+  },
+  "waitlist": {
+    "title": "Join the Waitlist",
+    "subtitle": "Be the first to know when MeasureMint launches. Get early access and exclusive updates.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "profession": "Profession",
+      "company": "Company Name",
+      "submit": "Join Waitlist",
+      "submitting": "Joining...",
+      "placeholders": {
+        "name": "John Doe",
+        "email": "john@company.com",
+        "profession": "e.g., Architect, Engineer, Project Manager",
+        "company": "Your Company"
+      }
+    },
+    "success": {
+      "title": "You're on the list!",
+      "text": "Thank you for joining the MeasureMint waitlist,",
+      "subtext": "We'll send updates and early access information to",
+      "nextSteps": "What happens next?",
+      "confirmation": {
+        "title": "Confirmation Email",
+        "text": "Check your inbox for a confirmation"
+      },
+      "launch": {
+        "title": "Launch Notification",
+        "text": "Be first to know when we launch"
+      },
+      "earlyAccess": {
+        "title": "Early Access",
+        "text": "Get exclusive early access"
+      },
+      "backToHome": "← Back to Home"
+    },
+    "privacyNote": "We respect your privacy. Your information will only be used to contact you about MeasureMint."
+  },
+  "guide": {
+    "title": "How to Use MeasureMint",
+    "subtitle": "A step-by-step guide to measuring and scaling drawings on Miro Board with precision.",
+    "watchVideo": "Watch Full Video Tutorial →",
+    "step": "STEP"
+  },
+  "help": {
+    "title": "MeasureMint Help Center",
+    "welcome": "Welcome to the MeasureMint Help Center! Find quick answers, tutorials, and troubleshooting tips.",
+    "quickStart": {
+      "title": "Quick Start (30 seconds)",
+      "step1": "Open the app in your Miro board (click the Apps panel, search \"MeasureMint\")",
+      "step2": "Set calibration - Click a known distance on your image and enter its actual measurement",
+      "step3": "Start measuring - Click two points anywhere to measure distance",
+      "step4": "Done! Switch units anytime, measurements update automatically"
+    },
+    "documentation": {
+      "title": "Documentation",
+      "text": "For comprehensive documentation, see our"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "general": {
+        "title": "General Questions",
+        "q1": "Do I need to select an image before measuring?",
+        "a1": "No! MeasureMint works anywhere on your Miro board. Just calibrate and measure.",
+        "q2": "Can multiple people use the same calibration?",
+        "a2": "Yes! Once calibrated, anyone on the board can take measurements using that calibration.",
+        "q3": "Do measurements save with the board?",
+        "a3": "Yes! Measurement lines and captions are standard Miro elements that save automatically."
+      },
+      "calibration": {
+        "title": "Calibration Questions",
+        "q1": "How accurate is MeasureMint?",
+        "a1": "Accuracy depends on your calibration. With accurate calibration and high-quality images, measurements are typically within 1-2% of actual dimensions.",
+        "q2": "Do I need to recalibrate for each measurement?",
+        "a2": "No! Calibrate once per image/scale. All measurements use that calibration."
+      },
+      "measurement": {
+        "title": "Measurement Questions",
+        "q1": "Can I change units after measuring?",
+        "a1": "Absolutely! Switch units anytime - all measurements update automatically.",
+        "q2": "Can I measure curved lines?",
+        "a2": "Yes! Use Multi-Point Distance and click points along the curve."
+      }
+    },
+    "troubleshooting": {
+      "title": "Troubleshooting",
+      "calibration": {
+        "title": "Calibration Issues",
+        "problem": "Calibration failed error",
+        "solutions": [
+          "Ensure you clicked two different points",
+          "Make sure you entered a valid number",
+          "Check that the known distance is not zero",
+          "Try drawing a new calibration line"
+        ]
+      },
+      "measurement": {
+        "title": "Measurement Issues",
+        "problem": "Can't create measurements",
+        "solutions": [
+          "Ensure calibration is set first",
+          "Check that you're clicking on the board",
+          "Zoom in for better precision",
+          "Try clicking directly on the image"
+        ]
+      }
+    },
+    "contact": {
+      "title": "Contact Support",
+      "text": "Need more help? We're here for you!",
+      "email": "Email Support",
+      "emailAddress": "support@measuremint.app",
+      "responseTime": "Response time: Within 24 hours (business days)",
+      "bestFor": "Best for: Technical issues, bug reports, feature requests",
+      "bugReports": "Report a Bug",
+      "githubIssues": "GitHub Issues",
+      "include": "Include: Browser, Miro plan, steps to reproduce, screenshots"
+    },
+    "units": {
+      "title": "Supported Units",
+      "imperial": {
+        "ft": "Feet (ft) - US/Imperial",
+        "in": "Inches (in) - US/Imperial",
+        "yd": "Yards (yd) - US/Imperial",
+        "mi": "Miles (mi) - US/Imperial"
+      },
+      "metric": {
+        "m": "Meters (m) - Metric",
+        "cm": "Centimeters (cm) - Metric",
+        "mm": "Millimeters (mm) - Metric",
+        "km": "Kilometers (km) - Metric"
+      }
+    },
+    "resources": {
+      "title": "Additional Resources",
+      "userGuide": "User Guide",
+      "technical": "Technical Documentation",
+      "github": "GitHub Repository"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 MeasureMint. All rights reserved.",
+    "support": "Support",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
