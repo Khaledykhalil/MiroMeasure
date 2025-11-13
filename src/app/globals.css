@@ -52,6 +52,62 @@
     font-family: var(--font-noto-sans-arabic), 'Noto Sans Arabic', sans-serif !important;
   }
 
+  /* Japanese font support - Noto Sans JP */
+  [lang="ja"],
+  [lang="ja"] body {
+    font-family: var(--font-noto-sans-jp), 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  [lang="ja"] * {
+    font-family: var(--font-noto-sans-jp), 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+
+  /* Mandarin Chinese font support - Noto Sans SC */
+  [lang="zh-CN"],
+  [lang="zh-CN"] body {
+    font-family: var(--font-noto-sans-sc), 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  [lang="zh-CN"] * {
+    font-family: var(--font-noto-sans-sc), 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+
+  /* Cantonese (Traditional Chinese) font support - Noto Sans TC */
+  [lang="zh-HK"],
+  [lang="zh-HK"] body {
+    font-family: var(--font-noto-sans-tc), 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  [lang="zh-HK"] * {
+    font-family: var(--font-noto-sans-tc), 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+
+  /* Korean font support - Noto Sans KR */
+  [lang="ko"],
+  [lang="ko"] body {
+    font-family: var(--font-noto-sans-kr), 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  [lang="ko"] * {
+    font-family: var(--font-noto-sans-kr), 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+
   button {
     cursor: pointer;
     transition: all 0.2s ease;
