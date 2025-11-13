@@ -4,9 +4,11 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getLoomShareUrl } from '@/config/loom-videos';
 import { detectLanguageSync } from '@/utils/languageDetection';
+import PageHeader from '@/components/PageHeader';
 
 export default function GuidePage() {
   const [locale, setLocale] = useState('en')
+  const [translations, setTranslations] = useState(null)
   
   useEffect(() => {
     // Get locale from URL, localStorage, or auto-detect
@@ -18,6 +20,40 @@ export default function GuidePage() {
       setLocale(currentLocale)
     }
   }, [])
+
+  // Load translations
+  useEffect(() => {
+    if (!locale) return
+    
+    const loadTranslations = async () => {
+      try {
+        const mod = await import(`../../messages/${locale}.json`)
+        setTranslations(mod.default)
+      } catch (err) {
+        try {
+          const mod = await import('../../messages/en.json')
+          setTranslations(mod.default)
+        } catch {
+          setTranslations({})
+        }
+      }
+    }
+    
+    loadTranslations()
+  }, [locale])
+
+  const t = (key) => {
+    if (!translations) {
+      const keys = key.split('.')
+      return keys[keys.length - 1] || key
+    }
+    const keys = key.split('.')
+    let value = translations
+    for (const k of keys) {
+      value = value?.[k]
+    }
+    return value || key
+  }
   const steps = [
     {
       number: 1,
@@ -113,21 +149,16 @@ export default function GuidePage() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Ultra Minimal Header */}
-      <header className="container mx-auto max-w-5xl px-5 py-12">
-        <Link href="/" className="text-4xl font-bold tracking-tighter hover:underline">
-          MeasureMint.
-        </Link>
-      </header>
+      <PageHeader />
 
       {/* Hero */}
       <main className="container mx-auto max-w-5xl px-5">
         <section className="mb-20">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight mb-8">
-            How to Use MeasureMint
+            {translations ? t('guide.title') : 'How to Use MeasureMint'}
           </h1>
           <p className="text-lg md:text-xl mb-4 max-w-2xl">
-            A step-by-step guide to measuring and scaling drawings on Miro Board with precision.
+            {translations ? t('guide.subtitle') : 'A step-by-step guide to measuring and scaling drawings on Miro Board with precision.'}
           </p>
           <a 
             href={getLoomShareUrl(locale)} 
@@ -135,7 +166,7 @@ export default function GuidePage() {
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline text-lg"
           >
-            Watch Full Video Tutorial →
+            {translations ? t('guide.watchVideo') : 'Watch Full Video Tutorial →'}
           </a>
         </section>
 
@@ -145,7 +176,7 @@ export default function GuidePage() {
             <article key={step.number}>
               <div className="mb-8">
                 <div className="text-gray-500 text-sm mb-2">
-                  STEP {step.number} · {step.time}
+                  {translations ? t('guide.step') : 'STEP'} {step.number} · {step.time}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight mb-4">
                   {step.title}

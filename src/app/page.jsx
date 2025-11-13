@@ -337,7 +337,7 @@ export default function Home() {
           </div>
           <div className="mt-10">
             <Link href="/guide" className="text-blue-500 hover:underline text-lg">
-              See detailed guide →
+              {translations ? t('guide.watchVideo') : 'See detailed guide →'}
             </Link>
           </div>
         </section>
@@ -377,9 +377,9 @@ export default function Home() {
                   Launch MeasureMint
                 </button>
               </Link>
-              <Link href="/guide">
+              <Link href="/help">
                 <button className="border border-gray-300 text-gray-900 hover:border-gray-400 bg-transparent px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                  View Documentation
+                  {translations ? (t('help.title') || 'View Documentation') : 'View Documentation'}
                 </button>
               </Link>
             </div>
