@@ -10,28 +10,107 @@
   },
   "home": {
     "hero": {
-      "title": "Faça Medições Precisas no Miro",
-      "subtitle": "Ferramenta profissional de medição e calibração para arquitetos, engenheiros e profissionais da construção. Defina a escala uma vez, meça qualquer coisa com precisão.",
+      "title": "Medições no Miro, Finalmente!",
+      "subtitle": "Ferramenta profissional de medição e calibração para designers. Escalar e medir desenhos no Miro, pela primeira vez!",
       "ctaPrimary": "Abrir App",
-      "ctaSecondary": "Assistir Demo"
+      "ctaSecondary": "Entrar na Lista de Espera"
     },
     "video": {
       "title": "Vídeo Demonstrativo do MeasureMint"
     },
+    "problem": {
+      "title": "O Problema",
+      "description": "Medir desenhos em quadros do Miro é frustrante. Você não consegue obter dimensões precisas de plantas, projetos ou desenhos técnicos sem soluções complicadas."
+    },
+    "solution": {
+      "title": "A Solução",
+      "description": "O MeasureMint resolve isso com ferramentas de medição profissionais integradas diretamente ao Miro. Calibre uma vez, meça qualquer coisa."
+    },
     "features": {
-      "title": "Por que MeasureMint?",
+      "title": "Construído para profissionais",
       "calibration": {
-        "title": "Calibração com Um Clique",
-        "description": "Defina sua referência de escala uma vez e meça tudo com precisão."
+        "title": "Calibração de Escala Precisa",
+        "description": "Defina uma distância conhecida para estabelecer uma escala precisa. Funciona com qualquer desenho, planta ou diagrama técnico. Calibração única por desenho."
       },
-      "precision": {
-        "title": "Medições Precisas",
-        "description": "Obtenha dimensões exatas com conversão completa de unidades."
+      "measurements": {
+        "title": "Medições Profissionais",
+        "description": "Meça qualquer distância em desenhos calibrados. Feedback visual com marcadores claros diretamente no quadro."
       },
       "units": {
-        "title": "Todas as Unidades",
-        "description": "Alterne entre sistemas Imperial e Métrico instantaneamente."
+        "title": "Sistemas de Unidades Duplos",
+        "description": "Suporte completo para Imperial e Métrico. 8 tipos de unidades: Pés, polegadas, jardas, milhas, metros, centímetros, milímetros, quilômetros."
+      },
+      "noSelection": {
+        "title": "Sem Necessidade de Seleção de Imagem",
+        "description": "Meça em qualquer lugar do quadro instantaneamente. Funciona com qualquer desenho, PDF ou imagem. Integração perfeita com o fluxo de trabalho do Miro."
+      },
+      "tracking": {
+        "title": "Rastreamento de Medições",
+        "description": "Visualize a última medição calculada para nunca perder o controle do seu quadro."
+      },
+      "professionalGrade": {
+        "title": "Nível Profissional",
+        "description": "Construído por e para arquitetos, engenheiros e profissionais de design."
       }
+    },
+    "useCases": {
+      "title": "Perfeito para",
+      "construction": {
+        "title": "Plantas de Construção",
+        "description": "Meça dimensões, verifique especificações, confira folgas"
+      },
+      "floorPlans": {
+        "title": "Plantas Baixas",
+        "description": "Planejamento de espaços, dimensões de cômodos, layouts de móveis"
+      },
+      "sitePlans": {
+        "title": "Plantas de Lote",
+        "description": "Medições de propriedades, dimensões de lotes, análise de terreno"
+      },
+      "technicalDrawings": {
+        "title": "Desenhos Técnicos",
+        "description": "Esquemas de engenharia, desenhos mecânicos, diagramas"
+      },
+      "architecturalDesigns": {
+        "title": "Projetos Arquitetônicos",
+        "description": "Elevações, cortes, desenhos de detalhes"
+      },
+      "interiorDesign": {
+        "title": "Design de Interiores",
+        "description": "Posicionamento de móveis, espaçamento de acessórios, cálculos de materiais"
+      }
+    },
+    "howItWorks": {
+      "title": "Comece em 60 segundos",
+      "step1": {
+        "title": "Calibrar Escala",
+        "description": "Clique em dois pontos em uma distância conhecida (como \"20 pés\" no seu desenho). Digite a distância real. Escolha sua unidade. Pronto! Sua escala está definida."
+      },
+      "step2": {
+        "title": "Meça Qualquer Coisa",
+        "description": "Clique em \"Medir Distância\". Clique em quaisquer dois pontos no seu desenho. Veja medições instantâneas com conversões completas de unidades."
+      },
+      "step3": {
+        "title": "Altere Unidades a Qualquer Momento",
+        "description": "Alterne entre Imperial (🇺🇸) e Métrico (🌍). Ao definir sua linha de calibração ou calcular uma medição, clique na unidade que preferir."
+      },
+      "guideLink": "Ver guia detalhado →"
+    },
+    "targetAudience": {
+      "title": "Construído para profissionais que exigem precisão",
+      "item1": "Arquitetos e escritórios de arquitetura",
+      "item2": "Engenheiros (civis, mecânicos, estruturais)",
+      "item3": "Gerentes de projetos de construção",
+      "item4": "Designers de interiores",
+      "item5": "Profissionais de imóveis",
+      "item6": "Gerentes de instalações",
+      "item7": "Qualquer pessoa que trabalhe com desenhos técnicos no Miro"
+    },
+    "finalCta": {
+      "title": "Pronto para medir com precisão?",
+      "subtitle": "Junte-se a arquitetos e engenheiros que confiam no MeasureMint para medições precisas no Miro.",
+      "launchApp": "Abrir MeasureMint",
+      "viewDocumentation": "Ver Documentação"
     }
   },
   "subscribe": {

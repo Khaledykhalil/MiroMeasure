@@ -87,17 +87,21 @@ export default function Home() {
     }
   }, [locale])
 
-  const t = (key) => {
+  const t = (key, fallback = null) => {
     if (!translations) {
-      // Return key as fallback while loading
-      return key.split('.').pop() || key
+      // Return fallback or last part of key while loading
+      return fallback || key.split('.').pop() || key
     }
     const keys = key.split('.')
     let value = translations
     for (const k of keys) {
       value = value?.[k]
+      if (value === undefined) {
+        // If key not found, return fallback or last part of key
+        return fallback || keys[keys.length - 1] || key
+      }
     }
-    return value || key
+    return value || fallback || key
   }
 
   return (
@@ -204,52 +208,52 @@ export default function Home() {
             {translations ? t('home.features.title') : 'Built for professionals'}
           </h2>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
-            <div>
+            <div className="min-h-[120px]">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                {translations ? t('home.features.calibration.title') : 'Precise Scale Calibration'}
+                {translations ? t('home.features.calibration.title', 'Precise Scale Calibration') : 'Precise Scale Calibration'}
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                {translations ? t('home.features.calibration.description') : 'Set a known distance to establish accurate scale. Works with any drawing, blueprint, or technical diagram. One-time calibration per drawing.'}
+                {translations ? t('home.features.calibration.description', 'Set a known distance to establish accurate scale. Works with any drawing, blueprint, or technical diagram. One-time calibration per drawing.') : 'Set a known distance to establish accurate scale. Works with any drawing, blueprint, or technical diagram. One-time calibration per drawing.'}
               </p>
             </div>
-            <div>
+            <div className="min-h-[120px]">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                {translations ? t('home.features.measurements.title') : 'Professional Measurements'}
+                {translations ? t('home.features.measurements.title', 'Professional Measurements') : 'Professional Measurements'}
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                {translations ? t('home.features.measurements.description') : 'Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board.'}
+                {translations ? t('home.features.measurements.description', 'Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board.') : 'Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board.'}
               </p>
             </div>
-            <div>
+            <div className="min-h-[120px]">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                {translations ? t('home.features.units.title') : 'Dual Unit Systems'}
+                {translations ? t('home.features.units.title', 'Dual Unit Systems') : 'Dual Unit Systems'}
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                {translations ? t('home.features.units.description') : 'Full Imperial and Metric support. 8 unit types: Feet, inches, yards, miles, meters, centimeters, millimeters, kilometers.'}
+                {translations ? t('home.features.units.description', 'Full Imperial and Metric support. 8 unit types: Feet, inches, yards, miles, meters, centimeters, millimeters, kilometers.') : 'Full Imperial and Metric support. 8 unit types: Feet, inches, yards, miles, meters, centimeters, millimeters, kilometers.'}
               </p>
             </div>
-            <div>
+            <div className="min-h-[120px]">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                {translations ? t('home.features.noSelection.title') : 'No Image Selection Required'}
+                {translations ? t('home.features.noSelection.title', 'No Image Selection Required') : 'No Image Selection Required'}
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                {translations ? t('home.features.noSelection.description') : 'Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow.'}
+                {translations ? t('home.features.noSelection.description', 'Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow.') : 'Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow.'}
               </p>
             </div>
-            <div>
+            <div className="min-h-[120px]">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                {translations ? t('home.features.tracking.title') : 'Measurement Tracking'}
+                {translations ? t('home.features.tracking.title', 'Measurement Tracking') : 'Measurement Tracking'}
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                {translations ? t('home.features.tracking.description') : 'View the latest measurement that was calculated so you never lose track of your board.'}
+                {translations ? t('home.features.tracking.description', 'View the latest measurement that was calculated so you never lose track of your board.') : 'View the latest measurement that was calculated so you never lose track of your board.'}
               </p>
             </div>
-            <div>
+            <div className="min-h-[120px]">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                {translations ? t('home.features.professionalGrade.title') : 'Professional Grade'}
+                {translations ? t('home.features.professionalGrade.title', 'Professional Grade') : 'Professional Grade'}
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                {translations ? t('home.features.professionalGrade.description') : 'Built by and for architects, engineers, and design professionals.'}
+                {translations ? t('home.features.professionalGrade.description', 'Built by and for architects, engineers, and design professionals.') : 'Built by and for architects, engineers, and design professionals.'}
               </p>
             </div>
           </div>
