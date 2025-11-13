@@ -10,111 +10,111 @@
   },
   "home": {
     "hero": {
-      "title": "在Miro上进行精确测量",
-      "subtitle": "面向建筑师、工程师和建筑专业人士的专业测量和校准工具。设置一次比例，即可精确测量任何内容。",
+      "title": "Miro上的测量，终于来了！",
+      "subtitle": "面向设计师的专业测量和校准工具。在Miro上缩放和测量图纸，这是第一次！",
       "ctaPrimary": "启动应用",
-      "ctaSecondary": "观看演示"
+      "ctaSecondary": "加入候补名单"
     },
     "video": {
       "title": "MeasureMint演示视频"
     },
     "features": {
-      "title": "为什么选择MeasureMint？",
+      "title": "为专业人士打造",
       "calibration": {
-        "title": "一键校准",
-        "description": "设置一次比例参考，即可精确测量所有内容。"
+        "title": "精确的比例校准",
+        "description": "设置已知距离以建立准确的比例。适用于任何图纸、蓝图或技术图表。每个图纸只需校准一次。"
       },
       "precision": {
         "title": "精确测量",
         "description": "获得精确尺寸，支持完整的单位转换。"
       },
       "units": {
-        "title": "所有单位",
-        "description": "可在英制和公制系统之间即时切换。"
+        "title": "双单位系统",
+        "description": "完全支持英制和公制。8种单位类型：英尺、英寸、码、英里、米、厘米、毫米、公里。"
       },
       "measurements": {
-        "title": "Professional Measurements",
-        "description": "Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board."
+        "title": "专业测量",
+        "description": "在已校准的图纸上测量任何距离。直接在板上提供清晰的标记视觉反馈。"
       },
       "noSelection": {
-        "title": "No Image Selection Required",
-        "description": "Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow."
+        "title": "无需选择图像",
+        "description": "立即在板上的任何地方进行测量。适用于任何图纸、PDF或图像。与Miro工作流程无缝集成。"
       },
       "tracking": {
-        "title": "Measurement Tracking",
-        "description": "View the latest measurement that was calculated so you never lose track of your board."
+        "title": "测量跟踪",
+        "description": "查看最新计算的测量值，这样您就永远不会丢失对板的跟踪。"
       },
       "professionalGrade": {
-        "title": "Professional Grade",
-        "description": "Built by and for architects, engineers, and design professionals."
+        "title": "专业级",
+        "description": "由建筑师、工程师和设计专业人士为建筑师、工程师和设计专业人士打造。"
       }
     },
     "problem": {
-      "title": "The Problem",
-      "description": "Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds."
+      "title": "问题",
+      "description": "在Miro板上测量图纸令人沮丧。没有复杂的变通方法，您无法从蓝图、平面图或技术图纸中获得准确的尺寸。"
     },
     "solution": {
-      "title": "The Solution",
-      "description": "MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything."
+      "title": "解决方案",
+      "description": "MeasureMint通过直接内置在Miro中的专业级测量工具解决了这个问题。校准一次，测量任何东西。"
     },
     "useCases": {
-      "title": "Perfect for",
+      "title": "完美适用于",
       "construction": {
-        "title": "Construction Blueprints",
-        "description": "Measure dimensions, verify specifications, check clearances"
+        "title": "建筑蓝图",
+        "description": "测量尺寸，验证规格，检查间隙"
       },
       "floorPlans": {
-        "title": "Floor Plans",
-        "description": "Space planning, room dimensions, furniture layouts"
+        "title": "平面图",
+        "description": "空间规划，房间尺寸，家具布局"
       },
       "sitePlans": {
-        "title": "Site Plans",
-        "description": "Property measurements, lot dimensions, site analysis"
+        "title": "场地平面图",
+        "description": "物业测量，地块尺寸，场地分析"
       },
       "technicalDrawings": {
-        "title": "Technical Drawings",
-        "description": "Engineering schematics, mechanical drawings, diagrams"
+        "title": "技术图纸",
+        "description": "工程示意图，机械图纸，图表"
       },
       "architecturalDesigns": {
-        "title": "Architectural Designs",
-        "description": "Elevations, sections, detail drawings"
+        "title": "建筑设计",
+        "description": "立面图，剖面图，详图"
       },
       "interiorDesign": {
-        "title": "Interior Design",
-        "description": "Furniture placement, fixture spacing, material calculations"
+        "title": "室内设计",
+        "description": "家具布置，固定装置间距，材料计算"
       }
     },
     "howItWorks": {
-      "title": "Get started in 60 seconds",
+      "title": "60秒内开始",
       "step1": {
-        "title": "Calibrate Scale",
-        "description": "Click two points on a known distance (like \"20 ft\" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set."
+        "title": "校准比例",
+        "description": "点击已知距离上的两个点（例如图纸上的\"20英尺\"）。输入实际距离。选择您的单位。完成！您的比例已设置。"
       },
       "step2": {
-        "title": "Measure Anything",
-        "description": "Click \"Measure Distance\". Click any two points on your drawing. See instant measurements with full unit conversions."
+        "title": "测量任何东西",
+        "description": "点击\"测量距离\"。点击图纸上的任意两个点。查看具有完整单位转换的即时测量值。"
       },
       "step3": {
-        "title": "Switch Units Anytime",
-        "description": "Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer."
+        "title": "随时切换单位",
+        "description": "在英制（🇺🇸）和公制（🌍）之间切换。设置校准线或计算测量值时，点击您喜欢的单位。"
       },
-      "guideLink": "See detailed guide →"
+      "guideLink": "查看详细指南 →"
     },
     "targetAudience": {
-      "title": "Built for professionals who demand precision",
-      "item1": "Architects and architectural firms",
-      "item2": "Engineers (civil, mechanical, structural)",
-      "item3": "Construction project managers",
-      "item4": "Interior designers",
-      "item5": "Real estate professionals",
-      "item6": "Facility managers",
-      "item7": "Anyone who works with technical drawings on Miro"
+      "title": "为要求精确度的专业人士打造",
+      "item1": "建筑师和建筑公司",
+      "item2": "工程师（土木、机械、结构）",
+      "item3": "建筑项目经理",
+      "item4": "室内设计师",
+      "item5": "房地产专业人士",
+      "item6": "设施经理",
+      "item7": "在Miro上使用技术图纸的任何人"
     },
     "finalCta": {
-      "title": "Ready to measure with precision?",
-      "subtitle": "Join architects and engineers who trust MeasureMint for accurate measurements on Miro.",
-      "launchApp": "Launch MeasureMint",
-      "viewDocumentation": "View Documentation"
+      "title": "准备好精确测量了吗？",
+      "subtitle": "加入信任MeasureMint在Miro上进行准确测量的建筑师和工程师。",
+      "launchApp": "启动MeasureMint",
+      "viewDocumentation": "查看文档"
     }
   },
   "subscribe": {

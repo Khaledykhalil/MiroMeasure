@@ -10,111 +10,111 @@
   },
   "home": {
     "hero": {
-      "title": "Faites des Mesures Exactes sur Miro",
-      "subtitle": "Outil professionnel de mesure et d'étalonnage pour les architectes, ingénieurs et professionnels de la construction. Définissez l'échelle une fois, mesurez tout avec précision.",
+      "title": "Mesures sur Miro, Enfin!",
+      "subtitle": "Outil professionnel de mesure et d'étalonnage pour les designers. Mise à l'échelle et mesure de dessins sur Miro, pour la première fois!",
       "ctaPrimary": "Lancer l'App",
-      "ctaSecondary": "Voir la Démo"
+      "ctaSecondary": "Rejoindre la liste d'attente"
     },
     "video": {
       "title": "Vidéo de Démonstration MeasureMint"
     },
     "features": {
-      "title": "Pourquoi MeasureMint?",
+      "title": "Conçu pour les professionnels",
       "calibration": {
-        "title": "Étalonnage en Un Clic",
-        "description": "Définissez votre référence d'échelle une fois et mesurez tout avec précision."
+        "title": "Étalonnage d'échelle précis",
+        "description": "Définissez une distance connue pour établir une échelle précise. Fonctionne avec n'importe quel dessin, plan ou diagramme technique. Calibrage unique par dessin."
       },
       "precision": {
         "title": "Mesures Précises",
         "description": "Obtenez des dimensions exactes avec conversion complète des unités."
       },
       "units": {
-        "title": "Toutes les Unités",
-        "description": "Basculez entre les systèmes impérial et métrique instantanément."
+        "title": "Systèmes d'unités doubles",
+        "description": "Support complet pour Impérial et Métrique. 8 types d'unités: Pieds, pouces, yards, miles, mètres, centimètres, millimètres, kilomètres."
       },
       "measurements": {
-        "title": "Professional Measurements",
-        "description": "Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board."
+        "title": "Mesures professionnelles",
+        "description": "Mesurez n'importe quelle distance sur des dessins calibrés. Retour visuel avec des marqueurs clairs directement sur le tableau."
       },
       "noSelection": {
-        "title": "No Image Selection Required",
-        "description": "Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow."
+        "title": "Aucune sélection d'image requise",
+        "description": "Mesurez n'importe où sur le tableau instantanément. Fonctionne avec n'importe quel dessin, PDF ou image. Intégration transparente avec le flux de travail Miro."
       },
       "tracking": {
-        "title": "Measurement Tracking",
-        "description": "View the latest measurement that was calculated so you never lose track of your board."
+        "title": "Suivi des mesures",
+        "description": "Visualisez la dernière mesure qui a été calculée pour ne jamais perdre le suivi de votre tableau."
       },
       "professionalGrade": {
-        "title": "Professional Grade",
-        "description": "Built by and for architects, engineers, and design professionals."
+        "title": "Niveau professionnel",
+        "description": "Conçu par et pour les architectes, ingénieurs et professionnels du design."
       }
     },
     "problem": {
-      "title": "The Problem",
-      "description": "Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds."
+      "title": "Le Problème",
+      "description": "Mesurer des dessins sur les tableaux Miro est frustrant. Vous ne pouvez pas obtenir des dimensions précises à partir de plans, plans d'étage ou dessins techniques sans solutions de contournement complexes."
     },
     "solution": {
-      "title": "The Solution",
-      "description": "MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything."
+      "title": "La Solution",
+      "description": "MeasureMint résout cela avec des outils de mesure de niveau professionnel intégrés directement dans Miro. Calibrez une fois, mesurez n'importe quoi."
     },
     "useCases": {
-      "title": "Perfect for",
+      "title": "Parfait pour",
       "construction": {
-        "title": "Construction Blueprints",
-        "description": "Measure dimensions, verify specifications, check clearances"
+        "title": "Plans de construction",
+        "description": "Mesurer les dimensions, vérifier les spécifications, vérifier les dégagements"
       },
       "floorPlans": {
-        "title": "Floor Plans",
-        "description": "Space planning, room dimensions, furniture layouts"
+        "title": "Plans d'étage",
+        "description": "Planification de l'espace, dimensions des pièces, agencement des meubles"
       },
       "sitePlans": {
-        "title": "Site Plans",
-        "description": "Property measurements, lot dimensions, site analysis"
+        "title": "Plans de site",
+        "description": "Mesures de propriété, dimensions de lot, analyse de site"
       },
       "technicalDrawings": {
-        "title": "Technical Drawings",
-        "description": "Engineering schematics, mechanical drawings, diagrams"
+        "title": "Dessins techniques",
+        "description": "Schémas d'ingénierie, dessins mécaniques, diagrammes"
       },
       "architecturalDesigns": {
-        "title": "Architectural Designs",
-        "description": "Elevations, sections, detail drawings"
+        "title": "Conceptions architecturales",
+        "description": "Élévations, sections, dessins de détails"
       },
       "interiorDesign": {
-        "title": "Interior Design",
-        "description": "Furniture placement, fixture spacing, material calculations"
+        "title": "Design d'intérieur",
+        "description": "Placement des meubles, espacement des appareils, calculs de matériaux"
       }
     },
     "howItWorks": {
-      "title": "Get started in 60 seconds",
+      "title": "Commencez en 60 secondes",
       "step1": {
-        "title": "Calibrate Scale",
-        "description": "Click two points on a known distance (like \"20 ft\" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set."
+        "title": "Calibrer l'échelle",
+        "description": "Cliquez sur deux points d'une distance connue (comme \"20 pieds\" sur votre dessin). Entrez la distance réelle. Choisissez votre unité. Terminé! Votre échelle est définie."
       },
       "step2": {
-        "title": "Measure Anything",
-        "description": "Click \"Measure Distance\". Click any two points on your drawing. See instant measurements with full unit conversions."
+        "title": "Mesurez n'importe quoi",
+        "description": "Cliquez sur \"Mesurer la distance\". Cliquez sur deux points quelconques sur votre dessin. Voyez des mesures instantanées avec des conversions d'unités complètes."
       },
       "step3": {
-        "title": "Switch Units Anytime",
-        "description": "Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer."
+        "title": "Changez d'unités à tout moment",
+        "description": "Basculez entre Impérial (🇺🇸) et Métrique (🌍). Lors de la définition de votre ligne d'étalonnage ou du calcul d'une mesure, cliquez sur l'unité que vous préférez."
       },
-      "guideLink": "See detailed guide →"
+      "guideLink": "Voir le guide détaillé →"
     },
     "targetAudience": {
-      "title": "Built for professionals who demand precision",
-      "item1": "Architects and architectural firms",
-      "item2": "Engineers (civil, mechanical, structural)",
-      "item3": "Construction project managers",
-      "item4": "Interior designers",
-      "item5": "Real estate professionals",
-      "item6": "Facility managers",
-      "item7": "Anyone who works with technical drawings on Miro"
+      "title": "Conçu pour les professionnels qui exigent la précision",
+      "item1": "Architectes et cabinets d'architecture",
+      "item2": "Ingénieurs (civils, mécaniques, structurels)",
+      "item3": "Chefs de projet de construction",
+      "item4": "Designers d'intérieur",
+      "item5": "Professionnels de l'immobilier",
+      "item6": "Gestionnaires d'installations",
+      "item7": "Toute personne travaillant avec des dessins techniques sur Miro"
     },
     "finalCta": {
-      "title": "Ready to measure with precision?",
-      "subtitle": "Join architects and engineers who trust MeasureMint for accurate measurements on Miro.",
-      "launchApp": "Launch MeasureMint",
-      "viewDocumentation": "View Documentation"
+      "title": "Prêt à mesurer avec précision?",
+      "subtitle": "Rejoignez les architectes et ingénieurs qui font confiance à MeasureMint pour des mesures précises sur Miro.",
+      "launchApp": "Lancer MeasureMint",
+      "viewDocumentation": "Voir la documentation"
     }
   },
   "subscribe": {

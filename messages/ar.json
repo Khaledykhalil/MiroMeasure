@@ -10,111 +10,111 @@
   },
   "home": {
     "hero": {
-      "title": "قم بإجراء قياسات دقيقة في Miro",
-      "subtitle": "أداة قياس ومعايرة احترافية للمهندسين المعماريين والمهندسين ومهنيي البناء. قم بتعيين المقياس مرة واحدة، وقياس أي شيء بدقة.",
+      "title": "القياسات في Miro، أخيراً!",
+      "subtitle": "أداة قياس ومعايرة احترافية للمصممين. قياس وتوسيع الرسومات في Miro، لأول مرة على الإطلاق!",
       "ctaPrimary": "تشغيل التطبيق",
-      "ctaSecondary": "مشاهدة العرض التوضيحي"
+      "ctaSecondary": "الانضمام إلى قائمة الانتظار"
     },
     "video": {
       "title": "فيديو تجريبي لـ MeasureMint"
     },
     "features": {
-      "title": "لماذا MeasureMint؟",
+      "title": "مبني للمحترفين",
       "calibration": {
-        "title": "معايرة بنقرة واحدة",
-        "description": "قم بتعيين مرجع المقياس الخاص بك مرة واحدة وقياس كل شيء بدقة."
+        "title": "معايرة المقياس الدقيقة",
+        "description": "قم بتعيين مسافة معروفة لإنشاء مقياس دقيق. يعمل مع أي رسم أو مخطط أو مخطط تقني. معايرة لمرة واحدة لكل رسم."
       },
       "precision": {
         "title": "قياسات دقيقة",
         "description": "احصل على أبعاد دقيقة مع تحويل كامل للوحدات."
       },
       "units": {
-        "title": "جميع الوحدات",
-        "description": "قم بالتبديل بين الأنظمة الإمبراطورية والمترية على الفور."
+        "title": "أنظمة وحدات مزدوجة",
+        "description": "دعم كامل للإمبراطورية والمترية. 8 أنواع من الوحدات: أقدام، بوصات، ياردات، أميال، أمتار، سنتيمترات، ملليمترات، كيلومترات."
       },
       "measurements": {
-        "title": "Professional Measurements",
-        "description": "Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board."
+        "title": "قياسات احترافية",
+        "description": "قم بقياس أي مسافة على الرسومات المعايرة. ردود فعل بصرية مع علامات واضحة مباشرة على اللوحة."
       },
       "noSelection": {
-        "title": "No Image Selection Required",
-        "description": "Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow."
+        "title": "لا يلزم اختيار الصورة",
+        "description": "قم بالقياس في أي مكان على اللوحة على الفور. يعمل مع أي رسم أو PDF أو صورة. تكامل سلس مع سير عمل Miro."
       },
       "tracking": {
-        "title": "Measurement Tracking",
-        "description": "View the latest measurement that was calculated so you never lose track of your board."
+        "title": "تتبع القياسات",
+        "description": "عرض آخر قياس تم حسابه حتى لا تفقد أبداً تتبع لوحتك."
       },
       "professionalGrade": {
-        "title": "Professional Grade",
-        "description": "Built by and for architects, engineers, and design professionals."
+        "title": "مستوى احترافي",
+        "description": "مبني من قبل المهندسين المعماريين والمهندسين ومحترفي التصميم."
       }
     },
     "problem": {
-      "title": "The Problem",
-      "description": "Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds."
+      "title": "المشكلة",
+      "description": "قياس الرسومات على لوحات Miro محبط. لا يمكنك الحصول على أبعاد دقيقة من المخططات أو المخططات الأرضية أو الرسومات التقنية دون حلول معقدة."
     },
     "solution": {
-      "title": "The Solution",
-      "description": "MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything."
+      "title": "الحل",
+      "description": "MeasureMint يحل هذا بأدوات قياس احترافية مدمجة مباشرة في Miro. قم بالمعايرة مرة واحدة، وقياس أي شيء."
     },
     "useCases": {
-      "title": "Perfect for",
+      "title": "مثالي لـ",
       "construction": {
-        "title": "Construction Blueprints",
-        "description": "Measure dimensions, verify specifications, check clearances"
+        "title": "مخططات البناء",
+        "description": "قياس الأبعاد، التحقق من المواصفات، فحص المسافات"
       },
       "floorPlans": {
-        "title": "Floor Plans",
-        "description": "Space planning, room dimensions, furniture layouts"
+        "title": "المخططات الأرضية",
+        "description": "تخطيط المساحة، أبعاد الغرف، تخطيط الأثاث"
       },
       "sitePlans": {
-        "title": "Site Plans",
-        "description": "Property measurements, lot dimensions, site analysis"
+        "title": "مخططات الموقع",
+        "description": "قياسات الممتلكات، أبعاد القطع، تحليل الموقع"
       },
       "technicalDrawings": {
-        "title": "Technical Drawings",
-        "description": "Engineering schematics, mechanical drawings, diagrams"
+        "title": "الرسومات التقنية",
+        "description": "المخططات الهندسية، الرسومات الميكانيكية، المخططات"
       },
       "architecturalDesigns": {
-        "title": "Architectural Designs",
-        "description": "Elevations, sections, detail drawings"
+        "title": "التصاميم المعمارية",
+        "description": "الواجهات، المقاطع، رسومات التفاصيل"
       },
       "interiorDesign": {
-        "title": "Interior Design",
-        "description": "Furniture placement, fixture spacing, material calculations"
+        "title": "التصميم الداخلي",
+        "description": "وضع الأثاث، تباعد التركيبات، حسابات المواد"
       }
     },
     "howItWorks": {
-      "title": "Get started in 60 seconds",
+      "title": "ابدأ في 60 ثانية",
       "step1": {
-        "title": "Calibrate Scale",
-        "description": "Click two points on a known distance (like \"20 ft\" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set."
+        "title": "معايرة المقياس",
+        "description": "انقر على نقطتين بمسافة معروفة (مثل \"20 قدم\" على الرسم الخاص بك). أدخل المسافة الفعلية. اختر وحدتك. تم! تم تعيين المقياس الخاص بك."
       },
       "step2": {
-        "title": "Measure Anything",
-        "description": "Click \"Measure Distance\". Click any two points on your drawing. See instant measurements with full unit conversions."
+        "title": "قم بقياس أي شيء",
+        "description": "انقر على \"قياس المسافة\". انقر على أي نقطتين على الرسم الخاص بك. شاهد القياسات الفورية مع تحويلات الوحدات الكاملة."
       },
       "step3": {
-        "title": "Switch Units Anytime",
-        "description": "Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer."
+        "title": "قم بتبديل الوحدات في أي وقت",
+        "description": "التبديل بين الإمبراطورية (🇺🇸) والمترية (🌍). عند تعيين خط المعايرة أو حساب قياس، انقر على الوحدة التي تفضلها."
       },
-      "guideLink": "See detailed guide →"
+      "guideLink": "راجع الدليل التفصيلي →"
     },
     "targetAudience": {
-      "title": "Built for professionals who demand precision",
-      "item1": "Architects and architectural firms",
-      "item2": "Engineers (civil, mechanical, structural)",
-      "item3": "Construction project managers",
-      "item4": "Interior designers",
-      "item5": "Real estate professionals",
-      "item6": "Facility managers",
-      "item7": "Anyone who works with technical drawings on Miro"
+      "title": "مبني للمحترفين الذين يطالبون بالدقة",
+      "item1": "المهندسون المعماريون وشركات الهندسة المعمارية",
+      "item2": "المهندسون (المدنيون، الميكانيكيون، الهيكليون)",
+      "item3": "مديرو مشاريع البناء",
+      "item4": "مصممو الديكور الداخلي",
+      "item5": "المهنيون العقاريون",
+      "item6": "مديرو المرافق",
+      "item7": "أي شخص يعمل مع الرسومات التقنية في Miro"
     },
     "finalCta": {
-      "title": "Ready to measure with precision?",
-      "subtitle": "Join architects and engineers who trust MeasureMint for accurate measurements on Miro.",
-      "launchApp": "Launch MeasureMint",
-      "viewDocumentation": "View Documentation"
+      "title": "هل أنت مستعد للقياس بدقة؟",
+      "subtitle": "انضم إلى المهندسين المعماريين والمهندسين الذين يثقون في MeasureMint للقياسات الدقيقة في Miro.",
+      "launchApp": "تشغيل MeasureMint",
+      "viewDocumentation": "عرض الوثائق"
     }
   },
   "subscribe": {

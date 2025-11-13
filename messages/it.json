@@ -19,102 +19,102 @@
       "title": "Video Dimostrativo MeasureMint"
     },
     "features": {
-      "title": "Perché MeasureMint?",
+      "title": "Costruito per professionisti",
       "calibration": {
-        "title": "Calibrazione con Un Click",
-        "description": "Imposta il riferimento di scala una volta e misura tutto con precisione."
+        "title": "Calibrazione della scala precisa",
+        "description": "Imposta una distanza nota per stabilire una scala accurata. Funziona con qualsiasi disegno, progetto o diagramma tecnico. Calibrazione una tantum per disegno."
       },
       "precision": {
         "title": "Misure Precise",
         "description": "Ottieni dimensioni esatte con conversione completa delle unità."
       },
       "units": {
-        "title": "Tutte le Unità",
-        "description": "Passa istantaneamente tra sistemi Imperiali e Metrici."
+        "title": "Sistemi di unità doppi",
+        "description": "Supporto completo per Imperiale e Metrico. 8 tipi di unità: Piedi, pollici, iarde, miglia, metri, centimetri, millimetri, chilometri."
       },
       "measurements": {
-        "title": "Professional Measurements",
-        "description": "Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board."
+        "title": "Misure professionali",
+        "description": "Misura qualsiasi distanza su disegni calibrati. Feedback visivo con marcatori chiari direttamente sulla tavola."
       },
       "noSelection": {
-        "title": "No Image Selection Required",
-        "description": "Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow."
+        "title": "Nessuna selezione immagine richiesta",
+        "description": "Misura ovunque sulla tavola istantaneamente. Funziona con qualsiasi disegno, PDF o immagine. Integrazione perfetta con il flusso di lavoro Miro."
       },
       "tracking": {
-        "title": "Measurement Tracking",
-        "description": "View the latest measurement that was calculated so you never lose track of your board."
+        "title": "Tracciamento delle misure",
+        "description": "Visualizza l'ultima misurazione calcolata in modo da non perdere mai traccia della tua tavola."
       },
       "professionalGrade": {
-        "title": "Professional Grade",
-        "description": "Built by and for architects, engineers, and design professionals."
+        "title": "Livello professionale",
+        "description": "Costruito da e per architetti, ingegneri e professionisti del design."
       }
     },
     "problem": {
-      "title": "The Problem",
-      "description": "Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds."
+      "title": "Il Problema",
+      "description": "Misurare disegni su tavole Miro è frustrante. Non puoi ottenere dimensioni accurate da progetti, planimetrie o disegni tecnici senza soluzioni complesse."
     },
     "solution": {
-      "title": "The Solution",
-      "description": "MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything."
+      "title": "La Soluzione",
+      "description": "MeasureMint risolve questo con strumenti di misurazione di livello professionale integrati direttamente in Miro. Calibra una volta, misura qualsiasi cosa."
     },
     "useCases": {
-      "title": "Perfect for",
+      "title": "Perfetto per",
       "construction": {
-        "title": "Construction Blueprints",
-        "description": "Measure dimensions, verify specifications, check clearances"
+        "title": "Progetti di costruzione",
+        "description": "Misurare dimensioni, verificare specifiche, controllare spazi liberi"
       },
       "floorPlans": {
-        "title": "Floor Plans",
-        "description": "Space planning, room dimensions, furniture layouts"
+        "title": "Planimetrie",
+        "description": "Pianificazione spaziale, dimensioni delle stanze, layout dei mobili"
       },
       "sitePlans": {
-        "title": "Site Plans",
-        "description": "Property measurements, lot dimensions, site analysis"
+        "title": "Piani di sito",
+        "description": "Misurazioni di proprietà, dimensioni del lotto, analisi del sito"
       },
       "technicalDrawings": {
-        "title": "Technical Drawings",
-        "description": "Engineering schematics, mechanical drawings, diagrams"
+        "title": "Disegni tecnici",
+        "description": "Schemi ingegneristici, disegni meccanici, diagrammi"
       },
       "architecturalDesigns": {
-        "title": "Architectural Designs",
-        "description": "Elevations, sections, detail drawings"
+        "title": "Progetti architettonici",
+        "description": "Prospetti, sezioni, disegni di dettaglio"
       },
       "interiorDesign": {
-        "title": "Interior Design",
-        "description": "Furniture placement, fixture spacing, material calculations"
+        "title": "Design d'interni",
+        "description": "Posizionamento mobili, spaziatura apparecchi, calcoli materiali"
       }
     },
     "howItWorks": {
-      "title": "Get started in 60 seconds",
+      "title": "Inizia in 60 secondi",
       "step1": {
-        "title": "Calibrate Scale",
-        "description": "Click two points on a known distance (like \"20 ft\" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set."
+        "title": "Calibra la scala",
+        "description": "Clicca su due punti di una distanza nota (come \"20 piedi\" sul tuo disegno). Inserisci la distanza effettiva. Scegli la tua unità. Fatto! La tua scala è impostata."
       },
       "step2": {
-        "title": "Measure Anything",
-        "description": "Click \"Measure Distance\". Click any two points on your drawing. See instant measurements with full unit conversions."
+        "title": "Misura qualsiasi cosa",
+        "description": "Clicca su \"Misura distanza\". Clicca su due punti qualsiasi sul tuo disegno. Vedi misurazioni istantanee con conversioni complete delle unità."
       },
       "step3": {
-        "title": "Switch Units Anytime",
-        "description": "Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer."
+        "title": "Cambia unità in qualsiasi momento",
+        "description": "Passa tra Imperiale (🇺🇸) e Metrico (🌍). Quando imposti la tua linea di calibrazione o calcoli una misurazione, clicca sull'unità che preferisci."
       },
-      "guideLink": "See detailed guide →"
+      "guideLink": "Vedi guida dettagliata →"
     },
     "targetAudience": {
-      "title": "Built for professionals who demand precision",
-      "item1": "Architects and architectural firms",
-      "item2": "Engineers (civil, mechanical, structural)",
-      "item3": "Construction project managers",
-      "item4": "Interior designers",
-      "item5": "Real estate professionals",
-      "item6": "Facility managers",
-      "item7": "Anyone who works with technical drawings on Miro"
+      "title": "Costruito per professionisti che richiedono precisione",
+      "item1": "Architetti e studi di architettura",
+      "item2": "Ingegneri (civili, meccanici, strutturali)",
+      "item3": "Project manager di costruzione",
+      "item4": "Designer d'interni",
+      "item5": "Professionisti immobiliari",
+      "item6": "Facility manager",
+      "item7": "Chiunque lavori con disegni tecnici su Miro"
     },
     "finalCta": {
-      "title": "Ready to measure with precision?",
-      "subtitle": "Join architects and engineers who trust MeasureMint for accurate measurements on Miro.",
-      "launchApp": "Launch MeasureMint",
-      "viewDocumentation": "View Documentation"
+      "title": "Pronto a misurare con precisione?",
+      "subtitle": "Unisciti ad architetti e ingegneri che si fidano di MeasureMint per misurazioni accurate su Miro.",
+      "launchApp": "Avvia MeasureMint",
+      "viewDocumentation": "Visualizza documentazione"
     }
   },
   "subscribe": {

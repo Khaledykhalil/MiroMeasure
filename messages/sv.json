@@ -10,111 +10,111 @@
   },
   "home": {
     "hero": {
-      "title": "Gör Exakta Mätningar i Miro",
-      "subtitle": "Professionellt mät- och kalibreringsverktyg för arkitekter, ingenjörer och byggprofessionella. Ställ in skalan en gång, mät allt med precision.",
+      "title": "Mätningar i Miro, Äntligen!",
+      "subtitle": "Professionellt mät- och kalibreringsverktyg för designers. Skalning och mätning av ritningar i Miro, för första gången någonsin!",
       "ctaPrimary": "Starta App",
-      "ctaSecondary": "Titta på Demo"
+      "ctaSecondary": "Gå med i väntelistan"
     },
     "video": {
       "title": "MeasureMint Demo Video"
     },
     "features": {
-      "title": "Varför MeasureMint?",
+      "title": "Byggt för professionella",
       "calibration": {
-        "title": "Ett-Klick Kalibrering",
-        "description": "Ställ in din skalreferens en gång och mät allt noggrant."
+        "title": "Exakt skalkalibrering",
+        "description": "Ställ in ett känt avstånd för att skapa en exakt skala. Fungerar med vilken ritning, ritning eller teknisk diagram som helst. Engångskalibrering per ritning."
       },
       "precision": {
         "title": "Precisa Mätningar",
         "description": "Få exakta dimensioner med full enhetsomvandling."
       },
       "units": {
-        "title": "Alla Enheter",
-        "description": "Växla mellan imperiala och metriska system direkt."
+        "title": "Dubbla enhetssystem",
+        "description": "Fullt stöd för Imperial och Metrisk. 8 enhetstyper: Fot, tum, yards, miles, meter, centimeter, millimeter, kilometer."
       },
       "measurements": {
-        "title": "Professional Measurements",
-        "description": "Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board."
+        "title": "Professionella mätningar",
+        "description": "Mät vilket avstånd som helst på kalibrerade ritningar. Visuell feedback med tydliga markörer direkt på tavlan."
       },
       "noSelection": {
-        "title": "No Image Selection Required",
-        "description": "Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow."
+        "title": "Ingen bildval krävs",
+        "description": "Mät var som helst på tavlan direkt. Fungerar med vilken ritning, PDF eller bild som helst. Sömlös integration med Miro-arbetsflöde."
       },
       "tracking": {
-        "title": "Measurement Tracking",
-        "description": "View the latest measurement that was calculated so you never lose track of your board."
+        "title": "Mätningsspårning",
+        "description": "Visa den senaste mätningen som beräknades så att du aldrig tappar bort din tavla."
       },
       "professionalGrade": {
-        "title": "Professional Grade",
-        "description": "Built by and for architects, engineers, and design professionals."
+        "title": "Professionell nivå",
+        "description": "Byggt av och för arkitekter, ingenjörer och designprofessionella."
       }
     },
     "problem": {
-      "title": "The Problem",
-      "description": "Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds."
+      "title": "Problemet",
+      "description": "Att mäta ritningar på Miro-brädor är frustrerande. Du kan inte få exakta dimensioner från ritningar, planritningar eller tekniska ritningar utan komplexa lösningar."
     },
     "solution": {
-      "title": "The Solution",
-      "description": "MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything."
+      "title": "Lösningen",
+      "description": "MeasureMint löser detta med professionella mätverktyg inbyggda direkt i Miro. Kalibrera en gång, mät vad som helst."
     },
     "useCases": {
-      "title": "Perfect for",
+      "title": "Perfekt för",
       "construction": {
-        "title": "Construction Blueprints",
-        "description": "Measure dimensions, verify specifications, check clearances"
+        "title": "Byggritningar",
+        "description": "Mät dimensioner, verifiera specifikationer, kontrollera avstånd"
       },
       "floorPlans": {
-        "title": "Floor Plans",
-        "description": "Space planning, room dimensions, furniture layouts"
+        "title": "Planritningar",
+        "description": "Rumsplanering, rumsdimensioner, möbelinredningar"
       },
       "sitePlans": {
-        "title": "Site Plans",
-        "description": "Property measurements, lot dimensions, site analysis"
+        "title": "Terrängplaner",
+        "description": "Fastighetsmätningar, tomtdimensioner, platsanalys"
       },
       "technicalDrawings": {
-        "title": "Technical Drawings",
-        "description": "Engineering schematics, mechanical drawings, diagrams"
+        "title": "Tekniska ritningar",
+        "description": "Ingenjörsscheman, mekaniska ritningar, diagram"
       },
       "architecturalDesigns": {
-        "title": "Architectural Designs",
-        "description": "Elevations, sections, detail drawings"
+        "title": "Arkitektoniska design",
+        "description": "Fasader, sektioner, detaljritningar"
       },
       "interiorDesign": {
-        "title": "Interior Design",
-        "description": "Furniture placement, fixture spacing, material calculations"
+        "title": "Inredningsdesign",
+        "description": "Möbelplacering, armaturspacing, materialberäkningar"
       }
     },
     "howItWorks": {
-      "title": "Get started in 60 seconds",
+      "title": "Kom igång på 60 sekunder",
       "step1": {
-        "title": "Calibrate Scale",
-        "description": "Click two points on a known distance (like \"20 ft\" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set."
+        "title": "Kalibrera skala",
+        "description": "Klicka på två punkter med ett känt avstånd (som \"20 fot\" på din ritning). Ange det faktiska avståndet. Välj din enhet. Klart! Din skala är inställd."
       },
       "step2": {
-        "title": "Measure Anything",
-        "description": "Click \"Measure Distance\". Click any two points on your drawing. See instant measurements with full unit conversions."
+        "title": "Mät vad som helst",
+        "description": "Klicka på \"Mät avstånd\". Klicka på två valfria punkter på din ritning. Se omedelbara mätningar med fullständiga enhetsomvandlingar."
       },
       "step3": {
-        "title": "Switch Units Anytime",
-        "description": "Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer."
+        "title": "Växla enheter när som helst",
+        "description": "Växla mellan Imperial (🇺🇸) och Metrisk (🌍). När du ställer in din kalibreringslinje eller beräknar en mätning, klicka på den enhet du föredrar."
       },
-      "guideLink": "See detailed guide →"
+      "guideLink": "Se detaljerad guide →"
     },
     "targetAudience": {
-      "title": "Built for professionals who demand precision",
-      "item1": "Architects and architectural firms",
-      "item2": "Engineers (civil, mechanical, structural)",
-      "item3": "Construction project managers",
-      "item4": "Interior designers",
-      "item5": "Real estate professionals",
-      "item6": "Facility managers",
-      "item7": "Anyone who works with technical drawings on Miro"
+      "title": "Byggt för professionella som kräver precision",
+      "item1": "Arkitekter och arkitektbyrår",
+      "item2": "Ingenjörer (bygg, mekanisk, strukturell)",
+      "item3": "Byggprojektchefer",
+      "item4": "Inredningsarkitekter",
+      "item5": "Fastighetsprofessionella",
+      "item6": "Anläggningschefer",
+      "item7": "Alla som arbetar med tekniska ritningar i Miro"
     },
     "finalCta": {
-      "title": "Ready to measure with precision?",
-      "subtitle": "Join architects and engineers who trust MeasureMint for accurate measurements on Miro.",
-      "launchApp": "Launch MeasureMint",
-      "viewDocumentation": "View Documentation"
+      "title": "Redo att mäta med precision?",
+      "subtitle": "Gå med arkitekter och ingenjörer som litar på MeasureMint för exakta mätningar i Miro.",
+      "launchApp": "Starta MeasureMint",
+      "viewDocumentation": "Visa dokumentation"
     }
   },
   "subscribe": {

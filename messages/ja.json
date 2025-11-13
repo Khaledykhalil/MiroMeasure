@@ -10,111 +10,111 @@
   },
   "home": {
     "hero": {
-      "title": "Miroで正確な測定を行う",
-      "subtitle": "建築家、エンジニア、建設専門家向けのプロフェッショナルな測定・キャリブレーションツール。スケールを一度設定すれば、何でも正確に測定できます。",
+      "title": "Miroでの測定、ついに！",
+      "subtitle": "デザイナー向けのプロフェッショナルな測定・キャリブレーションツール。Miroで図面をスケーリングして測定する、初めてのツールです！",
       "ctaPrimary": "アプリを起動",
-      "ctaSecondary": "デモを見る"
+      "ctaSecondary": "ウェイトリストに参加"
     },
     "video": {
       "title": "MeasureMintデモビデオ"
     },
     "features": {
-      "title": "MeasureMintを選ぶ理由",
+      "title": "プロフェッショナル向けに構築",
       "calibration": {
-        "title": "ワンクリックキャリブレーション",
-        "description": "スケール参照を一度設定すれば、すべてを正確に測定できます。"
+        "title": "正確なスケールキャリブレーション",
+        "description": "既知の距離を設定して正確なスケールを確立します。あらゆる図面、設計図、または技術図表で動作します。図面ごとに1回のキャリブレーション。"
       },
       "precision": {
         "title": "精密測定",
         "description": "完全な単位変換で正確な寸法を取得します。"
       },
       "units": {
-        "title": "すべての単位",
-        "description": "インペリアルとメートル法の間を瞬時に切り替えられます。"
+        "title": "デュアル単位システム",
+        "description": "インペリアルとメートル法の完全サポート。8種類の単位：フィート、インチ、ヤード、マイル、メートル、センチメートル、ミリメートル、キロメートル。"
       },
       "measurements": {
-        "title": "Professional Measurements",
-        "description": "Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board."
+        "title": "プロフェッショナルな測定",
+        "description": "キャリブレーションされた図面で任意の距離を測定します。ボード上に明確なマーカーで視覚的なフィードバックを提供します。"
       },
       "noSelection": {
-        "title": "No Image Selection Required",
-        "description": "Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow."
+        "title": "画像選択不要",
+        "description": "ボード上のどこでも即座に測定できます。あらゆる図面、PDF、または画像で動作します。Miroワークフローとのシームレスな統合。"
       },
       "tracking": {
-        "title": "Measurement Tracking",
-        "description": "View the latest measurement that was calculated so you never lose track of your board."
+        "title": "測定トラッキング",
+        "description": "計算された最新の測定値を表示して、ボードの追跡を失うことがありません。"
       },
       "professionalGrade": {
-        "title": "Professional Grade",
-        "description": "Built by and for architects, engineers, and design professionals."
+        "title": "プロフェッショナルグレード",
+        "description": "建築家、エンジニア、デザインプロフェッショナルによって、そして彼らのために構築されました。"
       }
     },
     "problem": {
-      "title": "The Problem",
-      "description": "Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds."
+      "title": "問題",
+      "description": "Miroボードで図面を測定するのはイライラします。複雑な回避策なしでは、設計図、平面図、または技術図面から正確な寸法を得ることができません。"
     },
     "solution": {
-      "title": "The Solution",
-      "description": "MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything."
+      "title": "解決策",
+      "description": "MeasureMintは、Miroに直接組み込まれたプロフェッショナルレベルの測定ツールでこれを解決します。一度キャリブレーションすれば、何でも測定できます。"
     },
     "useCases": {
-      "title": "Perfect for",
+      "title": "に最適",
       "construction": {
-        "title": "Construction Blueprints",
-        "description": "Measure dimensions, verify specifications, check clearances"
+        "title": "建設設計図",
+        "description": "寸法を測定し、仕様を確認し、クリアランスをチェック"
       },
       "floorPlans": {
-        "title": "Floor Plans",
-        "description": "Space planning, room dimensions, furniture layouts"
+        "title": "平面図",
+        "description": "空間計画、部屋の寸法、家具のレイアウト"
       },
       "sitePlans": {
-        "title": "Site Plans",
-        "description": "Property measurements, lot dimensions, site analysis"
+        "title": "敷地計画",
+        "description": "不動産測定、区画寸法、敷地分析"
       },
       "technicalDrawings": {
-        "title": "Technical Drawings",
-        "description": "Engineering schematics, mechanical drawings, diagrams"
+        "title": "技術図面",
+        "description": "エンジニアリング図、機械図面、図表"
       },
       "architecturalDesigns": {
-        "title": "Architectural Designs",
-        "description": "Elevations, sections, detail drawings"
+        "title": "建築設計",
+        "description": "立面図、断面図、詳細図"
       },
       "interiorDesign": {
-        "title": "Interior Design",
-        "description": "Furniture placement, fixture spacing, material calculations"
+        "title": "インテリアデザイン",
+        "description": "家具の配置、設備の間隔、材料計算"
       }
     },
     "howItWorks": {
-      "title": "Get started in 60 seconds",
+      "title": "60秒で始める",
       "step1": {
-        "title": "Calibrate Scale",
-        "description": "Click two points on a known distance (like \"20 ft\" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set."
+        "title": "スケールをキャリブレーション",
+        "description": "既知の距離の2点をクリックします（図面上の「20フィート」など）。実際の距離を入力します。単位を選択します。完了！スケールが設定されました。"
       },
       "step2": {
-        "title": "Measure Anything",
-        "description": "Click \"Measure Distance\". Click any two points on your drawing. See instant measurements with full unit conversions."
+        "title": "何でも測定",
+        "description": "「距離を測定」をクリックします。図面上の任意の2点をクリックします。完全な単位変換で即座に測定値を確認できます。"
       },
       "step3": {
-        "title": "Switch Units Anytime",
-        "description": "Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer."
+        "title": "いつでも単位を切り替え",
+        "description": "インペリアル（🇺🇸）とメートル法（🌍）を切り替えます。キャリブレーションラインを設定するか、測定値を計算するときは、希望する単位をクリックします。"
       },
-      "guideLink": "See detailed guide →"
+      "guideLink": "詳細ガイドを見る →"
     },
     "targetAudience": {
-      "title": "Built for professionals who demand precision",
-      "item1": "Architects and architectural firms",
-      "item2": "Engineers (civil, mechanical, structural)",
-      "item3": "Construction project managers",
-      "item4": "Interior designers",
-      "item5": "Real estate professionals",
-      "item6": "Facility managers",
-      "item7": "Anyone who works with technical drawings on Miro"
+      "title": "精度を要求するプロフェッショナル向けに構築",
+      "item1": "建築家と建築事務所",
+      "item2": "エンジニア（土木、機械、構造）",
+      "item3": "建設プロジェクトマネージャー",
+      "item4": "インテリアデザイナー",
+      "item5": "不動産プロフェッショナル",
+      "item6": "施設管理者",
+      "item7": "Miroで技術図面を扱うすべての人"
     },
     "finalCta": {
-      "title": "Ready to measure with precision?",
-      "subtitle": "Join architects and engineers who trust MeasureMint for accurate measurements on Miro.",
-      "launchApp": "Launch MeasureMint",
-      "viewDocumentation": "View Documentation"
+      "title": "精度を測る準備はできましたか？",
+      "subtitle": "Miroで正確な測定のためにMeasureMintを信頼する建築家やエンジニアに参加してください。",
+      "launchApp": "MeasureMintを起動",
+      "viewDocumentation": "ドキュメントを見る"
     }
   },
   "subscribe": {

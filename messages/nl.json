@@ -10,111 +10,111 @@
   },
   "home": {
     "hero": {
-      "title": "Maak Exacte Metingen in Miro",
-      "subtitle": "Professioneel meet- en kalibratiegereedschap voor architecten, ingenieurs en bouwprofessionals. Stel de schaal eenmaal in, meet alles met precisie.",
+      "title": "Metingen in Miro, Eindelijk!",
+      "subtitle": "Professioneel meet- en kalibratiegereedschap voor ontwerpers. Tekeningen schalen en meten in Miro, voor het eerst ooit!",
       "ctaPrimary": "App starten",
-      "ctaSecondary": "Demo bekijken"
+      "ctaSecondary": "Wachtlijst bijwonen"
     },
     "video": {
       "title": "MeasureMint Demo Video"
     },
     "features": {
-      "title": "Waarom MeasureMint?",
+      "title": "Gebouwd voor professionals",
       "calibration": {
-        "title": "Eén-Klik Kalibratie",
-        "description": "Stel uw schaalreferentie eenmaal in en meet alles nauwkeurig."
+        "title": "Nauwkeurige schaalkalibratie",
+        "description": "Stel een bekende afstand in om een nauwkeurige schaal vast te stellen. Werkt met elke tekening, blauwdruk of technisch diagram. Eenmalige kalibratie per tekening."
       },
       "precision": {
         "title": "Precieze Metingen",
         "description": "Krijg exacte afmetingen met volledige eenheidsconversie."
       },
       "units": {
-        "title": "Alle Eenheden",
-        "description": "Schakel direct tussen imperiale en metrische systemen."
+        "title": "Dubbele eenheidssystemen",
+        "description": "Volledige ondersteuning voor Imperiaal en Metrisch. 8 eenheidstypen: Voeten, inches, yards, mijlen, meters, centimeters, millimeters, kilometers."
       },
       "measurements": {
-        "title": "Professional Measurements",
-        "description": "Measure any distance on calibrated drawings. Visual feedback with clear markers directly on the board."
+        "title": "Professionele metingen",
+        "description": "Meet elke afstand op gekalibreerde tekeningen. Visuele feedback met duidelijke markeringen direct op het bord."
       },
       "noSelection": {
-        "title": "No Image Selection Required",
-        "description": "Measure anywhere on the board instantly. Works with any drawing, PDF, or image. Seamless integration with Miro workflow."
+        "title": "Geen beeldselectie vereist",
+        "description": "Meet overal op het bord direct. Werkt met elke tekening, PDF of afbeelding. Naadloze integratie met Miro-workflow."
       },
       "tracking": {
-        "title": "Measurement Tracking",
-        "description": "View the latest measurement that was calculated so you never lose track of your board."
+        "title": "Meting tracking",
+        "description": "Bekijk de laatste meting die is berekend, zodat je nooit het overzicht over je bord verliest."
       },
       "professionalGrade": {
-        "title": "Professional Grade",
-        "description": "Built by and for architects, engineers, and design professionals."
+        "title": "Professioneel niveau",
+        "description": "Gebouwd door en voor architecten, ingenieurs en ontwerpprofessionals."
       }
     },
     "problem": {
-      "title": "The Problem",
-      "description": "Measuring drawings on Miro boards is frustrating. You can't get accurate dimensions from blueprints, floor plans, or technical drawings without complex workarounds."
+      "title": "Het Probleem",
+      "description": "Het meten van tekeningen op Miro-borden is frustrerend. Je kunt geen nauwkeurige afmetingen krijgen van blauwdrukken, plattegronden of technische tekeningen zonder complexe workarounds."
     },
     "solution": {
-      "title": "The Solution",
-      "description": "MeasureMint solves this with professional-grade measurement tools built directly into Miro. Calibrate once, measure anything."
+      "title": "De Oplossing",
+      "description": "MeasureMint lost dit op met professionele meetgereedschappen die direct in Miro zijn ingebouwd. Kalibreer eenmaal, meet alles."
     },
     "useCases": {
-      "title": "Perfect for",
+      "title": "Perfect voor",
       "construction": {
-        "title": "Construction Blueprints",
-        "description": "Measure dimensions, verify specifications, check clearances"
+        "title": "Bouwkundige tekeningen",
+        "description": "Afmetingen meten, specificaties verifiëren, ruimtes controleren"
       },
       "floorPlans": {
-        "title": "Floor Plans",
-        "description": "Space planning, room dimensions, furniture layouts"
+        "title": "Plattegronden",
+        "description": "Ruimteplanning, kamerafmetingen, meubelindelingen"
       },
       "sitePlans": {
-        "title": "Site Plans",
-        "description": "Property measurements, lot dimensions, site analysis"
+        "title": "Terreinplannen",
+        "description": "Eigendomsmetingen, perceelafmetingen, terreinanalyse"
       },
       "technicalDrawings": {
-        "title": "Technical Drawings",
-        "description": "Engineering schematics, mechanical drawings, diagrams"
+        "title": "Technische tekeningen",
+        "description": "Ingenieurschema's, mechanische tekeningen, diagrammen"
       },
       "architecturalDesigns": {
-        "title": "Architectural Designs",
-        "description": "Elevations, sections, detail drawings"
+        "title": "Architectonische ontwerpen",
+        "description": "Gevels, doorsneden, detailtekeningen"
       },
       "interiorDesign": {
-        "title": "Interior Design",
-        "description": "Furniture placement, fixture spacing, material calculations"
+        "title": "Interieurontwerp",
+        "description": "Meubelplaatsing, armatuurspatiëring, materiaalberekeningen"
       }
     },
     "howItWorks": {
-      "title": "Get started in 60 seconds",
+      "title": "Begin in 60 seconden",
       "step1": {
-        "title": "Calibrate Scale",
-        "description": "Click two points on a known distance (like \"20 ft\" on your drawing). Enter the actual distance. Choose your unit. Done! Your scale is set."
+        "title": "Schaal kalibreren",
+        "description": "Klik op twee punten van een bekende afstand (zoals \"20 voet\" op je tekening). Voer de werkelijke afstand in. Kies je eenheid. Klaar! Je schaal is ingesteld."
       },
       "step2": {
-        "title": "Measure Anything",
-        "description": "Click \"Measure Distance\". Click any two points on your drawing. See instant measurements with full unit conversions."
+        "title": "Meet alles",
+        "description": "Klik op \"Afstand meten\". Klik op twee willekeurige punten op je tekening. Zie directe metingen met volledige eenheidsconversies."
       },
       "step3": {
-        "title": "Switch Units Anytime",
-        "description": "Toggle between Imperial (🇺🇸) and Metric (🌍). When setting your calibration line or calculating a measurement, click the unit you prefer."
+        "title": "Wissel eenheden altijd",
+        "description": "Schakel tussen Imperiaal (🇺🇸) en Metrisch (🌍). Bij het instellen van je kalibratielijn of het berekenen van een meting, klik op de eenheid die je voorkeur heeft."
       },
-      "guideLink": "See detailed guide →"
+      "guideLink": "Zie gedetailleerde gids →"
     },
     "targetAudience": {
-      "title": "Built for professionals who demand precision",
-      "item1": "Architects and architectural firms",
-      "item2": "Engineers (civil, mechanical, structural)",
-      "item3": "Construction project managers",
-      "item4": "Interior designers",
-      "item5": "Real estate professionals",
+      "title": "Gebouwd voor professionals die precisie eisen",
+      "item1": "Architecten en architectenbureaus",
+      "item2": "Ingenieurs (civiel, mechanisch, structureel)",
+      "item3": "Bouwprojectmanagers",
+      "item4": "Interieurontwerpers",
+      "item5": "Vastgoedprofessionals",
       "item6": "Facility managers",
-      "item7": "Anyone who works with technical drawings on Miro"
+      "item7": "Iedereen die werkt met technische tekeningen in Miro"
     },
     "finalCta": {
-      "title": "Ready to measure with precision?",
-      "subtitle": "Join architects and engineers who trust MeasureMint for accurate measurements on Miro.",
-      "launchApp": "Launch MeasureMint",
-      "viewDocumentation": "View Documentation"
+      "title": "Klaar om met precisie te meten?",
+      "subtitle": "Sluit je aan bij architecten en ingenieurs die MeasureMint vertrouwen voor nauwkeurige metingen in Miro.",
+      "launchApp": "MeasureMint starten",
+      "viewDocumentation": "Documentatie bekijken"
     }
   },
   "subscribe": {
