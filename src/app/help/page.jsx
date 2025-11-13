@@ -177,7 +177,7 @@ export default function HelpCenter() {
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: inherit;
             line-height: 1.7;
             color: #1e293b;
             background: white;

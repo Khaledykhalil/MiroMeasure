@@ -31,22 +31,25 @@
   /* Arabic font support - Noto Sans Arabic font for RTL/Arabic content */
   /* Next.js font optimization creates --font-noto-sans-arabic variable and className automatically */
   [dir="rtl"],
-  [lang="ar"] {
+  [lang="ar"],
+  [dir="rtl"] body,
+  [lang="ar"] body {
     font-family: var(--font-noto-sans-arabic), 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif !important;
   }
   
-  .font-noto-sans-arabic {
-    font-family: var(--font-noto-sans-arabic), 'Noto Sans Arabic', sans-serif !important;
-  }
-
+  /* Apply Arabic font to all children of RTL/Arabic elements */
   [dir="rtl"] *,
-  [lang="ar"] *,
-  [dir="rtl"] body,
-  [lang="ar"] body,
-  .font-cairo * {
-    font-family: inherit !important;
+  [lang="ar"] * {
+    font-family: var(--font-noto-sans-arabic), 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif !important;
+  }
+  
+  .font-noto-sans-arabic,
+  .font-noto-sans-arabic * {
+    font-family: var(--font-noto-sans-arabic), 'Noto Sans Arabic', sans-serif !important;
   }
 
   button {
