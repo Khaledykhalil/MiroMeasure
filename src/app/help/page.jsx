@@ -40,17 +40,19 @@ export default function HelpCenter() {
     loadTranslations()
   }, [locale])
 
-  const t = (key) => {
+  const t = (key, fallback = null) => {
     if (!translations) {
-      const keys = key.split('.')
-      return keys[keys.length - 1] || key
+      return fallback || key.split('.').pop() || key
     }
     const keys = key.split('.')
     let value = translations
     for (const k of keys) {
       value = value?.[k]
+      if (value === undefined) {
+        return fallback || keys[keys.length - 1] || key
+      }
     }
-    return value || key
+    return value || fallback || key
   }
   // Render help center directly in JSX for better Next.js compatibility
   const htmlContent = `
