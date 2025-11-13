@@ -16,7 +16,6 @@ const notoSansArabic = Noto_Sans_Arabic({
 });
 
 const notoSansJP = Noto_Sans_JP({
-  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-jp',
   display: 'swap',
@@ -24,7 +23,6 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 const notoSansSC = Noto_Sans_SC({
-  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-sc',
   display: 'swap',
@@ -32,7 +30,6 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 const notoSansTC = Noto_Sans_TC({
-  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-tc',
   display: 'swap',
@@ -40,7 +37,6 @@ const notoSansTC = Noto_Sans_TC({
 });
 
 const notoSansKR = Noto_Sans_KR({
-  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-kr',
   display: 'swap',
