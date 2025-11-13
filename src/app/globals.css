@@ -28,12 +28,15 @@
     line-height: 1.5;
   }
 
-  /* Arabic font support */
+  /* Arabic font support - Cairo font for RTL/Arabic content */
+  html[lang="ar"],
   [dir="rtl"],
-  [lang="ar"] {
-    font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  [lang="ar"],
+  [dir="rtl"] body,
+  [lang="ar"] body {
+    font-family: var(--font-cairo), 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+      sans-serif !important;
   }
 
   [dir="rtl"] *,

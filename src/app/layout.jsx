@@ -2,9 +2,17 @@ import React from 'react';
 import Script from 'next/script'; 
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Cairo } from 'next/font/google';
 
 import { MiroSDKInit } from '../components/SDKInit'; 
 import './globals.css';
+
+const cairo = Cairo({
+  subsets: ['latin', 'arabic'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-cairo',
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'MeasureMint - Make Exact Measurements on Miro',
@@ -12,12 +20,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-    return ( <html lang="en"> 
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
+    return ( <html lang="en" className={cairo.variable}> 
       <body> 
         <Script  src="https://miro.com/app/static/sdk/v2/miro.js"  strategy="beforeInteractive" /> 
         <MiroSDKInit /> 
