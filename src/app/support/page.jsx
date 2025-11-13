@@ -139,10 +139,11 @@ export default function SupportContact() {
 
   return (
     <div style={styles.container}>
+      <PageHeader />
       <div style={styles.formCard}>
-        <h1 style={styles.title}>📧 Contact Support</h1>
+        <h1 style={styles.title}>📧 {t('support.title')}</h1>
         <p style={styles.subtitle}>
-          Need help? We're here for you! Fill out the form below and we'll get back to you within 24 hours.
+          {t('support.subtitle')}
         </p>
 
         <form onSubmit={handleSubmit} style={styles.form}>
