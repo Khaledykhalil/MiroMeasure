@@ -2,15 +2,15 @@ import React from 'react';
 import Script from 'next/script'; 
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Cairo } from 'next/font/google';
+import { Noto_Sans_Arabic } from 'next/font/google';
 
 import { MiroSDKInit } from '../components/SDKInit'; 
 import './globals.css';
 
-const cairo = Cairo({
+const notoSansArabic = Noto_Sans_Arabic({
   subsets: ['latin', 'arabic'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-cairo',
+  variable: '--font-noto-sans-arabic',
   display: 'swap',
   fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
@@ -21,7 +21,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-    return ( <html lang="en" className={cairo.variable}> 
+    return ( <html lang="en" className={notoSansArabic.variable}> 
       <body> 
         <Script  src="https://miro.com/app/static/sdk/v2/miro.js"  strategy="beforeInteractive" /> 
         <MiroSDKInit /> 

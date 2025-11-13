@@ -11,7 +11,7 @@ module.exports = {
         'measuremint': '#10bb82',
       },
       fontFamily: {
-        'cairo': ['var(--font-cairo)', 'Cairo', 'sans-serif'],
+        'noto-sans-arabic': ['var(--font-noto-sans-arabic)', 'Noto Sans Arabic', 'sans-serif'],
       },
     },
   },
