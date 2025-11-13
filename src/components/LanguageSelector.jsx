@@ -82,7 +82,7 @@ export default function LanguageSelector() {
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <MdLanguage size={20} />
+        <MdLanguage size={20} className="flex-shrink-0" />
         <span className="hidden sm:inline">{currentLanguage.flag}</span>
         <span className="hidden md:inline">{currentLanguage.name}</span>
       </button>
