@@ -27,11 +27,11 @@ export default function GuidePage() {
     
     const loadTranslations = async () => {
       try {
-        const mod = await import(`../../messages/${locale}.json`)
+        const mod = await import(`../../../messages/${locale}.json`)
         setTranslations(mod.default)
       } catch (err) {
         try {
-          const mod = await import('../../messages/en.json')
+          const mod = await import('../../../messages/en.json')
           setTranslations(mod.default)
         } catch {
           setTranslations({})
