@@ -10,7 +10,7 @@ import { detectLanguageSync } from "@/utils/languageDetection"
  * Shared header component for all pages
  * Includes logo, navigation, and language selector
  */
-export default function PageHeader({ showPricing = false }) {
+export default function PageHeader() {
   const [locale, setLocale] = useState('en')
   const [translations, setTranslations] = useState(null)
 
@@ -88,11 +88,6 @@ export default function PageHeader({ showPricing = false }) {
           <Link href="/support" className="text-sm text-gray-600 hover:text-gray-900">
             {translations ? t('common.support') : 'Support'}
           </Link>
-          {showPricing && (
-            <Link href="/subscribe" className="text-sm text-gray-600 hover:text-gray-900">
-              {translations ? t('common.pricing') : 'Pricing'}
-            </Link>
-          )}
           <LanguageSelector />
           <Link href="/panel">
             <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-4 py-2 rounded-md text-sm font-medium transition-colors">

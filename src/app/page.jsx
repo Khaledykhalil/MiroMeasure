@@ -133,9 +133,6 @@ export default function Home() {
             <Link href="/support" className="text-sm text-gray-600 hover:text-gray-900">
               {translations ? t('common.support') : 'Support'}
             </Link>
-            <Link href="/subscribe" className="text-sm text-gray-600 hover:text-gray-900">
-              {t('common.pricing')}
-            </Link>
             <LanguageSelector />
             <Link href="/panel">
               <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-4 py-2 rounded-md text-sm font-medium transition-colors">
