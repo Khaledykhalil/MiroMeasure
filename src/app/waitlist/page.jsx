@@ -103,9 +103,12 @@ export default function WaitlistPage() {
     }
   };
 
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+
   if (submitted) {
     return (
-      <div style={styles.container}>
+      <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
         <PageHeader />
         <main style={styles.main}>
           <div style={styles.successCard}>
@@ -158,7 +161,7 @@ export default function WaitlistPage() {
   }
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
       <PageHeader />
       <main style={styles.main}>
         <div style={styles.heroSection}>

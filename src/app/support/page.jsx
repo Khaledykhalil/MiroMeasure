@@ -103,9 +103,12 @@ export default function SupportContact() {
     });
   };
 
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+
   if (submitted) {
     return (
-      <div style={styles.container}>
+      <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
         <PageHeader />
         <div style={styles.successCard}>
           <div style={styles.successIcon}>✓</div>
@@ -140,7 +143,7 @@ export default function SupportContact() {
   }
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
       <PageHeader />
       <div style={styles.formCard}>
         <h1 style={styles.title}>📧 {t('support.title')}</h1>

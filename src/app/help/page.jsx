@@ -160,8 +160,11 @@ export default function HelpCenter() {
     </p>
   `;
   
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+
   return (
-    <>
+    <div dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
       <style dangerouslySetInnerHTML={{
         __html: `
           body {
@@ -380,6 +383,6 @@ export default function HelpCenter() {
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
         <a href="#" className="back-to-top" title="Back to top">↑</a>
       </div>
-    </>
+    </div>
   );
 }

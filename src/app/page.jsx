@@ -104,8 +104,11 @@ export default function Home() {
     return value || fallback || key
   }
 
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+  
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
       {/* Navigation */}
       <header className="border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-5 md:px-6 py-4 flex items-center justify-between">

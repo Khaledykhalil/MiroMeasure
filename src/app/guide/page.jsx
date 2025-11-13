@@ -149,8 +149,11 @@ export default function GuidePage() {
     "Familiarize yourself with the known distances on your drawings to expedite the calibration process."
   ];
 
+  // Check if current locale is RTL (Arabic)
+  const isRTL = locale === 'ar'
+
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen" dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
       <PageHeader />
 
       {/* Hero */}
