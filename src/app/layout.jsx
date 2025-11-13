@@ -16,30 +16,38 @@ const notoSansArabic = Noto_Sans_Arabic({
 });
 
 const notoSansJP = Noto_Sans_JP({
+  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-jp',
   display: 'swap',
+  preload: true,
   fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const notoSansSC = Noto_Sans_SC({
+  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-sc',
   display: 'swap',
+  preload: true,
   fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const notoSansTC = Noto_Sans_TC({
+  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-tc',
   display: 'swap',
+  preload: true,
   fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
 const notoSansKR = Noto_Sans_KR({
+  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-noto-sans-kr',
   display: 'swap',
+  preload: true,
   fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 });
 
