@@ -29,16 +29,16 @@
   }
 
   /* Arabic font support - Cairo font for RTL/Arabic content */
-  :root {
-    --font-cairo: 'Cairo', sans-serif;
-  }
-
+  /* Next.js font optimization creates --font-cairo variable and className automatically */
   [dir="rtl"],
-  [lang="ar"],
-  .font-cairo {
+  [lang="ar"] {
     font-family: var(--font-cairo), 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif !important;
+  }
+  
+  .font-cairo {
+    font-family: var(--font-cairo), 'Cairo', sans-serif !important;
   }
 
   [dir="rtl"] *,

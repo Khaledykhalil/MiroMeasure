@@ -21,8 +21,8 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-    return ( <html lang="en" className={cairo.variable}> 
-      <body> 
+    return ( <html lang="en" className={`${cairo.variable} ${cairo.className}`}> 
+      <body className={cairo.className}> 
         <Script  src="https://miro.com/app/static/sdk/v2/miro.js"  strategy="beforeInteractive" /> 
         <MiroSDKInit /> 
         {children}
