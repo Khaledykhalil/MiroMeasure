@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import PageHeader from '@/components/PageHeader';
+import { useState, useEffect, useRef } from 'react';
 import { detectLanguageSync, detectUserLanguage } from '@/utils/languageDetection';
+import { MdLanguage, MdCheck } from 'react-icons/md';
 
 export default function SupportContact() {
   const [locale, setLocale] = useState('en')
@@ -106,10 +106,63 @@ export default function SupportContact() {
   // Check if current locale is RTL (Arabic)
   const isRTL = locale === 'ar'
 
+  // Language selector state
+  const [isLangOpen, setIsLangOpen] = useState(false)
+  const langDropdownRef = useRef(null)
+
+  // Languages list
+  const languages = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+    { code: 'pt-BR', name: 'Português (BR)', flag: '🇧🇷' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+    { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+    { code: 'ja', name: '日本語', flag: '🇯🇵' },
+    { code: 'zh-CN', name: '简体中文', flag: '🇨🇳' },
+    { code: 'zh-HK', name: '繁體中文', flag: '🇭🇰' },
+  ]
+
+  // Close language dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target)) {
+        setIsLangOpen(false)
+      }
+    }
+
+    if (isLangOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isLangOpen])
+
+  const handleLanguageChange = (newLocale) => {
+    localStorage.setItem('locale', newLocale)
+    setLocale(newLocale)
+    setIsLangOpen(false)
+    
+    // Update URL without full reload
+    const url = new URL(window.location.href)
+    url.searchParams.set('lang', newLocale)
+    window.history.pushState({}, '', url)
+    
+    // Reload to apply new language
+    window.location.reload()
+  }
+
+  const currentLanguage = languages.find(lang => lang.code === locale) || languages[0]
+
   if (submitted) {
     return (
       <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
-        <PageHeader />
         <div style={styles.successCard}>
           <div style={styles.successIcon}>✓</div>
           <h1 style={styles.successTitle}>{t('support.success.title')}</h1>
@@ -144,12 +197,66 @@ export default function SupportContact() {
 
   return (
     <div style={styles.container} dir={isRTL ? 'rtl' : 'ltr'} lang={locale}>
-      <PageHeader />
       <div style={styles.formCard}>
-        <h1 style={styles.title}>📧 {t('support.title')}</h1>
-        <p style={styles.subtitle}>
-          {t('support.subtitle')}
-        </p>
+        <div style={styles.headerRow}>
+          <div>
+            <h1 style={styles.title}>📧 {t('support.title')}</h1>
+            <p style={styles.subtitle}>
+              {t('support.subtitle')}
+            </p>
+          </div>
+          <div style={{ position: 'relative' }} ref={langDropdownRef}>
+            <button
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              style={{
+                ...styles.langButton,
+                borderColor: isLangOpen ? '#667eea' : '#e2e8f0',
+                backgroundColor: isLangOpen ? '#f8fafc' : 'white',
+              }}
+              onMouseEnter={(e) => {
+                if (!isLangOpen) {
+                  e.target.style.borderColor = '#667eea';
+                  e.target.style.backgroundColor = '#f8fafc';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isLangOpen) {
+                  e.target.style.borderColor = '#e2e8f0';
+                  e.target.style.backgroundColor = 'white';
+                }
+              }}
+              aria-label="Select language"
+            >
+              <MdLanguage size={20} />
+              <span style={{ marginLeft: '8px' }}>{currentLanguage.flag}</span>
+              <span style={{ marginLeft: '4px' }}>
+                {currentLanguage.name}
+              </span>
+            </button>
+            {isLangOpen && (
+              <div style={isRTL ? styles.langDropdownRTL : styles.langDropdown}>
+                {languages.map((language) => (
+                  <button
+                    key={language.code}
+                    onClick={() => handleLanguageChange(language.code)}
+                    style={{
+                      ...styles.langOption,
+                      backgroundColor: locale === language.code ? '#f1f5f9' : 'transparent',
+                    }}
+                  >
+                    <span style={{ fontSize: '18px' }}>{language.flag}</span>
+                    <span style={{ flex: 1, marginLeft: '12px', fontWeight: locale === language.code ? '600' : '400' }}>
+                      {language.name}
+                    </span>
+                    {locale === language.code && (
+                      <MdCheck size={18} style={{ color: '#10bb82' }} />
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.formGroup}>
@@ -338,10 +445,75 @@ const styles = {
     textAlign: 'center',
     margin: '40px auto',
   },
+  headerRow: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: '1.5em',
+    gap: '20px',
+    flexWrap: 'wrap',
+  },
   title: {
-    fontSize: '2.5em',
+    fontSize: '2em',
     marginBottom: '0.3em',
     color: '#1e293b',
+  },
+  langButton: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '8px 12px',
+    borderRadius: '8px',
+    fontSize: '0.9em',
+    fontWeight: '500',
+    color: '#334155',
+    background: 'white',
+    border: '2px solid #e2e8f0',
+    cursor: 'pointer',
+    transition: 'all 0.2s',
+  },
+  langDropdown: {
+    position: 'absolute',
+    top: '100%',
+    right: 0,
+    marginTop: '8px',
+    width: '220px',
+    background: 'white',
+    borderRadius: '8px',
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.15)',
+    border: '1px solid #e2e8f0',
+    padding: '4px',
+    zIndex: 1000,
+    maxHeight: '400px',
+    overflowY: 'auto',
+  },
+  langDropdownRTL: {
+    position: 'absolute',
+    top: '100%',
+    left: 0,
+    right: 'auto',
+    marginTop: '8px',
+    width: '220px',
+    background: 'white',
+    borderRadius: '8px',
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.15)',
+    border: '1px solid #e2e8f0',
+    padding: '4px',
+    zIndex: 1000,
+    maxHeight: '400px',
+    overflowY: 'auto',
+  },
+  langOption: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '10px 12px',
+    textAlign: 'left',
+    fontSize: '0.9em',
+    color: '#1e293b',
+    border: 'none',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    transition: 'background-color 0.2s',
   },
   subtitle: {
     color: '#64748b',
