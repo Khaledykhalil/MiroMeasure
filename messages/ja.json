@@ -152,38 +152,45 @@
     "form": {
       "name": "名前",
       "email": "メール",
+      "category": "カテゴリー",
+      "subject": "件名",
       "message": "メッセージ",
       "submit": "メッセージを送信",
-      "category": "Category",
-      "subject": "Subject",
-      "sending": "Sending...",
+      "sending": "送信中...",
       "categories": {
-        "technical": "Technical Issue",
-        "bug": "Bug Report",
-        "feature": "Feature Request",
-        "question": "General Question",
-        "feedback": "Feedback",
-        "other": "Other"
+        "technical": "技術的な問題",
+        "bug": "バグレポート",
+        "feature": "機能リクエスト",
+        "question": "一般的な質問",
+        "feedback": "フィードバック",
+        "other": "その他"
       },
       "placeholders": {
-        "name": "Your full name",
+        "name": "お名前（フルネーム）",
         "email": "your.email@example.com",
-        "subject": "Brief description of your issue",
-        "message": "Please provide as much detail as possible..."
-      }
+        "subject": "問題の簡単な説明",
+        "message": "できるだけ詳しくご記入ください。以下を含めてください：\n• 実行しようとしていたこと\n• 実際に起こったこと\n• ブラウザとMiroプランの種類\n• エラーメッセージ\n• 再現手順（該当する場合）"
+      },
+      "error": {
+        "title": "エラー：",
+        "default": "メッセージの送信に失敗しました。もう一度お試しください。",
+        "emailDirect": "直接メールでお問い合わせいただくこともできます："
+      },
+      "trouble": "問題が発生していますか？直接メールでお問い合わせください："
     },
     "success": {
-      "title": "Message Sent Successfully!",
-      "text": "Thank you for contacting MeasureMint support. We've received your message and will respond to",
-      "subtext": "If you don't hear from us, please check your spam folder or email us directly at:",
-      "sendAnother": "← Send Another Message"
+      "title": "メッセージが正常に送信されました！",
+      "text": "MeasureMintサポートにお問い合わせいただき、ありがとうございます。メッセージを受信し、",
+      "subtext": "返信がない場合は、迷惑メールフォルダを確認するか、直接メールでお問い合わせください：",
+      "sendAnother": "← 別のメッセージを送信"
     },
     "otherWays": {
-      "title": "Other Ways to Reach Us",
-      "directEmail": "Direct Email:",
-      "bugReports": "Bug Reports:",
-      "documentation": "Documentation:",
-      "helpCenter": "Help Center"
+      "title": "その他のお問い合わせ方法",
+      "directEmail": "直接メール：",
+      "bugReports": "バグレポート：",
+      "documentation": "ドキュメント：",
+      "helpCenter": "ヘルプセンター",
+      "githubIssues": "GitHubの問題"
     }
   },
   "waitlist": {
@@ -225,10 +232,10 @@
     "privacyNote": "We respect your privacy. Your information will only be used to contact you about MeasureMint."
   },
   "guide": {
-    "title": "How to Use MeasureMint",
-    "subtitle": "A step-by-step guide to measuring and scaling drawings on Miro Board with precision.",
-    "watchVideo": "Watch Full Video Tutorial →",
-    "step": "STEP"
+    "title": "MeasureMintの使い方",
+    "subtitle": "Miro Boardで図面を正確に測定およびスケーリングするためのステップバイステップガイド。",
+    "watchVideo": "完全なビデオチュートリアルを見る →",
+    "step": "ステップ"
   },
   "help": {
     "title": "MeasureMint Help Center",
@@ -327,9 +334,9 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 MeasureMint. All rights reserved.",
-    "support": "Support",
-    "privacy": "Privacy",
-    "terms": "Terms"
+    "copyright": "© 2025 MeasureMint. 全著作権所有。",
+    "support": "サポート",
+    "privacy": "プライバシー",
+    "terms": "利用規約"
   }
 }

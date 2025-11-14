@@ -148,83 +148,90 @@
     "form": {
       "name": "Nombre",
       "email": "Email",
+      "category": "Categoría",
+      "subject": "Asunto",
       "message": "Mensaje",
       "submit": "Enviar Mensaje",
-      "category": "Category",
-      "subject": "Subject",
-      "sending": "Sending...",
+      "sending": "Enviando...",
       "categories": {
-        "technical": "Technical Issue",
-        "bug": "Bug Report",
-        "feature": "Feature Request",
-        "question": "General Question",
-        "feedback": "Feedback",
-        "other": "Other"
+        "technical": "Problema técnico",
+        "bug": "Reporte de error",
+        "feature": "Solicitud de función",
+        "question": "Pregunta general",
+        "feedback": "Comentarios",
+        "other": "Otro"
       },
       "placeholders": {
-        "name": "Your full name",
-        "email": "your.email@example.com",
-        "subject": "Brief description of your issue",
-        "message": "Please provide as much detail as possible..."
-      }
+        "name": "Tu nombre completo",
+        "email": "tu.email@ejemplo.com",
+        "subject": "Breve descripción de tu problema",
+        "message": "Por favor proporciona tantos detalles como sea posible. Incluye:\n• Lo que estabas intentando hacer\n• Lo que sucedió en su lugar\n• Navegador y tipo de plan de Miro\n• Cualquier mensaje de error\n• Pasos para reproducir (si aplica)"
+      },
+      "error": {
+        "title": "Error:",
+        "default": "Error al enviar tu mensaje. Por favor intenta de nuevo.",
+        "emailDirect": "También puedes enviarnos un email directamente a:"
+      },
+      "trouble": "¿Tienes problemas? Envíanos un email directamente a"
     },
     "success": {
-      "title": "Message Sent Successfully!",
-      "text": "Thank you for contacting MeasureMint support. We've received your message and will respond to",
-      "subtext": "If you don't hear from us, please check your spam folder or email us directly at:",
-      "sendAnother": "← Send Another Message"
+      "title": "¡Mensaje enviado con éxito!",
+      "text": "Gracias por contactar al soporte de MeasureMint. Hemos recibido tu mensaje y responderemos a",
+      "subtext": "Si no recibes respuesta, por favor revisa tu carpeta de spam o envíanos un email directamente a:",
+      "sendAnother": "← Enviar otro mensaje"
     },
     "otherWays": {
-      "title": "Other Ways to Reach Us",
-      "directEmail": "Direct Email:",
-      "bugReports": "Bug Reports:",
-      "documentation": "Documentation:",
-      "helpCenter": "Help Center"
+      "title": "Otras formas de contactarnos",
+      "directEmail": "Email directo:",
+      "bugReports": "Reportes de errores:",
+      "documentation": "Documentación:",
+      "helpCenter": "Centro de ayuda",
+      "githubIssues": "Problemas de GitHub"
     }
   },
   "waitlist": {
-    "title": "Join the Waitlist",
-    "subtitle": "Be the first to know when MeasureMint launches. Get early access and exclusive updates.",
+    "title": "Únete a la lista de espera",
+    "subtitle": "Sé el primero en saber cuándo se lanza MeasureMint. Obtén acceso anticipado y actualizaciones exclusivas.",
     "form": {
-      "name": "Full Name",
-      "email": "Email Address",
-      "profession": "Profession",
-      "company": "Company Name",
-      "submit": "Join Waitlist",
-      "submitting": "Joining...",
+      "name": "Nombre completo",
+      "email": "Dirección de correo electrónico",
+      "profession": "Profesión",
+      "company": "Nombre de la empresa",
+      "submit": "Unirse a la lista",
+      "submitting": "Uniéndose...",
       "placeholders": {
-        "name": "John Doe",
-        "email": "john@company.com",
-        "profession": "e.g., Architect, Engineer, Project Manager",
-        "company": "Your Company"
+        "name": "Juan Pérez",
+        "email": "juan@empresa.com",
+        "profession": "ej: Arquitecto, Ingeniero, Gerente de Proyecto",
+        "company": "Tu empresa"
       }
     },
     "success": {
-      "title": "You're on the list!",
-      "text": "Thank you for joining the MeasureMint waitlist,",
-      "subtext": "We'll send updates and early access information to",
-      "nextSteps": "What happens next?",
+      "title": "¡Estás en la lista!",
+      "text": "Gracias por unirte a la lista de espera de MeasureMint,",
+      "subtext": "Enviaremos actualizaciones e información de acceso anticipado a",
+      "nextSteps": "¿Qué sigue?",
       "confirmation": {
-        "title": "Confirmation Email",
-        "text": "Check your inbox for a confirmation"
+        "title": "Correo de confirmación",
+        "text": "Revisa tu bandeja de entrada para una confirmación"
       },
       "launch": {
-        "title": "Launch Notification",
-        "text": "Be first to know when we launch"
+        "title": "Notificación de lanzamiento",
+        "text": "Sé el primero en saber cuándo lanzamos"
       },
       "earlyAccess": {
-        "title": "Early Access",
-        "text": "Get exclusive early access"
+        "title": "Acceso anticipado",
+        "text": "Obtén acceso anticipado exclusivo"
       },
-      "backToHome": "← Back to Home"
+      "backToHome": "← Volver al inicio"
     },
-    "privacyNote": "We respect your privacy. Your information will only be used to contact you about MeasureMint."
+    "privacyNote": "Respetamos tu privacidad. Tu información solo se usará para contactarte sobre MeasureMint."
   },
   "guide": {
-    "title": "How to Use MeasureMint",
-    "subtitle": "A step-by-step guide to measuring and scaling drawings on Miro Board with precision.",
-    "watchVideo": "Watch Full Video Tutorial →",
-    "step": "STEP"
+    "title": "Cómo usar MeasureMint",
+    "subtitle": "Una guía paso a paso para medir y escalar dibujos en Miro Board con precisión.",
+    "watchVideo": "Ver tutorial de video completo →",
+    "step": "PASO"
   },
   "help": {
     "title": "MeasureMint Help Center",
@@ -323,9 +330,9 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 MeasureMint. All rights reserved.",
-    "support": "Support",
-    "privacy": "Privacy",
-    "terms": "Terms"
+    "copyright": "© 2025 MeasureMint. Todos los derechos reservados.",
+    "support": "Soporte",
+    "privacy": "Privacidad",
+    "terms": "Términos"
   }
 }

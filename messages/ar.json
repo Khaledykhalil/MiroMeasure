@@ -152,38 +152,45 @@
     "form": {
       "name": "الاسم",
       "email": "البريد الإلكتروني",
+      "category": "الفئة",
+      "subject": "الموضوع",
       "message": "الرسالة",
       "submit": "إرسال الرسالة",
-      "category": "Category",
-      "subject": "Subject",
-      "sending": "Sending...",
+      "sending": "جاري الإرسال...",
       "categories": {
-        "technical": "Technical Issue",
-        "bug": "Bug Report",
-        "feature": "Feature Request",
-        "question": "General Question",
-        "feedback": "Feedback",
-        "other": "Other"
+        "technical": "مشكلة تقنية",
+        "bug": "تقرير خطأ",
+        "feature": "طلب ميزة",
+        "question": "سؤال عام",
+        "feedback": "ملاحظات",
+        "other": "أخرى"
       },
       "placeholders": {
-        "name": "Your full name",
-        "email": "your.email@example.com",
-        "subject": "Brief description of your issue",
-        "message": "Please provide as much detail as possible..."
-      }
+        "name": "اسمك الكامل",
+        "email": "بريدك.الإلكتروني@مثال.com",
+        "subject": "وصف موجز لمشكلتك",
+        "message": "يرجى تقديم أكبر قدر ممكن من التفاصيل. شمل:\n• ما كنت تحاول القيام به\n• ما حدث بدلاً من ذلك\n• المتصفح ونوع خطة Miro\n• أي رسائل خطأ\n• خطوات إعادة الإنتاج (إن أمكن)"
+      },
+      "error": {
+        "title": "خطأ:",
+        "default": "فشل في إرسال رسالتك. يرجى المحاولة مرة أخرى.",
+        "emailDirect": "يمكنك أيضًا إرسال بريد إلكتروني مباشر إلى:"
+      },
+      "trouble": "تواجه مشكلة؟ أرسل لنا بريدًا إلكترونيًا مباشرًا إلى"
     },
     "success": {
-      "title": "Message Sent Successfully!",
-      "text": "Thank you for contacting MeasureMint support. We've received your message and will respond to",
-      "subtext": "If you don't hear from us, please check your spam folder or email us directly at:",
-      "sendAnother": "← Send Another Message"
+      "title": "تم إرسال الرسالة بنجاح!",
+      "text": "شكرًا لتواصلك مع دعم MeasureMint. لقد استلمنا رسالتك وسنرد على",
+      "subtext": "إذا لم تسمع منا، يرجى التحقق من مجلد البريد العشوائي أو إرسال بريد إلكتروني مباشر إلى:",
+      "sendAnother": "← إرسال رسالة أخرى"
     },
     "otherWays": {
-      "title": "Other Ways to Reach Us",
-      "directEmail": "Direct Email:",
-      "bugReports": "Bug Reports:",
-      "documentation": "Documentation:",
-      "helpCenter": "Help Center"
+      "title": "طرق أخرى للوصول إلينا",
+      "directEmail": "البريد الإلكتروني المباشر:",
+      "bugReports": "تقارير الأخطاء:",
+      "documentation": "التوثيق:",
+      "helpCenter": "مركز المساعدة",
+      "githubIssues": "مشاكل GitHub"
     }
   },
   "waitlist": {
@@ -225,10 +232,10 @@
     "privacyNote": "We respect your privacy. Your information will only be used to contact you about MeasureMint."
   },
   "guide": {
-    "title": "How to Use MeasureMint",
-    "subtitle": "A step-by-step guide to measuring and scaling drawings on Miro Board with precision.",
-    "watchVideo": "Watch Full Video Tutorial →",
-    "step": "STEP"
+    "title": "كيفية استخدام MeasureMint",
+    "subtitle": "دليل خطوة بخطوة لقياس وتوسيع الرسومات على Miro Board بدقة.",
+    "watchVideo": "شاهد البرنامج التعليمي الكامل →",
+    "step": "خطوة"
   },
   "help": {
     "title": "MeasureMint Help Center",
@@ -327,9 +334,9 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 MeasureMint. All rights reserved.",
-    "support": "Support",
-    "privacy": "Privacy",
-    "terms": "Terms"
+    "copyright": "© 2025 MeasureMint. جميع الحقوق محفوظة.",
+    "support": "الدعم",
+    "privacy": "الخصوصية",
+    "terms": "الشروط"
   }
 }

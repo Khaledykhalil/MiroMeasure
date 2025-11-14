@@ -90,7 +90,7 @@ export default function SupportContact() {
       setSubmitted(true);
     } catch (err) {
       console.error('Error submitting form:', err);
-      setError(err.message || 'Failed to send your message. Please try again.');
+      setError(err.message || (translations ? t('support.form.error.default') : 'Failed to send your message. Please try again.'));
     } finally {
       setIsSubmitting(false);
     }
@@ -153,7 +153,7 @@ export default function SupportContact() {
 
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.formGroup}>
-            <label style={styles.label}>Name *</label>
+            <label style={styles.label}>{t('support.form.name')} *</label>
             <input
               type="text"
               name="name"
@@ -161,12 +161,14 @@ export default function SupportContact() {
               onChange={handleChange}
               required
               style={styles.input}
-              placeholder="Your full name"
+              placeholder={t('support.form.placeholders.name')}
+              onFocus={(e) => e.target.style.borderColor = '#667eea'}
+              onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
             />
           </div>
 
           <div style={styles.formGroup}>
-            <label style={styles.label}>Email *</label>
+            <label style={styles.label}>{t('support.form.email')} *</label>
             <input
               type="email"
               name="email"
@@ -174,30 +176,34 @@ export default function SupportContact() {
               onChange={handleChange}
               required
               style={styles.input}
-              placeholder="your.email@example.com"
+              placeholder={t('support.form.placeholders.email')}
+              onFocus={(e) => e.target.style.borderColor = '#667eea'}
+              onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
             />
           </div>
 
           <div style={styles.formGroup}>
-            <label style={styles.label}>Category *</label>
+            <label style={styles.label}>{t('support.form.category')} *</label>
             <select
               name="category"
               value={formData.category}
               onChange={handleChange}
               required
               style={styles.select}
+              onFocus={(e) => e.target.style.borderColor = '#667eea'}
+              onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
             >
-              <option value="technical">Technical Issue</option>
-              <option value="bug">Bug Report</option>
-              <option value="feature">Feature Request</option>
-              <option value="question">General Question</option>
-              <option value="feedback">Feedback</option>
-              <option value="other">Other</option>
+              <option value="technical">{t('support.form.categories.technical')}</option>
+              <option value="bug">{t('support.form.categories.bug')}</option>
+              <option value="feature">{t('support.form.categories.feature')}</option>
+              <option value="question">{t('support.form.categories.question')}</option>
+              <option value="feedback">{t('support.form.categories.feedback')}</option>
+              <option value="other">{t('support.form.categories.other')}</option>
             </select>
           </div>
 
           <div style={styles.formGroup}>
-            <label style={styles.label}>Subject *</label>
+            <label style={styles.label}>{t('support.form.subject')} *</label>
             <input
               type="text"
               name="subject"
@@ -205,12 +211,14 @@ export default function SupportContact() {
               onChange={handleChange}
               required
               style={styles.input}
-              placeholder="Brief description of your issue"
+              placeholder={t('support.form.placeholders.subject')}
+              onFocus={(e) => e.target.style.borderColor = '#667eea'}
+              onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
             />
           </div>
 
           <div style={styles.formGroup}>
-            <label style={styles.label}>Message *</label>
+            <label style={styles.label}>{t('support.form.message')} *</label>
             <textarea
               name="message"
               value={formData.message}
@@ -218,22 +226,19 @@ export default function SupportContact() {
               required
               rows={8}
               style={styles.textarea}
-              placeholder="Please provide as much detail as possible. Include:
-• What you were trying to do
-• What happened instead
-• Browser and Miro plan type
-• Any error messages
-• Steps to reproduce (if applicable)"
+              placeholder={t('support.form.placeholders.message')}
+              onFocus={(e) => e.target.style.borderColor = '#667eea'}
+              onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
             />
           </div>
 
           {error && (
             <div style={styles.errorBox}>
-              <strong>❌ Error:</strong> {error}
+              <strong>❌ {t('support.form.error.title')}</strong> {error}
               <p style={{marginTop: '12px', fontSize: '0.9em'}}>
-                You can also email us directly at:{' '}
+                {t('support.form.error.emailDirect')}{' '}
                 <a 
-                  href={`mailto:support@measuremint.app?subject=${encodeURIComponent(formData.subject || 'Support Request')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.category}\n\nMessage:\n${formData.message}`)}`}
+                  href={`mailto:support@measuremint.app?subject=${encodeURIComponent(formData.subject || t('support.title'))}&body=${encodeURIComponent(`${t('support.form.name')}: ${formData.name}\n${t('support.form.email')}: ${formData.email}\n${t('support.form.category')}: ${t(`support.form.categories.${formData.category}`)}\n\n${t('support.form.message')}:\n${formData.message}`)}`}
                   style={{color: '#3b82f6', textDecoration: 'underline'}}
                 >
                   support@measuremint.app
@@ -250,14 +255,24 @@ export default function SupportContact() {
               cursor: isSubmitting ? 'not-allowed' : 'pointer',
             }}
             disabled={isSubmitting}
+            onMouseEnter={(e) => {
+              if (!isSubmitting) {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 10px 20px rgba(102, 126, 234, 0.3)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = 'none';
+            }}
           >
             {isSubmitting ? t('support.form.sending') : t('support.form.submit') + ' →'}
           </button>
           
           <div style={{textAlign: 'center', marginTop: '16px', color: '#64748b', fontSize: '0.9em'}}>
-            Having trouble? Email us directly at{' '}
+            {t('support.form.trouble')}{' '}
             <a 
-              href={`mailto:support@measuremint.app?subject=${encodeURIComponent(formData.subject || 'Support Request')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.category}\n\nMessage:\n${formData.message}`)}`}
+              href={`mailto:support@measuremint.app?subject=${encodeURIComponent(formData.subject || t('support.title'))}&body=${encodeURIComponent(`${t('support.form.name')}: ${formData.name}\n${t('support.form.email')}: ${formData.email}\n${t('support.form.category')}: ${t(`support.form.categories.${formData.category}`)}\n\n${t('support.form.message')}:\n${formData.message}`)}`}
               style={{color: '#3b82f6', textDecoration: 'none', borderBottom: '1px solid #3b82f6'}}
             >
               support@measuremint.app
@@ -278,7 +293,7 @@ export default function SupportContact() {
           <div style={styles.contactMethod}>
             <strong>🐛 {t('support.otherWays.bugReports')}</strong>
             <a href="https://github.com/Khaledykhalil/MeasureMint/issues" target="_blank" rel="noopener noreferrer" style={styles.link}>
-              GitHub Issues
+              {t('support.otherWays.githubIssues')}
             </a>
           </div>
 
@@ -298,18 +313,20 @@ const styles = {
   container: {
     minHeight: '100vh',
     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    padding: '40px 20px',
+    padding: '20px 20px 40px',
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
   formCard: {
     maxWidth: '600px',
     width: '100%',
     background: 'white',
     borderRadius: '12px',
-    padding: '40px',
+    padding: 'clamp(24px, 5vw, 40px)',
     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+    marginTop: '20px',
   },
   successCard: {
     maxWidth: '500px',

@@ -152,38 +152,45 @@
     "form": {
       "name": "姓名",
       "email": "电子邮件",
+      "category": "类别",
+      "subject": "主题",
       "message": "消息",
       "submit": "发送消息",
-      "category": "Category",
-      "subject": "Subject",
-      "sending": "Sending...",
+      "sending": "发送中...",
       "categories": {
-        "technical": "Technical Issue",
-        "bug": "Bug Report",
-        "feature": "Feature Request",
-        "question": "General Question",
-        "feedback": "Feedback",
-        "other": "Other"
+        "technical": "技术问题",
+        "bug": "错误报告",
+        "feature": "功能请求",
+        "question": "一般问题",
+        "feedback": "反馈",
+        "other": "其他"
       },
       "placeholders": {
-        "name": "Your full name",
+        "name": "您的全名",
         "email": "your.email@example.com",
-        "subject": "Brief description of your issue",
-        "message": "Please provide as much detail as possible..."
-      }
+        "subject": "问题的简要描述",
+        "message": "请尽可能提供详细信息。包括：\n• 您尝试执行的操作\n• 实际发生的情况\n• 浏览器和Miro计划类型\n• 任何错误消息\n• 重现步骤（如适用）"
+      },
+      "error": {
+        "title": "错误：",
+        "default": "发送消息失败。请重试。",
+        "emailDirect": "您也可以直接发送电子邮件至："
+      },
+      "trouble": "遇到问题？直接发送电子邮件至"
     },
     "success": {
-      "title": "Message Sent Successfully!",
-      "text": "Thank you for contacting MeasureMint support. We've received your message and will respond to",
-      "subtext": "If you don't hear from us, please check your spam folder or email us directly at:",
-      "sendAnother": "← Send Another Message"
+      "title": "消息发送成功！",
+      "text": "感谢您联系MeasureMint支持。我们已收到您的消息，将在",
+      "subtext": "如果您没有收到回复，请检查您的垃圾邮件文件夹或直接发送电子邮件至：",
+      "sendAnother": "← 发送另一条消息"
     },
     "otherWays": {
-      "title": "Other Ways to Reach Us",
-      "directEmail": "Direct Email:",
-      "bugReports": "Bug Reports:",
-      "documentation": "Documentation:",
-      "helpCenter": "Help Center"
+      "title": "其他联系方式",
+      "directEmail": "直接电子邮件：",
+      "bugReports": "错误报告：",
+      "documentation": "文档：",
+      "helpCenter": "帮助中心",
+      "githubIssues": "GitHub问题"
     }
   },
   "waitlist": {
@@ -225,10 +232,10 @@
     "privacyNote": "We respect your privacy. Your information will only be used to contact you about MeasureMint."
   },
   "guide": {
-    "title": "How to Use MeasureMint",
-    "subtitle": "A step-by-step guide to measuring and scaling drawings on Miro Board with precision.",
-    "watchVideo": "Watch Full Video Tutorial →",
-    "step": "STEP"
+    "title": "如何使用 MeasureMint",
+    "subtitle": "在 Miro Board 上精确测量和缩放图纸的分步指南。",
+    "watchVideo": "观看完整视频教程 →",
+    "step": "步骤"
   },
   "help": {
     "title": "MeasureMint Help Center",
@@ -327,9 +334,9 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 MeasureMint. All rights reserved.",
-    "support": "Support",
-    "privacy": "Privacy",
-    "terms": "Terms"
+    "copyright": "© 2025 MeasureMint. 保留所有权利。",
+    "support": "支持",
+    "privacy": "隐私",
+    "terms": "条款"
   }
 }

@@ -152,38 +152,45 @@
     "form": {
       "name": "Имя",
       "email": "Email",
+      "category": "Категория",
+      "subject": "Тема",
       "message": "Сообщение",
       "submit": "Отправить сообщение",
-      "category": "Category",
-      "subject": "Subject",
-      "sending": "Sending...",
+      "sending": "Отправка...",
       "categories": {
-        "technical": "Technical Issue",
-        "bug": "Bug Report",
-        "feature": "Feature Request",
-        "question": "General Question",
-        "feedback": "Feedback",
-        "other": "Other"
+        "technical": "Техническая проблема",
+        "bug": "Сообщение об ошибке",
+        "feature": "Запрос функции",
+        "question": "Общий вопрос",
+        "feedback": "Отзыв",
+        "other": "Другое"
       },
       "placeholders": {
-        "name": "Your full name",
-        "email": "your.email@example.com",
-        "subject": "Brief description of your issue",
-        "message": "Please provide as much detail as possible..."
-      }
+        "name": "Ваше полное имя",
+        "email": "ваш.email@пример.com",
+        "subject": "Краткое описание вашей проблемы",
+        "message": "Пожалуйста, предоставьте как можно больше деталей. Включите:\n• Что вы пытались сделать\n• Что произошло вместо этого\n• Браузер и тип плана Miro\n• Любые сообщения об ошибках\n• Шаги для воспроизведения (если применимо)"
+      },
+      "error": {
+        "title": "Ошибка:",
+        "default": "Не удалось отправить ваше сообщение. Пожалуйста, попробуйте снова.",
+        "emailDirect": "Вы также можете отправить нам письмо напрямую на:"
+      },
+      "trouble": "Возникли проблемы? Отправьте нам письмо напрямую на"
     },
     "success": {
-      "title": "Message Sent Successfully!",
-      "text": "Thank you for contacting MeasureMint support. We've received your message and will respond to",
-      "subtext": "If you don't hear from us, please check your spam folder or email us directly at:",
-      "sendAnother": "← Send Another Message"
+      "title": "Сообщение успешно отправлено!",
+      "text": "Спасибо за обращение в службу поддержки MeasureMint. Мы получили ваше сообщение и ответим на",
+      "subtext": "Если вы не получите от нас ответа, пожалуйста, проверьте папку со спамом или отправьте нам письмо напрямую на:",
+      "sendAnother": "← Отправить другое сообщение"
     },
     "otherWays": {
-      "title": "Other Ways to Reach Us",
-      "directEmail": "Direct Email:",
-      "bugReports": "Bug Reports:",
-      "documentation": "Documentation:",
-      "helpCenter": "Help Center"
+      "title": "Другие способы связаться с нами",
+      "directEmail": "Прямой email:",
+      "bugReports": "Сообщения об ошибках:",
+      "documentation": "Документация:",
+      "helpCenter": "Центр помощи",
+      "githubIssues": "Проблемы на GitHub"
     }
   },
   "waitlist": {
@@ -225,10 +232,10 @@
     "privacyNote": "We respect your privacy. Your information will only be used to contact you about MeasureMint."
   },
   "guide": {
-    "title": "How to Use MeasureMint",
-    "subtitle": "A step-by-step guide to measuring and scaling drawings on Miro Board with precision.",
-    "watchVideo": "Watch Full Video Tutorial →",
-    "step": "STEP"
+    "title": "Как использовать MeasureMint",
+    "subtitle": "Пошаговое руководство по измерению и масштабированию чертежей на Miro Board с точностью.",
+    "watchVideo": "Смотреть полное видео-руководство →",
+    "step": "ШАГ"
   },
   "help": {
     "title": "MeasureMint Help Center",
@@ -327,9 +334,9 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 MeasureMint. All rights reserved.",
-    "support": "Support",
-    "privacy": "Privacy",
-    "terms": "Terms"
+    "copyright": "© 2025 MeasureMint. Все права защищены.",
+    "support": "Поддержка",
+    "privacy": "Конфиденциальность",
+    "terms": "Условия"
   }
 }

@@ -165,8 +165,14 @@
         "name": "Your full name",
         "email": "your.email@example.com",
         "subject": "Brief description of your issue",
-        "message": "Please provide as much detail as possible..."
-      }
+        "message": "Please provide as much detail as possible. Include:\n• What you were trying to do\n• What happened instead\n• Browser and Miro plan type\n• Any error messages\n• Steps to reproduce (if applicable)"
+      },
+      "error": {
+        "title": "Error:",
+        "default": "Failed to send your message. Please try again.",
+        "emailDirect": "You can also email us directly at:"
+      },
+      "trouble": "Having trouble? Email us directly at"
     },
     "success": {
       "title": "Message Sent Successfully!",
@@ -179,7 +185,8 @@
       "directEmail": "Direct Email:",
       "bugReports": "Bug Reports:",
       "documentation": "Documentation:",
-      "helpCenter": "Help Center"
+      "helpCenter": "Help Center",
+      "githubIssues": "GitHub Issues"
     }
   },
   "waitlist": {

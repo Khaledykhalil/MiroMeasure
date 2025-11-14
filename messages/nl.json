@@ -152,38 +152,45 @@
     "form": {
       "name": "Naam",
       "email": "E-mail",
+      "category": "Categorie",
+      "subject": "Onderwerp",
       "message": "Bericht",
       "submit": "Bericht Verzenden",
-      "category": "Category",
-      "subject": "Subject",
-      "sending": "Sending...",
+      "sending": "Verzenden...",
       "categories": {
-        "technical": "Technical Issue",
-        "bug": "Bug Report",
-        "feature": "Feature Request",
-        "question": "General Question",
+        "technical": "Technisch probleem",
+        "bug": "Bugrapport",
+        "feature": "Functieverzoek",
+        "question": "Algemene vraag",
         "feedback": "Feedback",
-        "other": "Other"
+        "other": "Anders"
       },
       "placeholders": {
-        "name": "Your full name",
-        "email": "your.email@example.com",
-        "subject": "Brief description of your issue",
-        "message": "Please provide as much detail as possible..."
-      }
+        "name": "Uw volledige naam",
+        "email": "uw.email@voorbeeld.com",
+        "subject": "Korte beschrijving van uw probleem",
+        "message": "Geef zoveel mogelijk details. Vermeld:\n• Wat u probeerde te doen\n• Wat er in plaats daarvan gebeurde\n• Browser en Miro-plan type\n• Eventuele foutmeldingen\n• Stappen om te reproduceren (indien van toepassing)"
+      },
+      "error": {
+        "title": "Fout:",
+        "default": "Uw bericht kon niet worden verzonden. Probeer het opnieuw.",
+        "emailDirect": "U kunt ons ook rechtstreeks een e-mail sturen naar:"
+      },
+      "trouble": "Heeft u problemen? Stuur ons rechtstreeks een e-mail naar"
     },
     "success": {
-      "title": "Message Sent Successfully!",
-      "text": "Thank you for contacting MeasureMint support. We've received your message and will respond to",
-      "subtext": "If you don't hear from us, please check your spam folder or email us directly at:",
-      "sendAnother": "← Send Another Message"
+      "title": "Bericht succesvol verzonden!",
+      "text": "Bedankt voor het contact opnemen met MeasureMint-ondersteuning. We hebben uw bericht ontvangen en zullen reageren op",
+      "subtext": "Als u niets van ons hoort, controleer dan uw spammap of stuur ons rechtstreeks een e-mail naar:",
+      "sendAnother": "← Verstuur een ander bericht"
     },
     "otherWays": {
-      "title": "Other Ways to Reach Us",
-      "directEmail": "Direct Email:",
-      "bugReports": "Bug Reports:",
-      "documentation": "Documentation:",
-      "helpCenter": "Help Center"
+      "title": "Andere manieren om ons te bereiken",
+      "directEmail": "Directe e-mail:",
+      "bugReports": "Bugrapporten:",
+      "documentation": "Documentatie:",
+      "helpCenter": "Helpcentrum",
+      "githubIssues": "GitHub-problemen"
     }
   },
   "waitlist": {
@@ -225,10 +232,10 @@
     "privacyNote": "We respect your privacy. Your information will only be used to contact you about MeasureMint."
   },
   "guide": {
-    "title": "How to Use MeasureMint",
-    "subtitle": "A step-by-step guide to measuring and scaling drawings on Miro Board with precision.",
-    "watchVideo": "Watch Full Video Tutorial →",
-    "step": "STEP"
+    "title": "Hoe MeasureMint te gebruiken",
+    "subtitle": "Een stap-voor-stap gids voor het meten en schalen van tekeningen op Miro Board met precisie.",
+    "watchVideo": "Bekijk volledige video-tutorial →",
+    "step": "STAP"
   },
   "help": {
     "title": "MeasureMint Help Center",
@@ -327,9 +334,9 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 MeasureMint. All rights reserved.",
-    "support": "Support",
+    "copyright": "© 2025 MeasureMint. Alle rechten voorbehouden.",
+    "support": "Ondersteuning",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Voorwaarden"
   }
 }
