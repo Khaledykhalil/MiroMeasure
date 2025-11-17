@@ -10,10 +10,23 @@ const nextConfig = {
 				// Apply to all routes except static files
 				source: '/:path*',
 				headers: [
-					// Allow being embedded by Miro (and keep it permissive otherwise)
+					// Comprehensive CSP policy
 					{
 						key: 'Content-Security-Policy',
-						value: "frame-ancestors 'self' https://miro.com https://*.miro.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;",
+						value: [
+							"default-src 'self'",
+							"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://miro.com https://*.miro.com https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.clarity.ms https://scripts.clarity.ms https://*.clarity.ms",
+							"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+							"font-src 'self' data: https://fonts.gstatic.com https://r2cdn.perplexity.ai",
+							"img-src 'self' data: https: blob:",
+							"connect-src 'self' https://api.miro.com https://www.clarity.ms https://c.clarity.ms https://*.clarity.ms https://sourcemaps-wsdk.roktinternal.com https://va.vercel-scripts.com https://*.vercel.live",
+							"frame-src 'self' https://miro.com https://*.miro.com",
+							"frame-ancestors 'self' https://miro.com https://*.miro.com",
+							"object-src 'none'",
+							"base-uri 'self'",
+							"form-action 'self'",
+							"upgrade-insecure-requests",
+						].join('; '),
 					},
 					// Keep referrer minimal
 					{ key: 'Referrer-Policy', value: 'no-referrer' },

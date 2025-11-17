@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Noto_Sans_Arabic, Noto_Sans_JP, Noto_Sans_SC, Noto_Sans_TC, Noto_Sans_KR } from 'next/font/google';
 
 import { MiroSDKInit } from '../components/SDKInit'; 
+import { ClarityInit } from '../components/ClarityInit';
 import './globals.css';
 
 const notoSansArabic = Noto_Sans_Arabic({
@@ -64,19 +65,7 @@ export default function RootLayout({ children }) {
         {children}
         <Analytics />
         <SpeedInsights />
-        
-        {/* Microsoft Clarity - Heatmap and Session Recording */}
-        {process.env.NEXT_PUBLIC_CLARITY_ID && (
-          <Script id="clarity-script" strategy="afterInteractive">
-            {`
-              (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
-            `}
-          </Script>
-        )}
+        <ClarityInit />
       </body> 
     </html> ); 
 } 
