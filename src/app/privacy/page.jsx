@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
             </Link>
             <Link
               href="/waitlist"
-              className="bg-black text-white hover:bg-gray-800 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+              className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-4 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Join Waitlist
             </Link>

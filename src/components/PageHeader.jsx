@@ -90,7 +90,7 @@ export default function PageHeader() {
           </Link>
           <LanguageSelector />
           <Link href="/waitlist">
-            <button className="bg-black text-white hover:bg-gray-800 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+            <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-4 py-2 rounded-md text-sm font-medium transition-colors">
               {translations ? t('home.hero.ctaSecondary') : 'Join Waitlist'}
             </button>
           </Link>

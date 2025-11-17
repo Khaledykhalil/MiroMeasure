@@ -135,7 +135,7 @@ export default function Home() {
             </Link>
             <LanguageSelector />
             <Link href="/waitlist">
-              <button className="bg-black text-white hover:bg-gray-800 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+              <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-4 py-2 rounded-md text-sm font-medium transition-colors">
                 {translations ? t('home.hero.ctaSecondary') : 'Join Waitlist'}
               </button>
             </Link>
@@ -160,7 +160,7 @@ export default function Home() {
               Coming Soon
             </button>
             <Link href="/waitlist">
-              <button className="bg-black text-white hover:bg-gray-800 px-8 py-3 rounded-md text-lg font-medium transition-colors">
+              <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-8 py-3 rounded-md text-lg font-medium transition-colors">
                 {translations ? t('home.hero.ctaSecondary') : 'Join Waitlist'}
               </button>
             </Link>
@@ -425,7 +425,7 @@ export default function Home() {
                 Coming Soon
               </button>
               <Link href="/waitlist">
-                <button className="bg-black text-white hover:bg-gray-800 px-8 py-3 rounded-md text-lg font-medium transition-colors">
+                <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-8 py-3 rounded-md text-lg font-medium transition-colors">
                   {translations ? t('home.hero.ctaSecondary') : 'Join Waitlist'}
                 </button>
               </Link>
