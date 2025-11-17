@@ -1,6 +1,6 @@
 # 📏 MeasureMint
 
-**Professional measurement and calibration tool for architects, engineers, designers, and construction professionals. Scale on Miro - Measure on Miro.**
+**Professional measurement and calibration tool for designers. Scale on Miro - Measure on Miro.**
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-Proprietary-red)
@@ -327,6 +327,13 @@ This code and its underlying concepts, algorithms, and implementations are prote
 - Integrate this software into commercial products or services
 
 **✅ Personal, non-commercial viewing for evaluation purposes only.**
+
+**💼 Interested in commercial licensing?**
+- Want to use this technology in your business?
+- Looking to license or purchase the code?
+- Need a custom solution based on this work?
+
+**Contact for licensing:** support@measuremint.app
 
 See the [LICENSE](LICENSE) file for complete terms and conditions.
 
