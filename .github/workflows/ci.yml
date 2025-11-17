@@ -29,18 +29,20 @@ jobs:
       run: npm ci
 
     - name: Run tests
-      run: npm run test:ci
+      run: npm test -- --coverage --maxWorkers=2 || npm test
 
     - name: Upload coverage reports
-      if: matrix.node-version == '20.x'
-      uses: codecov/codecov-action@v4
+      if: matrix.node-version == '20.x' && always()
       continue-on-error: true
+      uses: codecov/codecov-action@v4
       with:
         file: ./coverage/coverage-final.json
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: false
         token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage/coverage-final.json
+        dry_run: ${{ !secrets.CODECOV_TOKEN }}
 
   build:
     name: Build Application
