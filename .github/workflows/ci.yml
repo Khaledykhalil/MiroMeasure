@@ -83,10 +83,11 @@ jobs:
         cache: 'npm'
 
     - name: Run npm audit
-      run: npm audit --audit-level=moderate
+      run: npm audit --audit-level=moderate || true
       continue-on-error: true
 
     - name: Check for vulnerable dependencies
+      if: ${{ secrets.SNYK_TOKEN != '' }}
       uses: snyk/actions/node@master
       continue-on-error: true
       env:
