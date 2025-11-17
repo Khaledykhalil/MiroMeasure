@@ -155,7 +155,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
               disabled
-              className="bg-gray-300 text-gray-500 cursor-not-allowed px-8 py-3 rounded-md text-lg font-medium transition-colors"
+              className="bg-black text-white cursor-not-allowed px-8 py-3 rounded-md text-lg font-medium transition-colors opacity-60"
             >
               Coming Soon
             </button>
@@ -420,7 +420,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 disabled
-                className="bg-gray-300 text-gray-500 cursor-not-allowed px-8 py-3 rounded-md text-lg font-medium transition-colors"
+                className="bg-black text-white cursor-not-allowed px-8 py-3 rounded-md text-lg font-medium transition-colors opacity-60"
               >
                 Coming Soon
               </button>
