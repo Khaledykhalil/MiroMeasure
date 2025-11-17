@@ -32,10 +32,10 @@ export default function TermsOfService() {
               Support
             </Link>
             <Link
-              href="/panel"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+              href="/waitlist"
+              className="bg-black text-white hover:bg-gray-800 px-4 py-2 rounded-md text-sm font-medium transition-colors"
             >
-              Launch App
+              Join Waitlist
             </Link>
           </nav>
         </div>

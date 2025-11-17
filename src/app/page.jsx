@@ -134,9 +134,9 @@ export default function Home() {
               {translations ? t('common.support') : 'Support'}
             </Link>
             <LanguageSelector />
-            <Link href="/panel">
-              <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                {translations ? t('common.launchApp') : 'Launch App'}
+            <Link href="/waitlist">
+              <button className="bg-black text-white hover:bg-gray-800 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                {translations ? t('home.hero.ctaSecondary') : 'Join Waitlist'}
               </button>
             </Link>
           </nav>
@@ -153,13 +153,14 @@ export default function Home() {
             {translations ? t('home.hero.subtitle') : 'Professional measurement and calibration tool for designers. Scaling and measuring drawings on Miro, for the first time ever!'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/panel">
-              <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                {translations ? t('home.hero.ctaPrimary') : 'Launch App'}
-              </button>
-            </Link>
+            <button 
+              disabled
+              className="bg-gray-300 text-gray-500 cursor-not-allowed px-8 py-3 rounded-md text-lg font-medium transition-colors"
+            >
+              Coming Soon
+            </button>
             <Link href="/waitlist">
-              <button className="border border-gray-300 text-gray-900 hover:border-gray-400 bg-transparent px-8 py-3 rounded-md text-lg font-medium transition-colors">
+              <button className="bg-black text-white hover:bg-gray-800 px-8 py-3 rounded-md text-lg font-medium transition-colors">
                 {translations ? t('home.hero.ctaSecondary') : 'Join Waitlist'}
               </button>
             </Link>
@@ -417,14 +418,15 @@ export default function Home() {
               {translations ? t('home.finalCta.subtitle') : 'Join architects and engineers who trust MeasureMint for accurate measurements on Miro.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/panel">
-                <button className="bg-[#10bb82] text-white hover:bg-[#0ea574] px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                  {translations ? t('home.finalCta.launchApp') : 'Launch MeasureMint'}
-                </button>
-              </Link>
-              <Link href="/help">
-                <button className="border border-gray-300 text-gray-900 hover:border-gray-400 bg-transparent px-8 py-3 rounded-md text-lg font-medium transition-colors">
-                  {translations ? t('home.finalCta.viewDocumentation') : 'View Documentation'}
+              <button 
+                disabled
+                className="bg-gray-300 text-gray-500 cursor-not-allowed px-8 py-3 rounded-md text-lg font-medium transition-colors"
+              >
+                Coming Soon
+              </button>
+              <Link href="/waitlist">
+                <button className="bg-black text-white hover:bg-gray-800 px-8 py-3 rounded-md text-lg font-medium transition-colors">
+                  {translations ? t('home.hero.ctaSecondary') : 'Join Waitlist'}
                 </button>
               </Link>
             </div>
