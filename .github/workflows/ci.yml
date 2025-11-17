@@ -90,7 +90,9 @@ jobs:
 
     - name: Check for vulnerable dependencies
       if: ${{ secrets.SNYK_TOKEN != '' }}
-      uses: snyk/actions/node@master
       continue-on-error: true
+      uses: snyk/actions/node@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        args: --severity-threshold=high
