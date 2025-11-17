@@ -29,7 +29,12 @@ jobs:
       run: npm ci
 
     - name: Run tests
-      run: npm test -- --coverage --maxWorkers=2 || npm test
+      run: npm test -- --maxWorkers=2
+      
+    - name: Generate coverage
+      if: matrix.node-version == '20.x'
+      run: npm test -- --coverage --maxWorkers=2 || true
+      continue-on-error: true
 
     - name: Upload coverage reports
       if: matrix.node-version == '20.x' && always()
