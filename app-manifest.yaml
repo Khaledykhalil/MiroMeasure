@@ -2,15 +2,15 @@ appName: MeasureMint
 sdkVersion: SDK_V2
 # Production URL (CURRENT)
 sdkUri: https://measuremint.app/panel
-# Development URL (for local testing):
-# sdkUri: http://localhost:3000/panel
+# Development URL (for local testing with ngrok):
+# sdkUri: https://postmenstrual-disinfective-meri.ngrok-free.dev/panel
 boardPicker:
   allowedDomains: []
 redirectUris:
   # Production URL (CURRENT)
   - https://measuremint.app/api/redirect
-  # Development URL (for local testing):
-  # - http://localhost:3000/api/redirect
+  # Development URL (for local testing with ngrok):
+  # - https://postmenstrual-disinfective-meri.ngrok-free.dev/api/redirect
 redirectUriForSdk: ''
 scopes:
   - boards:read
