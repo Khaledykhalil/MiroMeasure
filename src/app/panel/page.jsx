@@ -268,28 +268,27 @@ export default function PanelPage() {
     const lastPositions = new Map();
     const isApplyingConstraint = new Set(); // Track connectors being constrained to avoid loops
 
+    let pollInFlight = false;
+
     const pollConnectors = async () => {
+      if (pollInFlight) {
+        return;
+      }
       try {
+        pollInFlight = true;
         // Only monitor connectors the user is actively interacting with
         const selection = await window.miro.board.getSelection();
         const selectedConnectorIds = selection
           .filter(item => item.type === 'connector')
           .map(connector => connector.id);
 
-        const connectorIds = selectedConnectorIds.length > 0
-          ? selectedConnectorIds
-          : (
-              (mode === 'calibrate' || mode === 'measure') && calibrationLine?.id
-            )
-            ? [calibrationLine.id]
-            : [];
-
-        if (connectorIds.length === 0) {
+        if (selectedConnectorIds.length === 0) {
           lastPositions.clear();
+          pollInFlight = false;
           return;
         }
 
-        const connectors = await window.miro.board.get({ id: connectorIds });
+        const connectors = await window.miro.board.get({ id: selectedConnectorIds });
         
         for (const connector of connectors) {
           if (connector.type !== 'connector') continue;
@@ -311,8 +310,7 @@ export default function PanelPage() {
               // Apply constraints if:
               // 1. Angle constraints are enabled globally, OR
               // 2. Shift key is pressed AND connector is selected
-              const shouldConstrain = angleConstraintsEnabled || 
-                (shiftKeyPressed && selectedConnectorIds.includes(connector.id));
+              const shouldConstrain = angleConstraintsEnabled || shiftKeyPressed;
               
               if (shouldConstrain) {
                 isApplyingConstraint.add(connector.id);
@@ -342,11 +340,10 @@ export default function PanelPage() {
                   }
                   
                   // Update state if this is the calibration line
+                  // Update measurement/calibration references if needed
                   if (calibrationLine?.id === connector.id) {
                     setCalibrationLine(updatedConnector);
                   }
-                  
-                  // Update measurement lines array
                   if (measurementLines.includes(connector.id)) {
                     setMeasurementLines(prev => prev.map(id => id === connector.id ? updatedConnector.id : id));
                   }
@@ -362,11 +359,13 @@ export default function PanelPage() {
         }
       } catch (error) {
         console.error('Error polling connectors:', error);
+      } finally {
+        pollInFlight = false;
       }
     };
 
-    // Poll every 200ms when constraints are enabled (less frequent to reduce overhead)
-    pollingInterval = setInterval(pollConnectors, 200);
+    // Poll every 400ms when constraints are enabled
+    pollingInterval = setInterval(pollConnectors, 400);
 
     return () => {
       if (pollingInterval) clearInterval(pollingInterval);
