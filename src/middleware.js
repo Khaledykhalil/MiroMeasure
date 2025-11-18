@@ -42,7 +42,8 @@ export function middleware(request) {
     // Script sources: Use 'strict-dynamic' with nonce for strict CSP
     // 'strict-dynamic' allows scripts loaded by nonce-script to load other scripts
     // This is more secure than 'unsafe-inline' and compatible with Next.js
-    `script-src 'self' 'nonce-${scriptNonce}' 'strict-dynamic' https://miro.com https://*.miro.com https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.clarity.ms https://scripts.clarity.ms https://*.clarity.ms`,
+    // Temporarily relax script-src until all Next.js scripts receive nonces
+    `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://miro.com https://*.miro.com https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.clarity.ms https://scripts.clarity.ms https://*.clarity.ms`,
     // Note: Removed 'unsafe-eval' - if Microsoft Clarity requires it, we'll need to add it back
     // Style sources: self, Google Fonts, and nonce for inline styles
     `style-src 'self' 'nonce-${styleNonce}' https://fonts.googleapis.com`,
