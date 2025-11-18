@@ -211,8 +211,27 @@ export default function PanelPage() {
     }
     
     try {
-      // Preserve all connector properties when recreating
-      const updatedConnector = await window.miro.board.createConnector({
+      // Prefer updating the existing connector so the user keeps the same selection
+      if (window.miro?.board?.update) {
+        const updatedConnector = await window.miro.board.update({
+          id: connector.id,
+          start: {
+            ...connector.start,
+            position: newStart,
+            snapTo: 'none'
+          },
+          end: {
+            ...connector.end,
+            position: newEnd,
+            snapTo: 'none'
+          },
+          style: connector.style
+        });
+        return updatedConnector;
+      }
+
+      // Fallback for environments without board.update
+      const recreatedConnector = await window.miro.board.createConnector({
         start: {
           ...connector.start,
           position: newStart,
@@ -233,10 +252,8 @@ export default function PanelPage() {
         captions: connector.captions || []
       });
       
-      // Remove old connector
       await window.miro.board.remove(connector);
-      
-      return updatedConnector;
+      return recreatedConnector;
     } catch (error) {
       console.error('Error applying angle constraint:', error);
       return null;
