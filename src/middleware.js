@@ -46,8 +46,8 @@ export function middleware(request) {
     `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://miro.com https://*.miro.com https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.clarity.ms https://scripts.clarity.ms https://*.clarity.ms`,
     // Note: Removed 'unsafe-eval' - if Microsoft Clarity requires it, we'll need to add it back
     // Style sources: self, Google Fonts, and nonce for inline styles
-    `style-src 'self' 'nonce-${styleNonce}' https://fonts.googleapis.com`,
-    `style-src-elem 'self' 'nonce-${styleNonce}' https://fonts.googleapis.com`,
+    `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
+    `style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com`,
     // Font sources
     "font-src 'self' data: https://fonts.gstatic.com https://r2cdn.perplexity.ai",
     // Image sources
