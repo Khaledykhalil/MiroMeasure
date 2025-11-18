@@ -1,6 +1,18 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
+// Handle OPTIONS requests for CORS preflight
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
+}
+
 // Initialize Resend only when API key is available
 // During build time, this might not be set yet
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
@@ -9,10 +21,17 @@ export async function POST(request) {
   try {
     // Check if Resend is configured
     if (!resend) {
-      return NextResponse.json(
-        { error: 'Email service not configured. Please contact support@measuremint.app directly.' },
-        { status: 503 }
-      );
+    return NextResponse.json(
+      { error: 'Email service not configured. Please contact support@measuremint.app directly.' },
+      { 
+        status: 503,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      }
+    );
     }
 
     const body = await request.json();
@@ -22,7 +41,14 @@ export async function POST(request) {
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { error: 'Missing required fields' },
-        { status: 400 }
+        { 
+          status: 400,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type',
+          },
+        }
       );
     }
 
@@ -72,7 +98,14 @@ export async function POST(request) {
         message: 'Support request sent successfully',
         id: data.id 
       },
-      { status: 200 }
+      { 
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      }
     );
 
   } catch (error) {
@@ -82,7 +115,14 @@ export async function POST(request) {
         error: 'Failed to send support request',
         details: error.message 
       },
-      { status: 500 }
+      { 
+        status: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      }
     );
   }
 }

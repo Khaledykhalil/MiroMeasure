@@ -458,6 +458,15 @@ export default function Home() {
               support@measuremint.app
             </a>
           </div>
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <p className="text-xs text-gray-500 leading-relaxed">
+              We improve our products and advertising by using Microsoft Clarity to see how you use our website. By using our site, you agree that we and Microsoft can collect and use this data. Our{' '}
+              <Link href="/privacy" className="text-blue-500 hover:underline">
+                privacy statement
+              </Link>{' '}
+              has more details.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

@@ -458,6 +458,15 @@ export default function TermsOfService() {
               </Link>
             </div>
           </div>
+          <div className="mt-4 pt-4 border-t border-border">
+            <p className="text-xs text-muted-foreground leading-relaxed text-center md:text-left">
+              We improve our products and advertising by using Microsoft Clarity to see how you use our website. By using our site, you agree that we and Microsoft can collect and use this data. Our{' '}
+              <Link href="/privacy" className="text-primary hover:underline">
+                privacy statement
+              </Link>{' '}
+              has more details.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

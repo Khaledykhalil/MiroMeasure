@@ -208,6 +208,20 @@ export default function PrivacyPolicy() {
                   <li><strong>Privacy Policy:</strong> <a href="https://resend.com/legal/privacy-policy" className="text-primary hover:underline">https://resend.com/legal/privacy-policy</a></li>
                 </ul>
               </div>
+
+              <div>
+                <p className="text-muted-foreground leading-relaxed"><strong>Microsoft Clarity (Analytics):</strong></p>
+                <ul className="list-disc pl-6 text-muted-foreground space-y-1">
+                  <li><strong>Purpose:</strong> Website analytics, user behavior tracking, heatmaps, and session replay to improve our products and services</li>
+                  <li><strong>Data Captured:</strong> Behavioral metrics, heatmaps, session replays, click patterns, scroll depth, and website usage data</li>
+                  <li><strong>Technology:</strong> First and third-party cookies and tracking technologies</li>
+                  <li><strong>Use Cases:</strong> Site optimization, fraud/security purposes, product improvement, and understanding user interactions</li>
+                  <li><strong>Privacy Policy:</strong> <a href="https://privacy.microsoft.com/privacystatement" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Microsoft Privacy Statement</a></li>
+                </ul>
+                <p className="text-muted-foreground leading-relaxed mt-2 text-sm">
+                  <strong>Note:</strong> We partner with Microsoft Clarity and Microsoft Advertising to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay to improve and market our products/services. Website usage data is captured using first and third-party cookies and other tracking technologies to determine the popularity of products/services and online activity. Additionally, we use this information for site optimization, fraud/security purposes, and advertising. For more information about how Microsoft collects and uses your data, visit the <a href="https://privacy.microsoft.com/privacystatement" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Microsoft Privacy Statement</a>.
+                </p>
+              </div>
             </div>
 
             <h3 className="text-xl font-semibold mb-3 text-foreground">4.2 When We May Disclose Information</h3>
@@ -350,10 +364,10 @@ export default function PrivacyPolicy() {
               <li>User preferences (unit settings, UI state)</li>
             </ul>
 
-            <p className="text-muted-foreground leading-relaxed mb-2"><strong>Analytics (Optional):</strong></p>
+            <p className="text-muted-foreground leading-relaxed mb-2"><strong>Analytics:</strong></p>
             <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-              <li>Vercel Analytics: Privacy-friendly, cookieless analytics</li>
-              <li>No cross-site tracking or advertising cookies</li>
+              <li><strong>Vercel Analytics:</strong> Privacy-friendly, cookieless analytics</li>
+              <li><strong>Microsoft Clarity:</strong> Behavioral analytics, heatmaps, and session replay (uses cookies and tracking technologies - see Section 4.1 for details)</li>
             </ul>
 
             <p className="text-muted-foreground leading-relaxed">
@@ -409,9 +423,10 @@ export default function PrivacyPolicy() {
 
           <div className="mt-12 pt-8 border-t border-border">
             <p className="text-sm text-muted-foreground">
-              <strong>Version:</strong> 1.0<br />
+              <strong>Version:</strong> 1.1<br />
               <strong>Effective Date:</strong> November 8, 2025<br />
-              <strong>Last Reviewed:</strong> November 8, 2025
+              <strong>Last Updated:</strong> November 17, 2025<br />
+              <strong>Changes:</strong> Added Microsoft Clarity disclosure (Section 4.1)
             </p>
           </div>
         </div>
@@ -440,6 +455,15 @@ export default function PrivacyPolicy() {
                 Terms
               </Link>
             </div>
+          </div>
+          <div className="mt-4 pt-4 border-t border-border">
+            <p className="text-xs text-muted-foreground leading-relaxed text-center md:text-left">
+              We improve our products and advertising by using Microsoft Clarity to see how you use our website. By using our site, you agree that we and Microsoft can collect and use this data. Our{' '}
+              <Link href="/privacy" className="text-primary hover:underline">
+                privacy statement
+              </Link>{' '}
+              has more details.
+            </p>
           </div>
         </div>
       </footer>

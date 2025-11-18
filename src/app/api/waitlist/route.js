@@ -2,6 +2,21 @@ import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import { Pool } from 'pg';
 
+// CORS headers helper
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
+
+// Handle OPTIONS requests for CORS preflight
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: corsHeaders,
+  });
+}
+
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 // Create PostgreSQL connection pool
@@ -34,7 +49,7 @@ export async function POST(request) {
     if (!name || !email || !profession || !company) {
       return NextResponse.json(
         { error: 'Missing required fields' },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -43,7 +58,7 @@ export async function POST(request) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: 'Invalid email format' },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -58,7 +73,7 @@ export async function POST(request) {
         if (existingUser.rows.length > 0) {
           return NextResponse.json(
             { error: 'This email is already on the waitlist' },
-            { status: 409 }
+            { status: 409, headers: corsHeaders }
           );
         }
       } catch (dbError) {
@@ -88,7 +103,7 @@ export async function POST(request) {
           message: 'Joined waitlist (stored in database, email service not configured)',
           stored: true
         },
-        { status: 200 }
+        { status: 200, headers: corsHeaders }
       );
     }
 
@@ -174,7 +189,7 @@ export async function POST(request) {
         stored: true,
         emailsSent: true
       },
-      { status: 200 }
+      { status: 200, headers: corsHeaders }
     );
 
   } catch (error) {
@@ -184,7 +199,7 @@ export async function POST(request) {
         error: 'Failed to process waitlist signup',
         details: error.message 
       },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }
@@ -199,7 +214,7 @@ export async function GET(request) {
     if (!expectedAuth || authHeader !== `Bearer ${expectedAuth}`) {
       return NextResponse.json(
         { error: 'Unauthorized' },
-        { status: 401 }
+        { status: 401, headers: corsHeaders }
       );
     }
 
@@ -210,7 +225,7 @@ export async function GET(request) {
           error: 'Database not configured',
           details: 'POSTGRES_URL not set'
         },
-        { status: 500 }
+        { status: 500, headers: corsHeaders }
       );
     }
 
@@ -224,7 +239,7 @@ export async function GET(request) {
         count: result.rows.length,
         waitlist: result.rows
       },
-      { status: 200 }
+      { status: 200, headers: corsHeaders }
     );
 
   } catch (error) {
@@ -234,7 +249,7 @@ export async function GET(request) {
         error: 'Failed to fetch waitlist',
         details: error.message 
       },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }

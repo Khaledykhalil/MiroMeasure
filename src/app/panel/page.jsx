@@ -99,6 +99,11 @@ export default function PanelPage() {
   // Dark mode state
   const [darkMode, setDarkMode] = useState(false);
 
+  // Angle constraint state
+  const [angleConstraintsEnabled, setAngleConstraintsEnabled] = useState(false);
+  const [shiftKeyPressed, setShiftKeyPressed] = useState(false);
+  const [trackedConnectors, setTrackedConnectors] = useState(new Map()); // Track connectors for angle snapping
+
   // Unit selection for measurement updates
   const [showMeasurementUnitModal, setShowMeasurementUnitModal] = useState(false);
   const [pendingMeasurementUpdate, setPendingMeasurementUpdate] = useState(null);
@@ -121,11 +126,225 @@ export default function PanelPage() {
         }
         setMode('none');
       }
+      // Track Shift key for temporary angle constraints
+      if (event.key === 'Shift') {
+        setShiftKeyPressed(true);
+      }
+    };
+
+    const handleKeyUp = (event) => {
+      if (event.key === 'Shift') {
+        setShiftKeyPressed(false);
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
   }, [mode, calibrationLine]);
+
+  // Angle snapping utility function
+  const snapAngle = (angleDegrees, constraintInterval = 45) => {
+    // Snap to nearest angle at the specified interval (0°, 45°, 90°, etc.)
+    const snapped = Math.round(angleDegrees / constraintInterval) * constraintInterval;
+    // Normalize to 0-360 range
+    return ((snapped % 360) + 360) % 360;
+  };
+
+  // Calculate angle between two points in degrees
+  const calculateAngle = (start, end) => {
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+    const angleRadians = Math.atan2(dy, dx);
+    const angleDegrees = angleRadians * (180 / Math.PI);
+    return ((angleDegrees % 360) + 360) % 360; // Normalize to 0-360
+  };
+
+  // Apply angle constraint to a connector endpoint
+  const applyAngleConstraint = async (connector, movedEndpoint = 'end') => {
+    if (!connector || connector.type !== 'connector') return null;
+
+    const start = connector.start.position || connector.start;
+    const end = connector.end.position || connector.end;
+    
+    // Calculate current angle
+    const currentAngle = calculateAngle(start, end);
+    
+    // Determine if constraints should be applied
+    const shouldConstrain = angleConstraintsEnabled || shiftKeyPressed;
+    
+    if (!shouldConstrain) return null;
+
+    // Snap angle to nearest 45-degree interval (0°, 45°, 90°, 135°, etc.)
+    const snappedAngle = snapAngle(currentAngle, 45);
+    const angleDiff = snappedAngle - currentAngle;
+    
+    // If angle difference is small, don't snap (to avoid jitter)
+    if (Math.abs(angleDiff) < 2) return null;
+
+    // Calculate line length
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+    const length = Math.sqrt(dx * dx + dy * dy);
+
+    // Calculate new endpoint position based on snapped angle
+    const snappedAngleRad = snappedAngle * (Math.PI / 180);
+    let newStart, newEnd;
+
+    if (movedEndpoint === 'start') {
+      // If moving start point, keep end point fixed
+      newEnd = { x: end.x, y: end.y };
+      newStart = {
+        x: end.x - length * Math.cos(snappedAngleRad),
+        y: end.y - length * Math.sin(snappedAngleRad)
+      };
+    } else {
+      // If moving end point, keep start point fixed
+      newStart = { x: start.x, y: start.y };
+      newEnd = {
+        x: start.x + length * Math.cos(snappedAngleRad),
+        y: start.y + length * Math.sin(snappedAngleRad)
+      };
+    }
+    
+    try {
+      // Preserve all connector properties when recreating
+      const updatedConnector = await window.miro.board.createConnector({
+        start: {
+          ...connector.start,
+          position: newStart,
+          snapTo: 'none'
+        },
+        end: {
+          ...connector.end,
+          position: newEnd,
+          snapTo: 'none'
+        },
+        shape: connector.shape || 'straight',
+        style: connector.style || {
+          strokeColor: '#4facfe',
+          strokeWidth: 2,
+          startStrokeCap: 'none',
+          endStrokeCap: 'none'
+        },
+        captions: connector.captions || []
+      });
+      
+      // Remove old connector
+      await window.miro.board.remove(connector);
+      
+      return updatedConnector;
+    } catch (error) {
+      console.error('Error applying angle constraint:', error);
+      return null;
+    }
+  };
+
+  // Poll for connector updates to apply angle constraints
+  useEffect(() => {
+    if (!angleConstraintsEnabled && !shiftKeyPressed) return;
+
+    let pollingInterval;
+    const lastPositions = new Map();
+    const isApplyingConstraint = new Set(); // Track connectors being constrained to avoid loops
+
+    const pollConnectors = async () => {
+      try {
+        // Get current selection to focus on selected connectors
+        const selection = await window.miro.board.getSelection();
+        const selectedIds = selection.map(item => item.id);
+
+        // Get all calibration and measurement connectors
+        const connectorIds = [];
+        if (calibrationLine?.id) connectorIds.push(calibrationLine.id);
+        measurementLines.forEach(id => connectorIds.push(id));
+
+        if (connectorIds.length === 0) return;
+
+        const connectors = await window.miro.board.get({ id: connectorIds });
+        
+        for (const connector of connectors) {
+          if (connector.type !== 'connector') continue;
+          if (isApplyingConstraint.has(connector.id)) continue; // Skip if already constraining
+
+          const start = connector.start.position || connector.start;
+          const end = connector.end.position || connector.end;
+          const key = connector.id;
+          const lastPos = lastPositions.get(key);
+
+          // Check if position changed
+          if (lastPos) {
+            const startMoved = Math.abs(lastPos.start.x - start.x) > 2 || Math.abs(lastPos.start.y - start.y) > 2;
+            const endMoved = Math.abs(lastPos.end.x - end.x) > 2 || Math.abs(lastPos.end.y - end.y) > 2;
+
+            if (startMoved || endMoved) {
+              // Apply constraints if:
+              // 1. Angle constraints are enabled globally, OR
+              // 2. Shift key is pressed AND connector is selected
+              const shouldConstrain = angleConstraintsEnabled || 
+                (shiftKeyPressed && selectedIds.includes(connector.id));
+              
+              if (shouldConstrain) {
+                isApplyingConstraint.add(connector.id);
+                
+                // Determine which endpoint moved more (the one being dragged)
+                const startMoveDistance = Math.sqrt(
+                  Math.pow(lastPos.start.x - start.x, 2) + 
+                  Math.pow(lastPos.start.y - start.y, 2)
+                );
+                const endMoveDistance = Math.sqrt(
+                  Math.pow(lastPos.end.x - end.x, 2) + 
+                  Math.pow(lastPos.end.y - end.y, 2)
+                );
+                const movedEndpoint = startMoveDistance > endMoveDistance ? 'start' : 'end';
+                
+                const updatedConnector = await applyAngleConstraint(connector, movedEndpoint);
+                
+                if (updatedConnector) {
+                  // Update tracking
+                  lastPositions.set(updatedConnector.id, {
+                    start: updatedConnector.start.position || updatedConnector.start,
+                    end: updatedConnector.end.position || updatedConnector.end
+                  });
+                  lastPositions.delete(key); // Remove old ID
+                  
+                  // Update state if this is the calibration line
+                  if (calibrationLine?.id === connector.id) {
+                    setCalibrationLine(updatedConnector);
+                  }
+                  
+                  // Update measurement lines array
+                  if (measurementLines.includes(connector.id)) {
+                    setMeasurementLines(prev => prev.map(id => id === connector.id ? updatedConnector.id : id));
+                  }
+                }
+                
+                isApplyingConstraint.delete(connector.id);
+              } else {
+                // Update position tracking even if not constraining
+                lastPositions.set(key, { start, end });
+              }
+            }
+          } else {
+            // Store initial position
+            lastPositions.set(key, { start, end });
+          }
+        }
+      } catch (error) {
+        console.error('Error polling connectors:', error);
+      }
+    };
+
+    // Poll every 200ms when constraints are enabled (less frequent to reduce overhead)
+    pollingInterval = setInterval(pollConnectors, 200);
+
+    return () => {
+      if (pollingInterval) clearInterval(pollingInterval);
+    };
+  }, [angleConstraintsEnabled, shiftKeyPressed, calibrationLine, measurementLines]);
 
   // Note: Miro SDK v2 doesn't support board.ui.on('click')
   // Instead, we use helper functions that prompt users to click and select positions
@@ -2937,6 +3156,91 @@ export default function PanelPage() {
             <p style={{marginTop: '8px', color: darkMode ? '#8e8e93' : '#718096', fontSize: '11px', textAlign: 'center'}}>
               Drag the line endpoints to the points you want to measure
             </p>
+          </div>
+        )}
+
+        {/* Angle Constraint Toggle */}
+        {(mode === 'calibrate' || mode === 'measure' || calibrationLine || measurementLines.length > 0) && (
+          <div style={{
+            background: darkMode ? '#2c2c2e' : 'white',
+            borderRadius: '12px',
+            padding: '12px 16px',
+            boxShadow: darkMode ? '0 1px 3px rgba(0, 0, 0, 0.4)' : '0 1px 3px rgba(0, 0, 0, 0.05)',
+            marginBottom: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px'
+          }}>
+            <div style={{ flex: 1 }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '4px'
+              }}>
+                <TbAngle size={18} color={darkMode ? '#ffffff' : '#1a202c'} />
+                <span style={{
+                  fontSize: '13px',
+                  fontWeight: '600',
+                  color: darkMode ? '#ffffff' : '#1a202c'
+                }}>
+                  Angle Constraints
+                </span>
+              </div>
+              <p style={{
+                margin: 0,
+                fontSize: '11px',
+                color: darkMode ? '#8e8e93' : '#718096',
+                lineHeight: '1.4'
+              }}>
+                Snap lines to 0°, 45°, 90° angles. Hold <strong>Shift</strong> for temporary constraint.
+              </p>
+            </div>
+            <label style={{
+              position: 'relative',
+              display: 'inline-block',
+              width: '44px',
+              height: '24px',
+              cursor: 'pointer'
+            }}>
+              <input
+                type="checkbox"
+                checked={angleConstraintsEnabled}
+                onChange={(e) => setAngleConstraintsEnabled(e.target.checked)}
+                style={{
+                  opacity: 0,
+                  width: 0,
+                  height: 0
+                }}
+              />
+              <span style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: angleConstraintsEnabled 
+                  ? (darkMode ? '#4facfe' : '#4facfe')
+                  : (darkMode ? '#3a3a3c' : '#cbd5e0'),
+                borderRadius: '24px',
+                transition: 'background-color 0.2s',
+                cursor: 'pointer'
+              }}>
+                <span style={{
+                  position: 'absolute',
+                  content: '""',
+                  height: '18px',
+                  width: '18px',
+                  left: angleConstraintsEnabled ? '22px' : '3px',
+                  bottom: '3px',
+                  backgroundColor: 'white',
+                  borderRadius: '50%',
+                  transition: 'left 0.2s',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                }} />
+              </span>
+            </label>
           </div>
         )}
 
