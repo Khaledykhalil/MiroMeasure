@@ -270,16 +270,24 @@ export default function PanelPage() {
 
     const pollConnectors = async () => {
       try {
-        // Get current selection to focus on selected connectors
+        // Only monitor connectors the user is actively interacting with
         const selection = await window.miro.board.getSelection();
-        const selectedIds = selection.map(item => item.id);
+        const selectedConnectorIds = selection
+          .filter(item => item.type === 'connector')
+          .map(connector => connector.id);
 
-        // Get all calibration and measurement connectors
-        const connectorIds = [];
-        if (calibrationLine?.id) connectorIds.push(calibrationLine.id);
-        measurementLines.forEach(id => connectorIds.push(id));
+        const connectorIds = selectedConnectorIds.length > 0
+          ? selectedConnectorIds
+          : (
+              (mode === 'calibrate' || mode === 'measure') && calibrationLine?.id
+            )
+            ? [calibrationLine.id]
+            : [];
 
-        if (connectorIds.length === 0) return;
+        if (connectorIds.length === 0) {
+          lastPositions.clear();
+          return;
+        }
 
         const connectors = await window.miro.board.get({ id: connectorIds });
         
@@ -287,8 +295,10 @@ export default function PanelPage() {
           if (connector.type !== 'connector') continue;
           if (isApplyingConstraint.has(connector.id)) continue; // Skip if already constraining
 
-          const start = connector.start.position || connector.start;
-          const end = connector.end.position || connector.end;
+          const start = connector.start?.position || connector.start || null;
+          const end = connector.end?.position || connector.end || null;
+          if (!start || !end) continue;
+
           const key = connector.id;
           const lastPos = lastPositions.get(key);
 
@@ -302,7 +312,7 @@ export default function PanelPage() {
               // 1. Angle constraints are enabled globally, OR
               // 2. Shift key is pressed AND connector is selected
               const shouldConstrain = angleConstraintsEnabled || 
-                (shiftKeyPressed && selectedIds.includes(connector.id));
+                (shiftKeyPressed && selectedConnectorIds.includes(connector.id));
               
               if (shouldConstrain) {
                 isApplyingConstraint.add(connector.id);
@@ -322,11 +332,14 @@ export default function PanelPage() {
                 
                 if (updatedConnector) {
                   // Update tracking
-                  lastPositions.set(updatedConnector.id, {
-                    start: updatedConnector.start.position || updatedConnector.start,
-                    end: updatedConnector.end.position || updatedConnector.end
-                  });
-                  lastPositions.delete(key); // Remove old ID
+                  const updatedStart = updatedConnector.start?.position || updatedConnector.start;
+                  const updatedEnd = updatedConnector.end?.position || updatedConnector.end;
+                  if (updatedStart && updatedEnd) {
+                    lastPositions.set(key, {
+                      start: updatedStart,
+                      end: updatedEnd
+                    });
+                  }
                   
                   // Update state if this is the calibration line
                   if (calibrationLine?.id === connector.id) {
@@ -340,9 +353,6 @@ export default function PanelPage() {
                 }
                 
                 isApplyingConstraint.delete(connector.id);
-              } else {
-                // Update position tracking even if not constraining
-                lastPositions.set(key, { start, end });
               }
             }
           } else {
